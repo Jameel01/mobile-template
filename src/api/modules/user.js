@@ -1,3 +1,9 @@
+/*按照功能模块划分接口
+ * @Author: chenyt 
+ * @Date: 2020-03-22 12:03:43 
+ * @Last Modified by:   chenyt 
+ * @Last Modified time: 2020-03-22 12:03:43 
+ */
 
 import commonApi from '../common-axios'
 

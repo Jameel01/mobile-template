@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import modules from './modules';
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import { getToken} from '@/utils/auth'
 
 Vue.use(Vuex);
 

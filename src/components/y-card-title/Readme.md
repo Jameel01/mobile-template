@@ -30,3 +30,7 @@ import GCardTitle from '@/components/g-card-title/index.vue'
 | title-after | 标题后面内容的插槽 一般用来放tag  |      |
 | right       | 右侧内容插槽 文字不满足要求时使用 |      |
 |             |                                   |      |
+
+### 组件规范
+* 按照y-开头，组件文件夹命名规则：y-*-*或y-*
+* 编写的组件需要添加readme说明文档，文档格式参考本组件文档

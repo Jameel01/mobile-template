@@ -1,3 +1,9 @@
+/*放置基础接口
+ * @Author: chenyt 
+ * @Date: 2020-03-22 12:04:29 
+ * @Last Modified by: chenyt
+ * @Last Modified time: 2020-03-22 12:05:12
+ */
 import commonApi from '../common-axios'
 /**
  * 获取用户信息

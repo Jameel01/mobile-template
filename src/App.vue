@@ -36,7 +36,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import url("@/styles/common.scss");
 #app {
   /* font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC',
     'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif; */
@@ -49,6 +50,7 @@ body {
   padding: 0;
   height: 100%;
 }
+// 加载框样式定义
 .project-loading {
   background: #fbfbfb;
   width: 100%;
