@@ -34,7 +34,7 @@ export async function beforeEachHandler (to, from, next) {
           } else {
             console.log('get2')
             // h5token失效重新拿一次
-            await getCookieFromApp()
+            // await getCookieFromApp()
           }
         } else {
           store.commit(SET_USER_INFO, result.data)
