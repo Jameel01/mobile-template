@@ -2,7 +2,7 @@
  * @Author: chenyt 
  * @Date: 2020-03-21 21:18:41 
  * @Last Modified by: chenyt
- * @Last Modified time: 2020-03-22 12:02:31
+ * @Last Modified time: 2020-03-27 13:28:55
  */
 
 import axios from "axios"
@@ -25,6 +25,7 @@ let service = axios.create({
 
 // 请求
 service.interceptors.request.use(config => {
+  Vue.$bus.$emit('setLoading', true)
   let token = getToken()
   if (token) {
     config.headers['Access-Token'] = token;
@@ -36,8 +37,10 @@ service.interceptors.request.use(config => {
 
 //响应拦截
 service.interceptors.response.use(response => {
+  Vue.$bus.$emit('setLoading', false)
   return response
 }, error => {
+  Vue.$bus.$emit('setLoading', false)
   return Promise.reject(error)
 })
 export default service;

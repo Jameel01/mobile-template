@@ -1,5 +1,6 @@
 const path = require('path')
 const isProd = process.env.NODE_ENV === 'production'
+// const CompressionPlugin = require('compression-webpack-plugin')
 const webpack = require('webpack')
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -29,6 +30,7 @@ module.exports = {
       }
     }
   },
+  
   css: {
     // 是否使用css分离插件 ExtractTextPlugin
     //如果需要css热更新就设置为false,打包时候要改为true
@@ -40,7 +42,7 @@ module.exports = {
       sass: {
         // @/ is an alias to src/
         // so this assumes you have a file named `src/variables.scss`
-        data: `@import "@/styles/params.scss";`
+        // data: `@import "@/styles/themeParams.scss";`
       }
     },
   },
@@ -80,18 +82,28 @@ module.exports = {
         limit: 20240
       }))
     // 图片质量压缩
-    config.module
-      .rule('images')
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-      .use('img-loader')
-      .loader('img-loader').options({
-        plugins: [
-          require('imagemin-jpegtran')(),
-          require('imagemin-pngquant')({
-            quality: [0.75, 0.85]
-          })
-        ]
-      })
+    // config.module
+    //   .rule('images')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('img-loader')
+    //   .loader('img-loader').options({
+    //     plugins: [
+    //       require('imagemin-jpegtran')(),
+    //       require('imagemin-pngquant')({
+    //         quality: [0.75, 0.85]
+    //       })
+    //     ]
+    //   })
+    // config.module
+    //   .rule("images")
+    //   .test(/\.(gif|png|jpe?g|svg)$/i)
+    //   .use("image-webpack-loader")
+    //   .loader("image-webpack-loader")
+    //   .options({
+    //     bypassOnDebug: true
+    //   })
+    //   .end();
+
   },
   // 第三方插件配置
   pluginOptions: {}

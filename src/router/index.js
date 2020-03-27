@@ -1,42 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import common from './modules/common'
-import user from './modules/user'
-import ErrorPage from '@/views/Error.vue'
-import NotFound from '@/views/404.vue'
-import sessionUtil from '@/utils/sessionStorage.js'
 Vue.use(Router)
-
-export const routes = [
-  ...common,
-  ...user,
-  {
-    path: '/',
-    name: '目录',
-    meta: {
-      needLogin: false
-    },
-    component: () => import('@/views/Home.vue')
-  },
-  {
-    path: '/error',
-    name: 'error',
-    component: ErrorPage
-  },
-  {
-    path: '/exception',
-    name: 'exception',
-    meta: {
-      needLogin: false,
-    },
-    component: () => import('@/views/example.vue')
-  },
-  {
-    path: '*',
-    name: 'not-found',
-    component: NotFound
+//自动引入模块路由，路由为模块下index.js文件
+export let routes = []
+const routerContext=require.context('./',true,/index\.js$/)
+routerContext.keys().forEach(route=>{
+  if(route.startsWith('./index')){
+    return
   }
-]
+  const routerModule=routerContext(route)
+  routes=[...routes,...(routerModule.default||routerModule)]
+})
 var router = new Router({
   linkActiveClass: 'active',
   // base: process.env.NODE_ENV === "production" ? "/ggfwstatic/chinahrss-unwork/" : "/",

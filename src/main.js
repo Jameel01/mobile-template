@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from '@/App.vue'
 import Router from 'vue-router';
 import router from '@/router'
-import { beforeEachHandler, beforeEachNoTitle, beforeEachToExample } from '@/router/before-each'
+import "@/styles/common.scss";
+import { beforeEachHandler, beforeEachToExample } from '@/router/before-each'
 import afterEachHandler from '@/router/after-each'
 import store from '@/store'
 import '@/use'
@@ -30,7 +31,10 @@ Object.defineProperties(Vue.prototype, {
   }
 })
 //替换演示页使用
+router.beforeEach(beforeEachToExample)
+// 登录用户信息校验
 router.beforeEach(beforeEachHandler)
+//标题设置
 router.afterEach(afterEachHandler)
 
 window.gvm = new Vue({

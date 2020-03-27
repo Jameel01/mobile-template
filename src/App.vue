@@ -1,31 +1,25 @@
 <template>
   <div id="app">
-    <!-- 加载gif -->
-    <div class="project-loading" v-show='loadingBox'>
-      <div class="loading-block">
-        <img src='@/assets/imgs/12333.gif' />
-      </div>
-    </div>
+    <y-loading :yLoading.sync='loadingStatus'></y-loading>
     <!-- 页面切换容器 -->
     <router-view />
   </div>
 </template>
 <script>
+import YLoading from '@/components/y-loading/index.vue'
 import SessionUtil from "@/utils/sessionStorage"
 export default {
   name: 'app',
   components: {
+    YLoading
   },
   data () {
     return {
-      loadingBox: true//加载展示
+      loadingStatus: true//加载展示
     }
   },
   created () {
-    // 修改加载状态
-    this.$bus.$on('setLoading', (params) => {
-      this.loadingBox = params
-    })
+
     // 隐藏加载
     setTimeout(() => {
       this.$bus.$emit('setLoading', false)
@@ -37,10 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("@/styles/common.scss");
 #app {
-  /* font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC',
-    'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif; */
   background: #fff;
   height: 100%;
 }

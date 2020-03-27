@@ -1,13 +1,13 @@
 import api from '@/api'
 import store from '@/store'
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 import getToken from '@/utils/auth'
 
 const TOKENNAME = process.env.VUE_APP_TOKEN
 const SET_USER_INFO = 'SET_USER_INFO'
 
 // 页面路由拦截
-export async function beforeEachHandler (to, from, next) {
+ async function beforeEachHandler (to, from, next) {
   if ((to.meta && to.meta.needLogin)) {
     let limit = 2
     try {
@@ -34,7 +34,6 @@ export async function beforeEachHandler (to, from, next) {
           } else {
             console.log('get2')
             // h5token失效重新拿一次
-            // await getCookieFromApp()
           }
         } else {
           store.commit(SET_USER_INFO, result.data)
@@ -51,24 +50,18 @@ export async function beforeEachHandler (to, from, next) {
   }
 }
 
-
 // 演示替换到维修升级页面
-export function beforeEachToExample (to, from, next) {
+ function beforeEachToExample (to, from, next) {
   const pathMap = {
-    // '/common/select-organization/medical-institutions': '/example?type=organization',
-    // '/common/select-organization/drugstore-search': '/example?type=drug',
-    // '/common/select-organization': '/example?type=net',
-    // '/common/medicare-catalog/drug': '/example?type=base',
-    // '/my-medicare/info': '/example?type=info',
-    // '/my-medicare/my': '/example?type=my',
-    // '/my-medicare/pay': '/example?type=pay',
-    // '/my-medicare/consume': '/example?type=consume'
-    // '/etc-certificates/active-data': '/exception?page=1&noheader=true',
-    // '/etc-certificates/enter-page': '/exception?page=1&noheader=true'
+    '/home': '/exception?page=1&noheader=true',
   }
   if (pathMap[to.path]) {
     next(pathMap[to.path])
   } else {
     next()
   }
+}
+export {
+  beforeEachHandler,
+  beforeEachToExample
 }

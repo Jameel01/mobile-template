@@ -8,3 +8,5 @@ function afterEachHandler (to, from) {
 }
 
 export default afterEachHandler
+
+
