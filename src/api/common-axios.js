@@ -2,7 +2,7 @@
  * @Author: chenyt 
  * @Date: 2020-03-21 21:18:41 
  * @Last Modified by: chenyt
- * @Last Modified time: 2020-03-27 13:28:55
+ * @Last Modified time: 2020-03-27 16:47:44
  */
 
 import axios from "axios"
@@ -11,7 +11,7 @@ import Vue from 'vue';
 import sessionUtil from '@/utils/sessionStorage.js';
 import { getToken } from '@/utils/auth'
 // 环境变量
-const API_BASEURL = process.env.VUE_APP_API_LOCATION;//api基础路径
+const API_BASEURL = process.env.BASE_URL;//api基础路径
 const CLIENT_TIMEOUT = process.env.VUE_APP_TIMEOUT || 8000//链接时间
 const MOCK_SERVER = process.env.VUE_APP_MOCK_SERVER || ''//mock
 const enableMock = process.env.VUE_APP_ENABLE_MOCK === 'true'//是否开启mock

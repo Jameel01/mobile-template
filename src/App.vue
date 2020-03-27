@@ -6,13 +6,13 @@
   </div>
 </template>
 <script>
-import YLoading from '@/components/y-loading/index.vue'
+// import YLoading from '@/components/y-loading/index.vue'
 import SessionUtil from "@/utils/sessionStorage"
 export default {
   name: 'app',
-  components: {
-    YLoading
-  },
+  // components: {
+  //   YLoading
+  // },
   data () {
     return {
       loadingStatus: true//加载展示

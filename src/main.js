@@ -2,7 +2,10 @@ import Vue from 'vue'
 import App from '@/App.vue'
 import Router from 'vue-router';
 import router from '@/router'
+// 引入基础样式
 import "@/styles/common.scss";
+// 自动注册全局的组件
+import "@/components/index";
 import { beforeEachHandler, beforeEachToExample } from '@/router/before-each'
 import afterEachHandler from '@/router/after-each'
 import store from '@/store'
@@ -30,13 +33,18 @@ Object.defineProperties(Vue.prototype, {
     }
   }
 })
+Vue.config.devtools = true
+Vue.config.productionTip = false
 //替换演示页使用
 router.beforeEach(beforeEachToExample)
 // 登录用户信息校验
 router.beforeEach(beforeEachHandler)
 //标题设置
 router.afterEach(afterEachHandler)
-
+// 热更新
+if (module && module.hot) {
+  module.hot.accept()
+  }
 window.gvm = new Vue({
   router,
   store,
