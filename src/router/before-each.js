@@ -1,9 +1,9 @@
 import api from '@/api'
 import store from '@/store'
 // import Cookies from 'js-cookie'
-import getToken from '@/utils/auth'
+import {getToken} from '@/utils/auth'
 
-const TOKENNAME = process.env.VUE_APP_TOKEN
+// const TOKENNAME = process.env.VUE_APP_TOKEN
 const SET_USER_INFO = 'SET_USER_INFO'
 
 // 页面路由拦截
