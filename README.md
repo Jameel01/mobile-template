@@ -28,11 +28,17 @@ See [Configuration Reference](https://cli.vuejs.org/zh/config/).
 本地设置跨域代理
 ### 访问环境变量方式
  `console.log(process.env.VUE_APP_SECRET)`
-### 创建组件模板命令
+### 自动创建组件模板命令
 npm run new:comp
-### 创建页面模板命令
+
+* 运行命令后，输入页面名称，自动创建组件模板
+### 自动创建页面模板命令
 npm run new:view
+
+* 运行命令后，输入页面名称，自动创建页面模板
 ### 路由自动加载
+在文件夹router下创建模块路由文件。自动引入新建路由模块。
+
 ```js
 export let routes = []
 const routerContext=require.context('./',true,/index\.js$/)
@@ -45,3 +51,17 @@ routerContext.keys().forEach(route=>{
 })
 ```
 ### 自动全局组件注册
+放在`/components/global`文件夹下的组件会全局自动注册。
+
+```js
+// 自动加载 global 目录下的 .vue 结尾的文件
+const componentsContext = require.context('./global', true, /\.vue$/)
+componentsContext.keys().forEach(component => {
+  const componentConfig = componentsContext(component)
+  /**
+  * 兼容 import export 和 require module.export 两种规范
+  */
+  const ctrl = componentConfig.default || componentConfig
+  Vue.component(ctrl.name, ctrl)
+})
+```
