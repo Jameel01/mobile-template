@@ -32,16 +32,16 @@ See [Configuration Reference](https://cli.vuejs.org/zh/config/).
 ```
 npm run new:comp
 ```
-::: tip
+
 运行命令后，输入页面名称，自动创建组件模板
-:::
+
 ### 自动创建页面模板命令
 ```
 npm run new:view
 ```
-::: tip
+
 运行命令后，输入页面名称，自动创建页面模板
-:::
+
 ### 路由自动加载
 在文件夹router下创建模块路由文件。自动引入新建路由模块。
 
