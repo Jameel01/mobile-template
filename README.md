@@ -29,13 +29,19 @@ See [Configuration Reference](https://cli.vuejs.org/zh/config/).
 ### 访问环境变量方式
  `console.log(process.env.VUE_APP_SECRET)`
 ### 自动创建组件模板命令
+```
 npm run new:comp
-
-* 运行命令后，输入页面名称，自动创建组件模板
+```
+::: tip
+运行命令后，输入页面名称，自动创建组件模板
+:::
 ### 自动创建页面模板命令
+```
 npm run new:view
-
-* 运行命令后，输入页面名称，自动创建页面模板
+```
+::: tip
+运行命令后，输入页面名称，自动创建页面模板
+:::
 ### 路由自动加载
 在文件夹router下创建模块路由文件。自动引入新建路由模块。
 
