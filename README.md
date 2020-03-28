@@ -28,3 +28,20 @@ See [Configuration Reference](https://cli.vuejs.org/zh/config/).
 本地设置跨域代理
 ### 访问环境变量方式
  `console.log(process.env.VUE_APP_SECRET)`
+### 创建组件模板命令
+npm run new:comp
+### 创建页面模板命令
+npm run new:view
+### 路由自动加载
+```js
+export let routes = []
+const routerContext=require.context('./',true,/index\.js$/)
+routerContext.keys().forEach(route=>{
+  if(route.startsWith('./index')){
+    return
+  }
+  const routerModule=routerContext(route)
+  routes=[...routes,...(routerModule.default||routerModule)]
+})
+```
+### 自动全局组件注册
