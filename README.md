@@ -1,21 +1,24 @@
 # Vue移动开发模板
 
-## Project setup
+## 安装依赖
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 本地环境代理启动命令
 ```
 npm run serve:proxy
 ```
-
-### Compiles and minifies for production
+### 发布测试环境打包命令
+```
+npm run build:test
+```
+### 发布线上环境打包命令
 ```
 npm run build:prod
 ```
 
-### Customize configuration
+### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/zh/config/).
 
 ### 基础UI组件库-Vant

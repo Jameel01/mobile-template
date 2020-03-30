@@ -41,7 +41,7 @@ router.beforeEach(beforeEachToExample)
 router.beforeEach(beforeEachHandler)
 //标题设置
 router.afterEach(afterEachHandler)
-// 热更新
+// 页面局部热更新
 if (module && module.hot) {
   module.hot.accept()
   }
