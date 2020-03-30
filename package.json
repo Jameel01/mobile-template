@@ -36,6 +36,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "chalk": "^3.0.0",
     "compression-webpack-plugin": "^3.1.0",
+    "cz-conventional-changelog": "^3.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.13.1",
@@ -61,5 +62,13 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "./validate-commit-msg.js"
+    }
+  }
 }

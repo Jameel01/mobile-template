@@ -42,7 +42,7 @@ const SET_USER_INFO = 'SET_USER_INFO'
       }
       next()
     } catch (error) {
-      console.error(error, '-------beforeEach错误日志-----')
+      console.error( error, '-------beforeEach错误日志-----')
       next(false)
     }
   } else {
