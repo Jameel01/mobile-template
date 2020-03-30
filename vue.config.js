@@ -74,7 +74,7 @@ module.exports = {
     },
 
   }),
-  //npm run build后能看到生成 .gz 文件就OK了。如果你的服务器使用nginx的话，nginx也需要配置开启GZIP
+  //npm run build后能看到生成 .gz 文件就OK了。如果你的服务器使用nginx的话，nginx也需要配置开启GZIP，gzip on|off：默认值: gzip off，开启或者关闭gzip模块
   configureWebpack: config => {
     // 开发环境不需要gzip
     if (!isProd) return
