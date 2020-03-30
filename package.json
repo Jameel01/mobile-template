@@ -10,20 +10,12 @@
     "serve:test": "vue-cli-service serve --mode test",
     "build:prod": "vue-cli-service build --mode prod",
     "commit": "git-cz",
-    "precommit": "lint-staged",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -w -r 0"
-  },
-  "lint-staged": {
-    "src/**/*.{js,vue}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "dependencies": {
     "@riophae/vue-treeselect": "^0.4.0",
     "axios": "^0.19.1",
     "commitizen": "^4.0.3",
-    "conventional-changelog-cli": "^2.0.31",
     "core-js": "^3.4.4",
     "css-loader": "^3.4.2",
     "dayjs": "^1.8.20",
@@ -78,6 +70,9 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "./validate-commit-msg.js"
     }
   }
 }
