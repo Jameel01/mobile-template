@@ -1,6 +1,7 @@
 const path = require('path')
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isProd = process.env.NODE_ENV === 'production'
-// const CompressionPlugin = require('compression-webpack-plugin')
 const webpack = require('webpack')
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -30,7 +31,7 @@ module.exports = {
       }
     }
   },
-  
+
   css: {
     // 是否使用css分离插件 ExtractTextPlugin
     //如果需要css热更新就设置为false,打包时候要改为true
@@ -71,7 +72,22 @@ module.exports = {
         'src': resolve('src')
       }
     },
+
   }),
+  //npm run build后能看到生成 .gz 文件就OK了。如果你的服务器使用nginx的话，nginx也需要配置开启GZIP
+  configureWebpack: config => {
+    // 开发环境不需要gzip
+    if (!isProd) return
+    config.plugins.push(
+      new CompressionWebpackPlugin({
+        // 正在匹配需要压缩的文件后缀
+        test: /\.(js|css|svg|woff|ttf|json|html)$/,
+        // 大于10kb的会压缩
+        threshold: 10240
+        // 其余配置查看compression-webpack-plugin
+      })
+    )
+  },
   chainWebpack: config => {
     // 图片限制 转为64base
     config.module
@@ -94,15 +110,6 @@ module.exports = {
     //       })
     //     ]
     //   })
-    // config.module
-    //   .rule("images")
-    //   .test(/\.(gif|png|jpe?g|svg)$/i)
-    //   .use("image-webpack-loader")
-    //   .loader("image-webpack-loader")
-    //   .options({
-    //     bypassOnDebug: true
-    //   })
-    //   .end();
     // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
     config.plugin('define').tap(args => {
       args[0]['process.env'].BASE_URL = JSON.stringify(process.env.BASE_URL)
@@ -111,6 +118,5 @@ module.exports = {
 
   },
   // 第三方插件配置
-  pluginOptions: {}
-
+  pluginOptions: {},
 }
