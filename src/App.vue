@@ -6,13 +6,9 @@
   </div>
 </template>
 <script>
-// import YLoading from '@/components/y-loading/index.vue'
 import SessionUtil from "@/utils/sessionStorage"
 export default {
   name: 'app',
-  // components: {
-  //   YLoading
-  // },
   data () {
     return {
       loadingStatus: true//加载展示
@@ -41,22 +37,5 @@ body {
   padding: 0;
   height: 100%;
 }
-// 加载框样式定义
-.project-loading {
-  background: #fbfbfb;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100000;
-}
 
-.loading-block {
-  position: absolute;
-  top: 50%;
-  margin-top: -42px;
-  left: 50%;
-  margin-left: -101px;
-}
 </style>

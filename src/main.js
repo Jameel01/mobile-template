@@ -11,7 +11,7 @@ import afterEachHandler from '@/router/after-each'
 import store from '@/store'
 import '@/use'
 // 移动端调试神奇
-import vConsole from '@/utils/vconsole'
+import  '@/utils/vconsole'
 // sessionStorage处理函数
 import SessionUtil from "@/utils/sessionStorage"
 

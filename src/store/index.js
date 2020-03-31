@@ -25,7 +25,7 @@ const mutations = {
   DEL_TOKEN: (state) => {
     state.token = ''
   },
-  SET_USER_INFO: (state, token) => {
+  SET_USER_INFO: (state, userInfo) => {
     state.userInfo = userInfo
   },
 };
