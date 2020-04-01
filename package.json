@@ -7,7 +7,7 @@
     "new:comp": "node ./scripts/generateComponent",
     "serve": "vue-cli-service serve",
     "serve:proxy": "vue-cli-service serve --mode proxy",
-    "serve:test": "vue-cli-service serve --mode test",
+    "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode prod"
   },
   "dependencies": {
@@ -18,8 +18,8 @@
     "dayjs": "^1.8.20",
     "img-loader": "^3.0.1",
     "js-cookie": "^2.2.1",
+    "lint-staged": "^10.0.10",
     "mockjs": "^1.1.0",
-    "postcss-pxtorem": "^5.1.1",
     "vant": "^2.5.2",
     "vconsole": "^3.3.4",
     "vue": "^2.6.10",
@@ -39,8 +39,22 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.13.1",
+    "postcss-px-to-viewport": "^1.1.1",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-px-to-viewport": {
+        "viewportWidth": 750,
+        "unitPrecision": 3,
+        "minPixelValue": 1,
+        "selectorBlackList": [
+          ".van-"
+        ]
+      }
+    }
   },
   "eslintConfig": {
     "root": true,
@@ -61,5 +75,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "config": {}
 }

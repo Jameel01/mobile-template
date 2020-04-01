@@ -24,7 +24,7 @@ See [Configuration Reference](https://cli.vuejs.org/zh/config/).
 ### 基础UI组件库-Vant
 
 ### 适配
-* 使用插件：postcss-pxtorem
+* 使用插件：postcss-px-to-viewport，将750px标准的设计稿转为vw和vh适配单位
 * 设置忽略vant-组件px单位转换
 
 ### 代理
