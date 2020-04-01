@@ -1,13 +1,13 @@
-import api from '@/api'
+import { base } from '@/api'
 import store from '@/store'
 // import Cookies from 'js-cookie'
-import {getToken} from '@/utils/auth'
+import { getToken } from '@/utils/auth'
 
 // const TOKENNAME = process.env.VUE_APP_TOKEN
 const SET_USER_INFO = 'SET_USER_INFO'
 
 // 页面路由拦截
- async function beforeEachHandler (to, from, next) {
+async function beforeEachHandler (to, from, next) {
   if ((to.meta && to.meta.needLogin)) {
     let limit = 2
     try {
@@ -26,7 +26,7 @@ const SET_USER_INFO = 'SET_USER_INFO'
       }
       while (limit-- > 0) {
         // 获取用户信息
-        let result = await api.base.getUserInfo({})
+        let result = await base.getUserInfo({})
         console.log(result, result.code, '------code-------')
         if (result.code !== 0) {
           if (!hasH5Token || limit === 0) {
@@ -42,7 +42,7 @@ const SET_USER_INFO = 'SET_USER_INFO'
       }
       next()
     } catch (error) {
-      console.error( error, '-------beforeEach错误日志-----')
+      console.error(error, '-------beforeEach错误日志-----')
       next(false)
     }
   } else {
@@ -51,7 +51,7 @@ const SET_USER_INFO = 'SET_USER_INFO'
 }
 
 // 演示替换到维修升级页面
- function beforeEachToExample (to, from, next) {
+function beforeEachToExample (to, from, next) {
   const pathMap = {
     '/home': '/exception?page=1&noheader=true',
   }
