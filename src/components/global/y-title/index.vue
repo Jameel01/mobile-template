@@ -62,7 +62,7 @@ export default {
     },
     lineTop: {//线头部边距
       type: String,
-      default: '13'
+      default: '3'
     },
     more: {//更多
       type: String,

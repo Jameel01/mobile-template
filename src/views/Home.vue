@@ -1,7 +1,7 @@
 <template>
   <div>
     首页1aaaaa111111111
-    <y-title></y-title>
+    <y-title content="标题"></y-title>
   </div>
 </template>
 
