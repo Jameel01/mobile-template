@@ -7,7 +7,7 @@ yarn install
 
 ### 本地环境代理启动命令
 ```
-npm run serve:proxy
+npm run serve
 ```
 ### 发布测试环境打包命令
 ```
