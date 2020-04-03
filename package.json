@@ -6,6 +6,8 @@
     "new:view": "node ./scripts/generateView",
     "new:comp": "node ./scripts/generateComponent",
     "serve": "vue-cli-service serve --mode proxy",
+    "build": "vue-cli-service build --report",
+    "serve:proxy": "vue-cli-service serve --mode proxy",
     "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode prod"
   },

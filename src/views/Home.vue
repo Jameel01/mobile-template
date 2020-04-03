@@ -6,9 +6,21 @@
 </template>
 
 <script>
+import SessionUtil from "@/utils/sessionStorage";
 export default {
-
-}
+    components: {},
+    name: "",
+    watch: {},
+    props: {},
+    filters: {},
+    data() {
+        return {};
+    },
+    created() {},
+    mounted() {},
+    methods: {},
+    destroyed() {}
+};
 </script>
 <style lang='scss' scoped>
 .test {
