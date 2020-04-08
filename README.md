@@ -74,3 +74,23 @@ componentsContext.keys().forEach(component => {
   Vue.component(ctrl.name, ctrl)
 })
 ```
+### 关闭preload 和 Prefetch
+
+
+```js
+/*
+    preload 和 Prefetch 链接将会消耗带宽。
+    如果你的应用很大且有很多 async chunk，
+    而用户主要使用的是对带宽较敏感的移动端，
+    那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。
+    Vue CLI 应用会为所有初始化渲染需要的文件自动生成 preload 提示
+*/
+config.plugins.delete('preload')
+config.plugins.delete('prefetch')
+
+```
+>  当 prefetch 插件被禁用时，你可以通过 webpack 的内联注释手动选定要提前获取的代码区块：
+
+```js
+import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
+```
