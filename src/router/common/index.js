@@ -3,10 +3,9 @@
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
  * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:09:04
+ * @LastEditTime: 2020-04-09 20:29:07
  */
-import ErrorPage from "@/views/Error.vue"
-import NotFound from "@/views/404.vue"
+
 export default [
   {
     path: "/",
@@ -14,12 +13,13 @@ export default [
     meta: {
       needLogin: false
     },
-    component: () => import("@/views/Home.vue")
+    component: () => import(/* webpackChunkName: "loginModule" */"@/views/Home.vue")
   },
   {
     path: "/error",
     name: "error",
-    component: ErrorPage
+    component: () => import(/* webpackChunkName: "errorModule" */"@/views/Error.vue")
+    
   },
   {
     path: "/exception",
@@ -27,11 +27,11 @@ export default [
     meta: {
       needLogin: false
     },
-    component: () => import("@/views/example.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/example.vue")
   },
   {
     path: "*",
     name: "not-found",
-    component: NotFound
+    component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")    
   }
 ]
