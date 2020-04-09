@@ -3,22 +3,22 @@
 </template>
 <script>
 export default {
-  name: 'name',
+  name: "name",
   data(){
-    return{
+    return {
 
     }
   },
   computed: {
   },
-  mounted () {
+  mounted() {
   },
   created(){
 
   },
-  methods:{
+  methods: {
     
-  },
+  }
  
 }
 </script>
