@@ -1,9 +1,9 @@
 <template>
-<div class="example">example组件</div>
+<div class="name">name组件</div>
 </template>
 <script>
 export default {
-  name: "example",
+  name: "name",
   data(){
     return {
 
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.example {
+.name {
 
 }
 </style>

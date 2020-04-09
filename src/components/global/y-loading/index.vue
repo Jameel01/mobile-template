@@ -10,17 +10,17 @@
 </template>
 <script>
 export default {
-  name: 'y-loading',
+  name: "y-loading",
   props: {
     yLoading: {//
       type: Boolean,
       default: true
-    },
+    }
   },
-  created () {
+  created() {
     // 修改加载状态
-    this.$bus.$on('setLoading', (params) => {
-      this.$emit('update:yLoading', params)
+    this.$bus.$on("setLoading", (params) => {
+      this.$emit("update:yLoading", params)
     })
   }
 }
@@ -45,5 +45,4 @@ export default {
   margin-left: -65px;
 }
 </style>
-
 

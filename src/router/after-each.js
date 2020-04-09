@@ -1,5 +1,12 @@
-import setTitle from '@/utils/setTitle'
-function afterEachHandler (to, from) {
+/*
+ * @Description: 路由跳转设置浏览器title
+ * @Autor: guoruliang
+ * @Date: 2020-04-01 09:57:00
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-09 17:08:16
+ */
+import setTitle from "@/utils/setTitle"
+function afterEachHandler(to, from) {
   let { title } = to.meta
   title || (title = to.name)
   if (title) {
@@ -8,5 +15,4 @@ function afterEachHandler (to, from) {
 }
 
 export default afterEachHandler
-
 
