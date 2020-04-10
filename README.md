@@ -8,7 +8,13 @@ yarn install
 ### 本地环境代理启动命令
 ```
 npm run serve
+
 ```
+### 代码提交前eslint规则校验与修复
+```
+npm run lint --fix
+```
+
 ### 发布测试环境打包命令
 ```
 npm run build:test
