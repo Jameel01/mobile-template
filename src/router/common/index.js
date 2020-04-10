@@ -1,30 +1,37 @@
+/*
+ * @Description: 公共路由
+ * @Autor: guoruliang
+ * @Date: 2020-04-01 09:57:00
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-09 20:29:07
+ */
 
 export default [
   {
-    path: '/',
-    name: '目录',
+    path: "/",
+    name: "目录",
     meta: {
       needLogin: false
     },
-    component: () => import(/* webpackChunkName: "loginModule" */'@/views/Home.vue')
+    component: () => import(/* webpackChunkName: "loginModule" */"@/views/Home.vue")
   },
   {
-    path: '/error',
-    name: 'error',
-    component: () => import(/* webpackChunkName: "errorModule" */'@/views/Error.vue')
+    path: "/error",
+    name: "error",
+    component: () => import(/* webpackChunkName: "errorModule" */"@/views/Error.vue")
     
   },
   {
-    path: '/exception',
-    name: 'exception',
+    path: "/exception",
+    name: "exception",
     meta: {
-      needLogin: false,
+      needLogin: false
     },
-    component: () => import(/* webpackChunkName: "exceptionModule" */'@/views/example.vue')
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/example.vue")
   },
   {
-    path: '*',
-    name: 'not-found',
-    component: () => import(/* webpackChunkName: "notFoundModule" */'@/views/404.vue')    
+    path: "*",
+    name: "not-found",
+    component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")    
   }
 ]

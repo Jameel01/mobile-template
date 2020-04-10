@@ -14,123 +14,123 @@ export default {
   name: "y-title",
   props: {
     moreType: {
-      type: Number,//默认不展示,默认1为链接,2为文字
-      default: 1,
+      type: Number, //默认不展示,默认1为链接,2为文字
+      default: 1
     },
     border: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 标题内容样式
     fontContSize: {//标题字大小
       type: String,
-      default: '14'
+      default: "14"
     },
     colorCont: {//标题内容颜色
       type: String,
-      default: '333'
+      default: "333"
     },
     content: {//标题内容
       type: String,
       required: true,
-      default: '标题2'
+      default: "标题2"
     },
     pleft: {//左边间距
       type: String,
-      default: '30'
+      default: "30"
     },
     fontWeight: {//是否可以加粗
       type: String,
-      default: 'normal'
+      default: "normal"
     },
     mBottom: {//标题底部间距
       type: String,
-      default: '10'
+      default: "10"
     },
     // 左侧竖线样式
     lineWidth: {//线宽度
       type: String,
-      default: '6'
+      default: "6"
     },
     lineHeight: {//线高度
       type: String,
-      default: '16'
+      default: "16"
     },
     lineLeft: {//线左边距
       type: String,
-      default: '-17'
+      default: "-17"
     },
     lineTop: {//线头部边距
       type: String,
-      default: '3'
+      default: "3"
     },
     more: {//更多
       type: String,
-      default: ''
+      default: ""
     },
     pathUrl: {//设置更多的链接
       type: String,
-      default: '/'
+      default: "/"
     },
     backgroundColor: {
       type: String,
-      default: 'linear-gradient(0deg,rgba (52, 152, 219, 1) 0%,rgba (87, 186, 252, 1) 100%)'
+      default: "linear-gradient(0deg,rgba (52, 152, 219, 1) 0%,rgba (87, 186, 252, 1) 100%)"
     },
     iconUrl: {//图标的url 如：footer-icon-fault.png 标题的图标要放titleIcon底下
       type: String,
-      default: ''
+      default: ""
     },
     iconWidth: {//图标宽度
       type: String,
-      default: '28'
+      default: "28"
     },
     iconHeight: {//图标高度
       type: String,
-      default: '28'
+      default: "28"
     },
     iconLeft: {//图标左边距
       type: String,
-      default: '-32'
+      default: "-32"
     },
     iconTop: {//图标头部边距
       type: String,
-      default: '7'
-    },
+      default: "7"
+    }
   },
   computed: {
-    imgIconUrl: function () {
-      // return require('@/assets/img/titleIcon/' + this.iconUrl)
-    },
-    style () {
+    // imgIconUrl: function() {
+    //   // return require('@/assets/img/titleIcon/' + this.iconUrl)
+    // },
+    style() {
       return {
-        marginBottom: (this.mBottom) + 'px',
-        paddingLeft: (this.pleft) + 'px',
+        marginBottom: (this.mBottom) + "px",
+        paddingLeft: (this.pleft) + "px"
       };
     },
-    lineStyle () {
+    lineStyle() {
       return {
-        width: (this.lineWidth) + 'px',
-        height: (this.lineHeight) + 'px',
-        left: this.lineLeft + 'px',
-        top: this.lineTop + 'px',
+        width: (this.lineWidth) + "px",
+        height: (this.lineHeight) + "px",
+        left: this.lineLeft + "px",
+        top: this.lineTop + "px",
         background: this.backgroundColor
       };
     },
-    contStyle () {
+    contStyle() {
       return {
-        fontSize: this.fontContSize + 'px',
-        color: '#' + this.colorCont,
+        fontSize: this.fontContSize + "px",
+        color: "#" + this.colorCont,
         fontWeight: this.fontWeight
       }
     },
-    iconStyle () {//前置图标
+    iconStyle() { //前置图标
       return {
-        width: (this.iconWidth) + 'px',
-        height: (this.iconHeight) + 'px',
-        left: this.iconLeft + 'px',
-        top: this.iconTop + 'px',
+        width: (this.iconWidth) + "px",
+        height: (this.iconHeight) + "px",
+        left: this.iconLeft + "px",
+        top: this.iconTop + "px"
       };
-    },
+    }
   }
 };
 </script>

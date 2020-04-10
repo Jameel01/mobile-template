@@ -2,12 +2,12 @@ const path = require('path')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isProd = process.env.NODE_ENV === 'production'
-const webpack = require('webpack')
+// const webpack = require('webpack')
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
-    publicPath: isProd ? "" : "/",//配置根路径
+    publicPath: isProd ? '' : '/', //配置根路径
     // assetsRoot: path.resolve(__dirname, "../dist"),
     outputDir: 'dist', //构建输出目录
     assetsDir: 'assets', //静态资源目录(js\css\img)
@@ -45,7 +45,7 @@ module.exports = {
                 // so this assumes you have a file named `src/variables.scss`
                 prependData: `@import "@/styles/themeParams.scss";`
             }
-        },
+        }
     },
     pages: {
         index: {
@@ -61,7 +61,7 @@ module.exports = {
             // 在这个页面中包含的块，默认情况下会包含
             // 提取出来的通用 chunk 和 vendor chunk。
             chunks: ['chunk-vendors', 'chunk-common', 'index']
-        },
+        }
     },
     configureWebpack: (config) => {
         const conf = {
@@ -87,7 +87,7 @@ module.exports = {
                 })
             ]
         }
-        return conf;
+        return conf
     },
     // 也可以一下的写法
     // configureWebpack: config => {
@@ -119,33 +119,33 @@ module.exports = {
             .tap(options => Object.assign(options, {
                 limit: 20240
             })),
-            // 图片质量压缩
-            // config.module
-            //   .rule('images')
-            //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-            //   .use('img-loader')
-            //   .loader('img-loader').options({
-            //     plugins: [
-            //       require('imagemin-jpegtran')(),
-            //       require('imagemin-pngquant')({
-            //         quality: [0.75, 0.85]
-            //       })
-            //     ]
-            //   })
-            // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
-            config.plugin('define').tap(args => {
-                args[0]['process.env'].BASE_URL = JSON.stringify(process.env.BASE_URL)
-                return args
-            }),
+        // 图片质量压缩
+        // config.module
+        //   .rule('images')
+        //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+        //   .use('img-loader')
+        //   .loader('img-loader').options({
+        //     plugins: [
+        //       require('imagemin-jpegtran')(),
+        //       require('imagemin-pngquant')({
+        //         quality: [0.75, 0.85]
+        //       })
+        //     ]
+        //   })
+        // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
+        config.plugin('define').tap(args => {
+            args[0]['process.env'].BASE_URL = JSON.stringify(process.env.BASE_URL)
+            return args
+        }),
 
-            /*
+        /*
                 preload 和 Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async chunk，
                 而用户主要使用的是对带宽较敏感的移动端，
                 那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。
             */
-            config.plugins.delete('preload'),
-            config.plugins.delete('prefetch')
+        config.plugins.delete('preload'),
+        config.plugins.delete('prefetch')
     },
     // 第三方插件配置
-    pluginOptions: {},
+    pluginOptions: {}
 }

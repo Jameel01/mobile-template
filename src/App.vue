@@ -1,10 +1,9 @@
 <!--
- * @Description: 
- * @Version: 0.1
- * @Autor: chenyt
- * @Date: 2020-03-20 10:55:10
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-09 10:09:40
+ * @Description: 主页面
+ * @Autor: guoruliang
+ * @Date: 2020-04-03 16:52:52
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-09 20:13:29
  -->
 <template>
   <div id="app">
@@ -16,21 +15,21 @@
 <script>
 // import SessionUtil from "@/utils/sessionStorage"
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
       loadingStatus: true//加载展示
     }
   },
-  created () {
+  created() {
 
     // 隐藏加载
     setTimeout(() => {
-      this.$bus.$emit('setLoading', false)
-    }, 2000);
+      this.$bus.$emit("setLoading", false)
+    }, 2000)
   },
   methods: {
-  },
+  }
 }
 </script>
 

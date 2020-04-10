@@ -1,12 +1,11 @@
 <!--
- * @Description: 
- * @Version: 0.1
+ * @Description: 用于演示临时切换
  * @Autor: chenyt
- * @Date: 2020-03-21 22:59:04
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-09 10:09:50
+ * @Date: 2020-03-22 12:01:17
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-09 20:13:19
  -->
-
+ 
 <template>
   <div>
     演示示例
@@ -14,7 +13,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>

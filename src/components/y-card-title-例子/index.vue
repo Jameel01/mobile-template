@@ -31,41 +31,41 @@
 
 <script>
 export default {
-  name: 'g-component-card-title',
+  name: "g-component-card-title",
   props: {
     title: {
       type: String,
-      default: ''
+      default: ""
     },
     subTitle: {
       type: String,
-      default: ''
+      default: ""
     },
     rightText: {
       type: String,
-      default: ''
+      default: ""
     },
     bodyStyle: {
       type: Object,
-      default () {
+      default() {
         return {}
       }
     },
     titleStyle: {
       type: Object,
-      default () {
+      default() {
         return {}
       }
     },
     subTitleStyle: {
       type: Object,
-      default () {
+      default() {
         return {}
       }
     },
     rightStyle: {
       type: Object,
-      default () {
+      default() {
         return {}
       }
     }
