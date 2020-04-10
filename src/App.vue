@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: chenyt
+ * @Date: 2020-03-20 10:55:10
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-09 10:09:40
+ -->
 <template>
   <div id="app">
     <y-loading :yLoading.sync='loadingStatus'></y-loading>
@@ -6,7 +14,7 @@
   </div>
 </template>
 <script>
-import SessionUtil from "@/utils/sessionStorage"
+// import SessionUtil from "@/utils/sessionStorage"
 export default {
   name: 'app',
   data () {
