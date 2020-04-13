@@ -1,6 +1,5 @@
 const path = require("path")
 const CompressionWebpackPlugin = require("compression-webpack-plugin")
-const webpack = require("webpack")
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isProd = process.env.NODE_ENV === "production"
 // const webpack = require('webpack')
@@ -66,20 +65,9 @@ module.exports = {
     }
   },
   configureWebpack: (config) => {
-    console.log("xxxconfig", config);
-    const conf = {
-      resolve: {
-        extensions: [".js", ".vue", ".json"],
-        alias: {
-          "@": resolve("src"),
-          "~": resolve("config"),
-          "src": resolve("src")
-        }
-      }
-    }
     if (isProd) {
-      conf.plugins = [
-        //npm run build后能看到生成 .gz 文件就OK了。如果你的服务器使用nginx的话，nginx也需要配置开启GZIP，gzip on|off：默认值: gzip off，开启或者关闭gzip模块
+      // 生产环境
+      config.plugins.push(
         new CompressionWebpackPlugin({
           // 正在匹配需要压缩的文件后缀
           test: /\.(js|css|svg|woff|ttf|json|html)$/,
@@ -88,32 +76,22 @@ module.exports = {
           deleteOriginalAssets: false
           // 其余配置查看compression-webpack-plugin
         })
-      ]
+      );
+    } else {
+      // 开发环境
     }
-    return conf
+
   },
-  // 也可以一下的写法
-  // configureWebpack: config => {
-  //     config.resolve.extensions = ['.js', '.vue', '.json'];
-  //     config.resolve.alias = {
-  //         '@': resolve('src'),
-  //         '~': resolve('config'),
-  //         'src': resolve('src')
-  //     }
-  //     // 开发环境不需要gzip
-  //     if (!isProd) return
-  //     config.plugins.push(
-  //         new CompressionWebpackPlugin({
-  //             // 正在匹配需要压缩的文件后缀
-  //             test: /\.(js|css|svg|woff|ttf|json|html)$/,
-  //             // 大于10kb的会压缩
-  //             threshold: 10240,
-  //             deleteOriginalAssets: false
-  //             // 其余配置查看compression-webpack-plugin
-  //         })
-  //     )
-  // },
   chainWebpack: config => {
+    // 别名配置
+    config.resolve.alias
+      .set("@", resolve("src"))
+      .set("~", resolve("config"))
+      .set("src", resolve("src"))
+    config.resolve.extensions
+      .clear()
+      .merge([".js", ".vue", ".json"])
+
     // 图片限制 转为64base
     config.module
       .rule("images")
@@ -148,7 +126,6 @@ module.exports = {
     */
     config.plugins.delete("preload"),
     config.plugins.delete("prefetch"),
-    config.plugin("hot").use(webpack.HotModuleReplacementPlugin),
     config.optimization.splitChunks({
       chunks: "all", // 控制webpack选择哪些代码块用于分割（其他类型代码块按默认方式打包）。有3个可选的值：initial、async和all。
       minSize: 30000, // 形成一个新代码块最小的体积
