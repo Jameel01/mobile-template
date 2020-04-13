@@ -99,7 +99,7 @@ module.exports = {
       .loader("url-loader")
       .tap(options => Object.assign(options, {
         limit: 20240
-      })),
+      }))
     // 图片质量压缩
     // config.module
     //   .rule('images')
@@ -117,15 +117,7 @@ module.exports = {
     config.plugin("define").tap(args => {
       args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL)
       return args
-    }),
-
-    /*
-        preload 和 Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async chunk，
-        而用户主要使用的是对带宽较敏感的移动端，
-        那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。
-    */
-    config.plugins.delete("preload"),
-    config.plugins.delete("prefetch"),
+    })
     config.optimization.splitChunks({
       chunks: "all", // 控制webpack选择哪些代码块用于分割（其他类型代码块按默认方式打包）。有3个可选的值：initial、async和all。
       minSize: 30000, // 形成一个新代码块最小的体积
@@ -147,6 +139,16 @@ module.exports = {
         }
       }
     })
+    /*
+        preload 和 Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async chunk，
+        而用户主要使用的是对带宽较敏感的移动端，
+        那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。
+        官方文件很坑爹的官网文档是错的要自己打印出来
+        console.log(config)
+        他改名字了
+    */
+    config.plugins.delete("prefetch-index")
+    config.plugins.delete("preload-index")
   },
   // 第三方插件配置
   pluginOptions: {}
