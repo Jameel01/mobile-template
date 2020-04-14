@@ -33,5 +33,10 @@ export default [
     path: "*",
     name: "not-found",
     component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")    
+  },
+  {
+    path: "/button",
+    name: "button",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/button.vue")
   }
 ]
