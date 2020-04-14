@@ -11,6 +11,8 @@ import Router from "vue-router"
 import router from "@/router"
 // 引入基础样式
 import "@/styles/common.scss"
+// 引入全部样式
+import "vant/lib/index.less"
 // 自动注册全局的组件
 import "@/components/index"
 import { beforeEachHandler, beforeEachToExample } from "@/router/before-each"
