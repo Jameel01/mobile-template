@@ -45,6 +45,19 @@ module.exports = {
         // @/ is an alias to src/
         // so this assumes you have a file named `src/variables.scss`
         prependData: `@import "@/styles/themeParams.scss";`
+      },
+      less: {
+        modifyVars: {
+          // 直接覆盖变量
+          //"text-color": "#111",
+          //"border-color": "#eee"
+          // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+          hack: `true; @import "${path.join(
+            __dirname,
+            "./src/assets/common/resetui.less"//这个import 的路径必须是绝对路径
+          )}";`
+          //hack: `true; @import "@/common/resetui.less";`
+        }
       }
     }
   },
