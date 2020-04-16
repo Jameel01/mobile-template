@@ -2,8 +2,8 @@
  * @Description: 主页面
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:13:29
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-16 17:26:48
  -->
 <template>
   <div id="app">
@@ -13,23 +13,21 @@
   </div>
 </template>
 <script>
-// import SessionUtil from "@/utils/sessionStorage"
+// import SessionUtil from "@/utils/sessionStorage";
 export default {
   name: "app",
   data() {
     return {
-      loadingStatus: true//加载展示
+      loadingStatus: true //加载展示
     }
   },
   created() {
-
     // 隐藏加载
     setTimeout(() => {
       this.$bus.$emit("setLoading", false)
     }, 2000)
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
@@ -44,5 +42,4 @@ body {
   padding: 0;
   height: 100%;
 }
-
 </style>

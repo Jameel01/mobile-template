@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: chenyt
+ * @Date: 2020-03-21 22:55:00
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-16 16:48:07
+ -->
 <template>
   <div class="test">
     <p>海南省高校毕业生报到及未就业实名登记须知</p>
@@ -14,13 +22,13 @@ export default {
   props: {},
   filters: {},
   data() {
-    return {};
+    return { data: "" }
   },
   created() {},
   mounted() {},
   methods: {},
   destroyed() {}
-};
+}
 </script>
 <style lang='scss' scoped>
 .test {

@@ -105,7 +105,7 @@ export default {
       return {
         marginBottom: (this.mBottom) + "px",
         paddingLeft: (this.pleft) + "px"
-      };
+      }
     },
     lineStyle() {
       return {
@@ -114,7 +114,7 @@ export default {
         left: this.lineLeft + "px",
         top: this.lineTop + "px",
         background: this.backgroundColor
-      };
+      }
     },
     contStyle() {
       return {
@@ -129,10 +129,10 @@ export default {
         height: (this.iconHeight) + "px",
         left: this.iconLeft + "px",
         top: this.iconTop + "px"
-      };
+      }
     }
   }
-};
+}
 </script>
 <style  lang="scss" scoped>
 #v_header_title {

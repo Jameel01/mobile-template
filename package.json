@@ -10,7 +10,7 @@
     "serve:proxy": "vue-cli-service serve --mode proxy",
     "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode prod",
-    "lint": "eslint --ext .js,.vue, src/"
+    "lint": "eslint --fix --ext .js,.vue, src/"
   },
   "dependencies": {
     "@riophae/vue-treeselect": "^0.4.0",
