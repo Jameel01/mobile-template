@@ -1168,6 +1168,10 @@
   version "4.2.2"
   resolved "https://registry.npm.taobao.org/@xtuc/long/download/@xtuc/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
 
+"@ylz/dict@^0.0.1":
+  version "0.0.1"
+  resolved "http://47.107.67.231:4873/@ylz%2fdict/-/dict-0.0.1.tgz#d1f55c77b0e6a5f1909b76c2a3c0cd75be535782"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/abbrev/download/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

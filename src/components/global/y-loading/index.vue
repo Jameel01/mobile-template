@@ -21,10 +21,10 @@ export default {
   created() {
     // 修改加载状态
     this.$bus.$on("setLoading", params => {
-      this.$emit("update:yLoading", params);
-    });
+      this.$emit("update:yLoading", params)
+    })
   }
-};
+}
 </script>
 <style lang='scss' scoped>
 // 加载框样式定义

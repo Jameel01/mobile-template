@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-04-09 11:26:58
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:10:02
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-16 17:24:33
  */
 module.exports = {
     env: {
@@ -151,15 +151,10 @@ module.exports = {
                 allowTemplateLiterals: true,
             },
         ],
-        // semi: [2, "never"], // 语句强制分号结尾
-        // "semi-spacing": [
-        //   2,
-        //   {
-        //     // 分号前后空格
-        //     before: false,
-        //     after: true,
-        //   },
-        // ],
+        "semi": [
+            "error",
+            "never"         // 改成代码结尾不再加分号，加了分号报错，不加分号不报错
+        ],
         "space-before-function-paren": [2, "never"], // 函数定义时括号前面要不要有空格
         "space-in-parens": [2, "never"], // 小括号里面要不要有空格
         "space-unary-ops": [

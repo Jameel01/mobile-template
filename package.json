@@ -1,7 +1,7 @@
 {
-  "name": "vue-cli4-tem",
+  "name": "@ylz/vue-tem",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "new:view": "node ./scripts/generateView",
     "new:comp": "node ./scripts/generateComponent",
@@ -10,10 +10,11 @@
     "serve:proxy": "vue-cli-service serve --mode proxy",
     "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode prod",
-    "lint": "eslint --ext .js,.vue, src/"
+    "lint": "eslint --fix --ext .js,.vue, src/"
   },
   "dependencies": {
     "@riophae/vue-treeselect": "^0.4.0",
+    "@ylz/dict": "^0.0.1",
     "axios": "^0.19.1",
     "core-js": "^3.4.4",
     "css-loader": "^3.4.2",
