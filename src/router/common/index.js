@@ -38,5 +38,15 @@ export default [
     path: "/button",
     name: "button",
     component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/button.vue")
+  },
+  {
+    path: "/checkbox",
+    name: "checkbox",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/checkbox.vue")
+  },
+  {
+    path: "/searchBar",
+    name: "searchBar",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/searchBar.vue")
   }
 ]
