@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-04-16 11:13:12
- * @LastEditTime: 2020-04-17 10:11:20
+ * @LastEditTime: 2020-04-19 13:25:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \移动端ui规范\src\views\uireset\searchBar.vue
@@ -13,7 +13,7 @@
         </div>
         <van-search v-model="value1" :placeholder="placeholder" :input-align="align" :show-action="cancel" @focus="focus1" @blur="blur1">
             <div slot="left-icon" class="icon" :class="cancel?'':'icon-left'">
-                <img :src="require('../../assets/imgs/searchBar/btn_serch_grey@2x.png')" alt="" width="20px" height="20px"/>
+                <img :src="require('../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px"/>
             </div>
             <span slot="action" class="text-right">取消</span>
         </van-search>
@@ -89,11 +89,17 @@ export default {
         position: relative;
     }
     .icon-left{
-        left: 36vw;
+        left: 38vw;
     }
     .text-right{
         color: #3B71E8;
         letter-spacing: 0;
         text-align: right;
+    }
+    [class*='van-hairline']::after {
+        content: none; 
+    }
+    /deep/ .van-search__content{
+        height: 28px;
     }
 </style>

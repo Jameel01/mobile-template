@@ -8,7 +8,7 @@ module.exports = {
       unitPrecision: 3,
       minPixelValue: 1,
       selectorBlackList: [
-        ".van-"
+        ".van-",".ignore-"
       ]
     }
   }

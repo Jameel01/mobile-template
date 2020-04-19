@@ -48,5 +48,10 @@ export default [
     path: "/searchBar",
     name: "searchBar",
     component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/searchBar.vue")
+  },
+  {
+    path: "/inputItem",
+    name: "inputItem",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/inputItem.vue")
   }
 ]
