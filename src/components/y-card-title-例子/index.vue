@@ -31,45 +31,45 @@
 
 <script>
 export default {
-  name: "g-component-card-title",
-  props: {
-    title: {
-      type: String,
-      default: ""
-    },
-    subTitle: {
-      type: String,
-      default: ""
-    },
-    rightText: {
-      type: String,
-      default: ""
-    },
-    bodyStyle: {
-      type: Object,
-      default() {
-        return {}
-      }
-    },
-    titleStyle: {
-      type: Object,
-      default() {
-        return {}
-      }
-    },
-    subTitleStyle: {
-      type: Object,
-      default() {
-        return {}
-      }
-    },
-    rightStyle: {
-      type: Object,
-      default() {
-        return {}
-      }
+    name: "g-component-card-title",
+    props: {
+        title: {
+            type: String,
+            default: ""
+        },
+        subTitle: {
+            type: String,
+            default: ""
+        },
+        rightText: {
+            type: String,
+            default: ""
+        },
+        bodyStyle: {
+            type: Object,
+            default() {
+                return {}
+            }
+        },
+        titleStyle: {
+            type: Object,
+            default() {
+                return {}
+            }
+        },
+        subTitleStyle: {
+            type: Object,
+            default() {
+                return {}
+            }
+        },
+        rightStyle: {
+            type: Object,
+            default() {
+                return {}
+            }
+        }
     }
-  }
 }
 </script>
 

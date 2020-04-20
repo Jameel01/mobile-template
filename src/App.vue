@@ -15,19 +15,19 @@
 <script>
 // import SessionUtil from "@/utils/sessionStorage";
 export default {
-  name: "app",
-  data() {
-    return {
-      loadingStatus: true //加载展示
-    }
-  },
-  created() {
+    name: "app",
+    data() {
+        return {
+            loadingStatus: true //加载展示
+        }
+    },
+    created() {
     // 隐藏加载
-    setTimeout(() => {
-      this.$bus.$emit("setLoading", false)
-    }, 2000)
-  },
-  methods: {}
+        setTimeout(() => {
+            this.$bus.$emit("setLoading", false)
+        }, 2000)
+    },
+    methods: {}
 }
 </script>
 

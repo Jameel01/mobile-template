@@ -16,18 +16,18 @@
 <script>
 // import SessionUtil from "@/utils/sessionStorage";
 export default {
-  components: {},
-  name: "",
-  watch: {},
-  props: {},
-  filters: {},
-  data() {
-    return { data: "" }
-  },
-  created() {},
-  mounted() {},
-  methods: {},
-  destroyed() {}
+    components: {},
+    name: "",
+    watch: {},
+    props: {},
+    filters: {},
+    data() {
+        return { data: "" }
+    },
+    created() {},
+    mounted() {},
+    methods: {},
+    destroyed() {}
 }
 </script>
 <style lang='scss' scoped>
