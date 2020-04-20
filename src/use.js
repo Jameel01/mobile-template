@@ -7,7 +7,7 @@
  */
 
 import Vue from "vue"
-import { Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio } from "vant"
+import { Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search } from "vant"
 // 常用移动端组件
 Vue.use(Button)
 Vue.use(Panel)
@@ -42,4 +42,6 @@ Vue.use(RadioGroup)
 Vue.use(Radio)
 Vue.use(Form)
 Vue.use(Loading)
+Vue.use(Switch)
+Vue.use(Search)
 Vue.prototype.$Toast = Toast

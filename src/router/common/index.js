@@ -2,8 +2,8 @@
  * @Description: 公共路由
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:29:07
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-20 13:57:08
  */
 
 export default [
@@ -19,7 +19,7 @@ export default [
         path: "/error",
         name: "error",
         component: () => import(/* webpackChunkName: "errorModule" */"@/views/Error.vue")
-    
+
     },
     {
         path: "/exception",
@@ -29,14 +29,30 @@ export default [
         },
         component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/example.vue")
     },
+
     {
         path: "*",
         name: "not-found",
-        component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")    
+        component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")
     },
     {
         path: "/button",
         name: "button",
         component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/button.vue")
+    },
+    {
+        path: "/checkbox",
+        name: "checkbox",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/checkbox.vue")
+    },
+    {
+        path: "/searchBar",
+        name: "searchBar",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/searchBar.vue")
+    },
+    {
+        path: "/inputItem",
+        name: "inputItem",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/inputItem.vue")
     }
 ]
