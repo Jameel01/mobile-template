@@ -2,10 +2,10 @@
  * @Description: 路由拦截
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:34:14
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:22:04
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-20 16:01:54
  */
-import api from "@/api"
+import { base } from "@/api"
 import store from "@/store"
 // import Cookies from 'js-cookie'
 import { getToken } from "@/utils/auth"
@@ -33,7 +33,7 @@ async function beforeEachHandler(to, from, next) {
             }
             while (limit-- > 0) {
                 // 获取用户信息
-                const result = await api.base.getUserInfo({})
+                const result = await base.getUserInfo({})
                 console.log(result, result.code, "------code-------")
                 if (result.code !== 0) {
                     if (!hasH5Token || limit === 0) {
