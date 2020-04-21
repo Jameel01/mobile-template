@@ -19,7 +19,7 @@ export default [
     path: "/error",
     name: "error",
     component: () => import(/* webpackChunkName: "errorModule" */"@/views/Error.vue")
-    
+
   },
   {
     path: "/exception",
@@ -32,26 +32,36 @@ export default [
   {
     path: "*",
     name: "not-found",
-    component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")    
+    component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")
   },
   {
     path: "/button",
     name: "button",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/button.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/button.vue")
   },
   {
     path: "/checkbox",
     name: "checkbox",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/checkbox.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/checkbox.vue")
   },
   {
     path: "/searchBar",
     name: "searchBar",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/searchBar.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/searchBar.vue")
   },
   {
     path: "/inputItem",
     name: "inputItem",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/inputItem.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/inputItem.vue")
+  },
+  {
+    path: "/uploader",
+    name: "uploader",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/uploader.vue")
+  },
+  {
+    path: "/picker",
+    name: "picker",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/picker.vue")
   }
 ]
