@@ -1,12 +1,11 @@
 <!--
- * @Description: 
+ * @Description: 开关  Checkbox、Radio、Switch
  * @Version: 0.1
- * @Autor: lzx
- * @Date: 2020-04-16 09:25:18
- * @LastEditors: lzx
- * @LastEditTime: 2020-04-21 18:51:26
+ * @Autor: zhengxn
+ * @Date: 2020-04-20 09:18:40
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-20 10:42:14
  -->
-
 <template>
   <div class="checkbox">
     <van-checkbox v-model="checked" class="check">
@@ -42,7 +41,7 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       checked: true,
       radio: "1",

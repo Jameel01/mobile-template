@@ -1,12 +1,12 @@
 <!--
- * @Author: lzx
+ * @Description: 搜索  SearchBar
+ * @Author: your name
  * @Date: 2020-04-16 11:13:12
- * @LastEditTime: 2020-04-21 18:51:53
- * @LastEditors: lzx
+ * @LastEditTime: 2020-04-20 10:43:09
+ * @LastEditors: zhengxn
  * @Description: In User Settings Edit
  * @FilePath: \移动端ui规范\src\views\uireset\searchBar.vue
  -->
-
 <template>
   <div>
     <div class="searchBar">
@@ -14,7 +14,7 @@
     </div>
     <van-search v-model="value1" :placeholder="placeholder" :input-align="align" :show-action="cancel" @focus="focus1" @blur="blur1">
       <div slot="left-icon" class="icon" :class="cancel?'':'icon-left'">
-        <img :src="require('../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
+        <img :src="require('../../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
       </div>
       <span slot="action" class="text-right">取消</span>
     </van-search>
@@ -41,40 +41,40 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      value1: '',
-      value2: '',
-      value3: '',
+      value1: "",
+      value2: "",
+      value3: "",
       value4: 0,
       cancel: false,
-      align: 'center',
-      placeholder: '搜索',
-      placeholder1: '搜索内容提示',
+      align: "center",
+      placeholder: "搜索",
+      placeholder1: "搜索内容提示",
       option1: [
-        { text: '排序筛选', value: 0 },
-        { text: '其他筛选', value: 1 },
+        { text: "排序筛选", value: 0 },
+        { text: "其他筛选", value: 1 }
       ]
     }
   },
   methods: {
-    focus1 () {
+    focus1() {
       this.cancel = true
-      this.align = 'left'
-      this.placeholder = '输入提示性文案'
+      this.align = "left"
+      this.placeholder = "输入提示性文案"
     },
-    blur1 () {
+    blur1() {
       this.cancel = false
-      this.align = 'center'
-      this.placeholder = '搜索'
-      this.value1 = ''
+      this.align = "center"
+      this.placeholder = "搜索"
+      this.value1 = ""
     },
-    focus2 () {
-      this.placeholder1 = '输入提示性文案'
+    focus2() {
+      this.placeholder1 = "输入提示性文案"
     },
-    blur2 () {
-      this.placeholder1 = '搜索内容提示'
-    },
+    blur2() {
+      this.placeholder1 = "搜索内容提示"
+    }
   }
 }
 </script>
@@ -90,7 +90,7 @@ export default {
   position: relative;
 }
 .icon-left {
-  left: 37vw;
+  left: 38vw;
 }
 .text-right {
   color: #3b71e8;
