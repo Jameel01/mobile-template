@@ -2,8 +2,8 @@
  * @Description: 公共路由
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:29:07
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-20 13:57:08
  */
 
 export default [
@@ -29,6 +29,7 @@ export default [
     },
     component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/example.vue")
   },
+
   {
     path: "*",
     name: "not-found",
@@ -65,3 +66,5 @@ export default [
     component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/picker.vue")
   }
 ]
+
+

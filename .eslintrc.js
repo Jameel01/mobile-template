@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-04-09 11:26:58
  * @LastEditors: chenyt
- * @LastEditTime: 2020-04-16 17:24:33
+ * @LastEditTime: 2020-04-20 14:31:53
  */
 module.exports = {
     env: {
@@ -74,7 +74,9 @@ module.exports = {
                 null: "ignore",
             },
         ], // 必须使用全等
-        indent: [1, 2], // 设置为2格缩进
+        // indent: [1, 2], // 设置为2格缩进
+
+        "indent": ["error", 4],// 设置为4格缩进
         "key-spacing": [
             2,
             {
