@@ -1,12 +1,12 @@
 <!--
- * @Description: 
- * @Version: 0.1
- * @Autor: chenyt
- * @Date: 2020-04-20 13:55:49
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-21 16:34:47
+ * @Description: 搜索  SearchBar
+ * @Author: your name
+ * @Date: 2020-04-16 11:13:12
+ * @LastEditTime: 2020-04-20 10:43:09
+ * @LastEditors: zhengxn
+ * @Description: In User Settings Edit
+ * @FilePath: \移动端ui规范\src\views\uireset\searchBar.vue
  -->
-
 <template>
   <div>
     <div class="searchBar">
@@ -14,7 +14,7 @@
     </div>
     <van-search v-model="value1" :placeholder="placeholder" :input-align="align" :show-action="cancel" @focus="focus1" @blur="blur1">
       <div slot="left-icon" class="icon" :class="cancel?'':'icon-left'">
-        <img :src="require('../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
+        <img :src="require('../../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
       </div>
       <span slot="action" class="text-right">取消</span>
     </van-search>

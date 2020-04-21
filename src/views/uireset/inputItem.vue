@@ -1,11 +1,12 @@
 <!--
- * @Author: your name
- * @Date: 2020-04-17 14:21:25
- * @LastEditTime: 2020-04-20 22:13:35
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: chenyt
+ * @Date: 2020-04-20 13:55:49
  * @LastEditors: chenyt
- * @Description: In User Settings Edit
- * @FilePath: \移动端ui规范\src\views\uireset\inputItem.vue
+ * @LastEditTime: 2020-04-21 16:34:33
  -->
+
 <template>
   <div style="background-color:#F5F7FA;height:100%">
     <van-cell-group>
