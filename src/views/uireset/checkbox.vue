@@ -1,11 +1,12 @@
 <!--
  * @Description: 
  * @Version: 0.1
- * @Autor: chenyt
- * @Date: 2020-04-20 13:55:49
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-20 22:12:30
+ * @Autor: lzx
+ * @Date: 2020-04-16 09:25:18
+ * @LastEditors: lzx
+ * @LastEditTime: 2020-04-21 18:51:26
  -->
+
 <template>
   <div class="checkbox">
     <van-checkbox v-model="checked" class="check">
@@ -41,7 +42,7 @@
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       checked: true,
       radio: "1",
