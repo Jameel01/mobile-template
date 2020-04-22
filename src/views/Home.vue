@@ -73,9 +73,14 @@
             通告栏 NoticeBar
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
 
-          <a href="#/number-keyboard" class="demo-home-nav__block">
-            NumberKeyboard 数字键盘
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/password-input" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-display/list" class="demo-home-nav__block">
+            列表 List
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+
+          <a href="#/ui-reset/data-display/card" class="demo-home-nav__block">
+            列表 card
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/password-input" class="demo-home-nav__block">
             PasswordInput 密码输入框
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/picker" class="demo-home-nav__block">
             Picker 选择器
