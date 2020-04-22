@@ -64,6 +64,11 @@ export default [
     path: "/picker",
     name: "picker",
     component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/picker.vue")
+  },
+  {
+    path: "/noticeBar",
+    name: "noticeBar",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataDisplay/noticeBar.vue")
   }
 ]
 

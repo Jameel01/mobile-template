@@ -62,17 +62,18 @@
       </div>
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">数据展示 Data Display</div>
-        <div class="demo-home-nav__group"><a href="#/calendar" class="demo-home-nav__block">
-            Calendar 日历
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/checkbox" class="demo-home-nav__block">
-            Checkbox 复选框
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/datetime-picker" class="demo-home-nav__block">
-            DatetimePicker 时间选择
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/inputItem" class="demo-home-nav__block">
-            Field 输入框
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/form" class="demo-home-nav__block">
-            Form 表单
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/number-keyboard" class="demo-home-nav__block">
+        <div class="demo-home-nav__group">
+          <a href="#/noticeBar" class="demo-home-nav__block">
+            标记 Badge
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/noticeBar" class="demo-home-nav__block">
+            标签 Tag
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/noticeBar" class="demo-home-nav__block">
+            通告栏 NoticeBar
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+
+          <a href="#/number-keyboard" class="demo-home-nav__block">
             NumberKeyboard 数字键盘
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/password-input" class="demo-home-nav__block">
             PasswordInput 密码输入框
@@ -150,8 +151,6 @@
             Sticky 粘性布局
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/swipe" class="demo-home-nav__block">
             Swipe 轮播
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/tag" class="demo-home-nav__block">
-            Tag 标记
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
       </div>
       <div class="demo-home-nav">

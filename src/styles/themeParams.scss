@@ -51,8 +51,8 @@ $ft-36: 36px;
 
 // 公共css
 .btitle {
-    margin: 20px 0 40px 20px;
-    color: rgba(69, 90, 100, 0.6);
+    margin: 40px 0 40px 20px;
+    color: #333;
     font-size: 30px;
     display: block;
 }
@@ -158,6 +158,6 @@ $ft-36: 36px;
     color: #3b71e8;
 }
 //picker
-/deep/.van-picker__cancel{
+/deep/.van-picker__cancel {
     color: #303133;
 }
