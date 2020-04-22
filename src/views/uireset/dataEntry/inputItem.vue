@@ -1,25 +1,25 @@
+
 <!--
- * @Description: inputItem
- * @Author: your name
- * @Date: 2020-04-17 14:21:25
- * @LastEditTime: 2020-04-21 10:06:48
+ * @Description: searchBar
+ * @Version: 0.1
+ * @Autor: zhengxn
+ * @Date: 2020-04-21 11:02:28
  * @LastEditors: zhengxn
- * @Description: In User Settings Edit
- * @FilePath: \移动端ui规范\src\views\uireset\inputItem.vue
+ * @LastEditTime: 2020-04-22 10:54:04
  -->
 <template>
-
   <div class='input-page'>
     <span class="btitle">Basic</span>
     <van-cell-group>
       <van-field v-model="value1" placeholder="我是暗提示" clearable input-align="right">
         <div slot="label" class="tip-wrap">
-          <span>文字标题</span>
+          <span>文字标题1</span>
           <div>
             <span class="ignore-tip">左侧注释</span>
           </div>
         </div>
       </van-field>
+
       <van-field v-model="value2" placeholder="我是暗提示" clearable input-align="right">
         <div slot="label" class="tip-wrap">
           <span>文字标题</span>

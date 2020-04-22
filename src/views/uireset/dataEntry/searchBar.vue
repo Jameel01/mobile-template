@@ -1,12 +1,12 @@
 <!--
- * @Description: 搜索  SearchBar
- * @Author: your name
- * @Date: 2020-04-16 11:13:12
- * @LastEditTime: 2020-04-20 10:43:09
+ * @Description: searchBar
+ * @Version: 0.1
+ * @Autor: zhengxn
+ * @Date: 2020-04-21 11:02:28
  * @LastEditors: zhengxn
- * @Description: In User Settings Edit
- * @FilePath: \移动端ui规范\src\views\uireset\searchBar.vue
+ * @LastEditTime: 2020-04-22 10:53:47
  -->
+
 <template>
   <div>
     <div class="searchBar">
@@ -25,7 +25,7 @@
       <span slot="action" class="text-right">搜索</span>
     </van-search>
     <div class="searchBar">
-      <span>样式三</span>
+      <span>样式3</span>
     </div>
     <div style="display:flex">
       <span slot="left">
