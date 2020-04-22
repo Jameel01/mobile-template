@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-21 16:26:34
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-22 17:57:56
  -->
 <template>
   <div class="test">
@@ -80,7 +80,7 @@
           <a href="#/ui-reset/data-display/card" class="demo-home-nav__block">
             列表 card
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/password-input" class="demo-home-nav__block">
+          <!-- <a href="#/password-input" class="demo-home-nav__block">
             PasswordInput 密码输入框
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/picker" class="demo-home-nav__block">
             Picker 选择器
@@ -98,12 +98,13 @@
             Switch 开关
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/uploader" class="demo-home-nav__block">
             Uploader 文件上传
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
+        </div>
       </div>
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">反馈组件</div>
-        <div class="demo-home-nav__group"><a href="#/action-sheet" class="demo-home-nav__block">
-            ActionSheet 动作面板
+        <div class="demo-home-nav__group"><a href="#/ui-reset/back-feed/action-sheet" class="demo-home-nav__block">
+            弹框 ActionSheet
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/dialog" class="demo-home-nav__block">
             Dialog 弹出框
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/dropdown-menu" class="demo-home-nav__block">

@@ -1,10 +1,10 @@
 <!--
- * @Description: 
+ * @Description: list
  * @Version: 0.1
  * @Autor: zhengxn
  * @Date: 2020-04-22 10:56:32
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-22 11:05:05
+ * @LastEditTime: 2020-04-22 17:11:26
  -->
 <template>
   <div class="list">

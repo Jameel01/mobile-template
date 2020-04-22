@@ -1,5 +1,15 @@
+<!--
+ * @Description: card
+ * @Version: 0.1
+ * @Autor: zhengxn
+ * @Date: 2020-04-22 16:45:17
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-22 17:45:03
+ -->
+
+
 <template>
-  <div class="card"> <span class="btitle">卡片 Card</span>
+  <div class="card-page"> <span class="btitle">卡片 Card</span>
     <!-- <y-title content="标题"></y-title> -->
     <van-panel>
       <template #header>
@@ -187,31 +197,61 @@
     <van-panel>
       <template #header>
         <van-row>
-          <van-col span="4">
-            <div style="padding:20px">
-              <van-image round width="40" height="40" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-            </div>
-          </van-col>
-          <van-col span="20">
-            <van-cell center label="2019-08-24">
-              <template #title>
-
-                <span class="custom-title">文字图标图片</span>
-
-              </template>
-              <template #right-icon>
-                <div class="color-red">辅助文本</div>
-              </template>
-            </van-cell>
-          </van-col>
-
+          <van-cell center value="右侧小注释">
+            <template #title>
+              <van-row>
+                <van-col span="8">
+                  <div>
+                    <van-image round width="50" height="50" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+                  </div>
+                </van-col>
+                <van-col span="16"><span class="onetitle">双行一级标题</span>
+                  <p class="color-999">2019-08-24</p>
+                </van-col>
+              </van-row>
+            </template>
+          </van-cell>
         </van-row>
 
       </template>
       <div class="van-panel-content">文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容</div>
       <template #footer>
-        <van-cell title="查看详情" is-link to="index" />
+        <van-cell title="辅助说明1" value="辅助文本" />
+        <div class="van-panel-footer-content">文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容</div>
       </template>
+    </van-panel>
+
+    <div class="line"></div>
+    <van-panel class="cardList">
+      <template #header>
+        <van-cell title="文本标题" center>
+
+          <template #right-icon>
+            <div>辅助内容</div>
+          </template>
+        </van-cell>
+      </template>
+      <div class="pl-20">
+        <van-cell>
+          <template #title>
+            <div class="ignore-explain">卡片内容1</div>
+          </template>
+          <template #right-icon>
+            <div class="ignore-explain">辅助内容</div>
+          </template>
+        </van-cell>
+        <van-cell title="卡片内容1">
+          <template #right-icon>
+            <div>辅助内容</div>
+          </template>
+        </van-cell>
+        <van-cell title="卡片内容1">
+          <template #right-icon>
+            <div>辅助内容</div>
+          </template>
+        </van-cell>
+
+      </div>
     </van-panel>
   </div>
 
@@ -230,6 +270,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.card {
+.card-page {
+  background-color: #f5f7fa;
+  margin-bottom: 150px;
 }
 </style>

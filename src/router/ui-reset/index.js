@@ -3,7 +3,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-22 04:22:00
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-22 04:22:08
+ * @LastEditTime: 2020-04-22 17:51:04
  */
 export default [
     {
@@ -50,6 +50,11 @@ export default [
         path: "/ui-reset/data-display/card",
         name: "card",
         component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-display/card/index.vue")
+    },
+    {
+        path: "/ui-reset/back-feed/action-sheet",
+        name: "action-sheet",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/back-feed/action-sheet/index.vue")
     }
 ]
 

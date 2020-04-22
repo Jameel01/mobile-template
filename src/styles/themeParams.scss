@@ -56,6 +56,10 @@ $ft-36: 36px;
     font-size: 30px;
     display: block;
 }
+.onetitle {
+    font-size: 36px;
+    color: #333;
+}
 .line {
     height: 20px;
     background: #eeeeee;
@@ -198,4 +202,14 @@ $ft-36: 36px;
     color: #666;
     line-height: 20px;
     padding-left: 12px;
+}
+.van-panel-footer-content {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    padding-left: 12px;
+}
+.cardList {
+    border-radius: 30px;
+    margin: 30px;
 }
