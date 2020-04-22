@@ -15,32 +15,32 @@
       </h2>
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">数据录入 Data Entry</div>
-        <div class="demo-home-nav__group"><a href="#/button" class="demo-home-nav__block">
+        <div class="demo-home-nav__group"><a href="#/ui-reset/data-entry/button" class="demo-home-nav__block">
             按钮 Button
             <van-icon class="demo-home-nav__icon" name="arrow" />
           </a>
-          <a href="#/checkbox" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/checkbox" class="demo-home-nav__block">
             开关 Checkbox、Radio、Switch
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/searchBar" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/search" class="demo-home-nav__block">
             搜索 SearchBar
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/inputItem" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/input" class="demo-home-nav__block">
             输入 InputItem
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/inputItem" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/input" class="demo-home-nav__block">
             输入块 TextareaItem
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/uploader" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/uploader" class="demo-home-nav__block">
             图片选择 ImagePicker
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/uploader" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/uploader" class="demo-home-nav__block">
             滑动 Slidder
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/uploader" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/uploader" class="demo-home-nav__block">
             步进器 Stepper
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/picker" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/picker" class="demo-home-nav__block">
             选择器 Picker
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
           <!-- <a href="#/cell" class="demo-home-nav__block">
@@ -63,13 +63,13 @@
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">数据展示 Data Display</div>
         <div class="demo-home-nav__group">
-          <a href="#/noticeBar" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-display/noticebar" class="demo-home-nav__block">
             标记 Badge
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/noticeBar" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-display/noticebar" class="demo-home-nav__block">
             标签 Tag
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/noticeBar" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-display/noticebar" class="demo-home-nav__block">
             通告栏 NoticeBar
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
 

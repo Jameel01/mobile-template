@@ -13,21 +13,7 @@ export default [
     meta: {
       needLogin: false
     },
-    component: () => import(/* webpackChunkName: "loginModule" */"@/views/Home.vue")
-  },
-  {
-    path: "/error",
-    name: "error",
-    component: () => import(/* webpackChunkName: "errorModule" */"@/views/Error.vue")
-
-  },
-  {
-    path: "/exception",
-    name: "exception",
-    meta: {
-      needLogin: false
-    },
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/example.vue")
+    component: () => import(/* webpackChunkName: "loginModule" */"@/views/home.vue")
   },
 
   {
@@ -36,39 +22,44 @@ export default [
     component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")
   },
   {
-    path: "/button",
+    path: "/ui-reset/data-entry/button",
     name: "button",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/button.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-entry/button/index.vue")
   },
   {
-    path: "/checkbox",
+    path: "/ui-reset/data-entry/checkbox",
     name: "checkbox",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/checkbox.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-entry/checkbox/index.vue")
   },
   {
-    path: "/searchBar",
-    name: "searchBar",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/searchBar.vue")
+    path: "/ui-reset/data-entry/search",
+    name: "search",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-entry/search/index.vue")
   },
   {
-    path: "/inputItem",
-    name: "inputItem",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/inputItem.vue")
+    path: "/ui-reset/data-entry/input",
+    name: "input",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-entry/input/index.vue")
   },
   {
-    path: "/uploader",
+    path: "/ui-reset/data-entry/uploader",
     name: "uploader",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/uploader.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-entry/uploader/index.vue")
   },
   {
-    path: "/picker",
+    path: "/ui-reset/data-entry/picker",
     name: "picker",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataEntry/picker.vue")
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-entry/picker/index.vue")
   },
   {
-    path: "/noticeBar",
-    name: "noticeBar",
-    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/uireset/dataDisplay/noticeBar.vue")
+    path: "/ui-reset/data-display/noticebar",
+    name: "noticebar",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-display/noticebar/index.vue")
+  },
+  {
+    path: "/ui-reset/data-display/list",
+    name: "list",
+    component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/data-display/list/index.vue")
   }
 ]
 

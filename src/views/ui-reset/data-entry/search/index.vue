@@ -14,7 +14,7 @@
     </div>
     <van-search v-model="value1" :placeholder="placeholder" :input-align="align" :show-action="cancel" @focus="focus1" @blur="blur1">
       <div slot="left-icon" class="icon" :class="cancel?'':'icon-left'">
-        <img :src="require('../../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
+        <img :src="require('../../../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
       </div>
       <span slot="action" class="text-right">取消</span>
     </van-search>
