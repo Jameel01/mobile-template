@@ -20,8 +20,7 @@ export default [
     path: "*",
     name: "not-found",
     component: () => import(/* webpackChunkName: "notFoundModule" */"@/views/404.vue")
-  },
+  }
 
 ]
-
 

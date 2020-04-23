@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-03-24 10:37:27
  * @LastEditors: chenyt
- * @LastEditTime: 2020-04-23 11:24:25
+ * @LastEditTime: 2020-04-23 12:04:14
  */
 /**
  * @description: 添加指定cookie，同域名可以使用
@@ -41,9 +41,23 @@ function getCookie(key) {
     }
     return false;
 }
+/**
+ * @description: 清除所有cookie
+ * @param {type} 
+ * @return: 
+ * @author: chenyt
+ */
+function clearCookie() {
+    var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+    if (keys) {
+        for (var i = keys.length; i--;)
+            document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+    }
+}
 
 export default {
     setCookie,
     removeCookie,
-    getCookie
+    getCookie,
+    clearCookie
 }

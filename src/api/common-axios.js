@@ -15,28 +15,28 @@ const CLIENT_TIMEOUT = process.env.VUE_APP_TIMEOUT || 8000//链接时间
 const MOCK_SERVER = process.env.VUE_APP_MOCK_SERVER || ""//mock
 const enableMock = process.env.VUE_APP_ENABLE_MOCK === "true"//是否开启mock
 const service = axios.create({
-    baseURL: enableMock ? MOCK_SERVER : API_BASEURL,
-    timeout: CLIENT_TIMEOUT,
-    headers: {
-        "Content-Type": "application/json"
-    }
+  baseURL: enableMock ? MOCK_SERVER : API_BASEURL,
+  timeout: CLIENT_TIMEOUT,
+  headers: {
+    "Content-Type": "application/json"
+  }
 })
 
 // 请求
 service.interceptors.request.use(config => {
-    const token = getToken()
-    if (token) {
-        config.headers["Access-Token"] = token
-    }
-    return config
+  const token = getToken()
+  if (token) {
+    config.headers["Access-Token"] = token
+  }
+  return config
 }, error => {
-    return Promise.reject(error)
+  return Promise.reject(error)
 })
 
 //响应拦截
 service.interceptors.response.use(response => {
-    return response
+  return response
 }, error => {
-    return Promise.reject(error)
+  return Promise.reject(error)
 })
 export default service
