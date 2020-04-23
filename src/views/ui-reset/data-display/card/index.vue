@@ -7,7 +7,6 @@
  * @LastEditTime: 2020-04-22 17:45:03
  -->
 
-
 <template>
   <div class="card-page"> <span class="btitle">卡片 Card</span>
     <!-- <y-title content="标题"></y-title> -->

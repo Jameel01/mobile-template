@@ -27,7 +27,7 @@ import SessionUtil from "@/utils/sessionStorage"
 // 修改路由跳转报错的bug-start
 const routerPush = Router.prototype.push
 Router.prototype.push = function push(location) {
-    return routerPush.call(this, location).catch(error => error)
+  return routerPush.call(this, location).catch(error => error)
 }
 // 修改路由跳转报错的bug--end
 
@@ -36,11 +36,11 @@ Vue.prototype.$sessionUtil = SessionUtil
 // 总线
 var EventBus = new Vue()
 Object.defineProperties(Vue.prototype, {
-    $bus: {
-        get: function() {
-            return EventBus
-        }
+  $bus: {
+    get: function() {
+      return EventBus
     }
+  }
 })
 Vue.config.devtools = true
 Vue.config.productionTip = false
@@ -52,11 +52,11 @@ router.beforeEach(beforeEachHandler)
 router.afterEach(afterEachHandler)
 // 页面局部热更新
 if (module && module.hot) {
-    module.hot.accept()
+  module.hot.accept()
 }
 window.gvm = new Vue({
-    router,
-    store,
-    render: h => h(App)
+  router,
+  store,
+  render: h => h(App)
 }).$mount("#app")
 

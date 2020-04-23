@@ -12,17 +12,17 @@ Vue.use(Router)
 export let routes = []
 const routerContext=require.context("./", true, /index\.js$/)
 routerContext.keys().forEach(route => {
-    if (route.startsWith("./index")){
-        return
-    }
-    const routerModule=routerContext(route)
-    routes=[...routes, ...(routerModule.default||routerModule)]
+  if (route.startsWith("./index")){
+    return
+  }
+  const routerModule=routerContext(route)
+  routes=[...routes, ...(routerModule.default||routerModule)]
 })
 var router = new Router({
-    linkActiveClass: "active",
-    // base: process.env.NODE_ENV === "production" ? "/ggfwstatic/chinahrss-unwork/" : "/",
-    routes
-    // mode:"history"
+  linkActiveClass: "active",
+  // base: process.env.NODE_ENV === "production" ? "/ggfwstatic/chinahrss-unwork/" : "/",
+  routes
+  // mode:"history"
 })
 
 export default router

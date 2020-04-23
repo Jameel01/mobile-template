@@ -3,7 +3,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-22 04:22:00
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-23 16:01:08
+ * @LastEditTime: 2020-04-23 18:33:28
  */
 export default [
     {
@@ -87,5 +87,4 @@ export default [
         component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/others/result-page/index.vue")
     }
 ]
-
 
