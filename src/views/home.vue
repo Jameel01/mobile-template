@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-21 16:26:34
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-22 17:57:56
  -->
 <template>
   <div class="test">
@@ -15,32 +15,32 @@
       </h2>
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">数据录入 Data Entry</div>
-        <div class="demo-home-nav__group"><a href="#/button" class="demo-home-nav__block">
+        <div class="demo-home-nav__group"><a href="#/ui-reset/data-entry/button" class="demo-home-nav__block">
             按钮 Button
             <van-icon class="demo-home-nav__icon" name="arrow" />
           </a>
-          <a href="#/checkbox" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/checkbox" class="demo-home-nav__block">
             开关 Checkbox、Radio、Switch
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/searchBar" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/search" class="demo-home-nav__block">
             搜索 SearchBar
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/inputItem" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/input" class="demo-home-nav__block">
             输入 InputItem
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/inputItem" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/input" class="demo-home-nav__block">
             输入块 TextareaItem
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/uploader" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/uploader" class="demo-home-nav__block">
             图片选择 ImagePicker
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/uploader" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/uploader" class="demo-home-nav__block">
             滑动 Slidder
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/uploader" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/uploader" class="demo-home-nav__block">
             步进器 Stepper
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
-          <a href="#/picker" class="demo-home-nav__block">
+          <a href="#/ui-reset/data-entry/picker" class="demo-home-nav__block">
             选择器 Picker
             <van-icon class="demo-home-nav__icon" name="arrow" /></a>
           <!-- <a href="#/cell" class="demo-home-nav__block">
@@ -62,19 +62,25 @@
       </div>
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">数据展示 Data Display</div>
-        <div class="demo-home-nav__group"><a href="#/calendar" class="demo-home-nav__block">
-            Calendar 日历
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/checkbox" class="demo-home-nav__block">
-            Checkbox 复选框
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/datetime-picker" class="demo-home-nav__block">
-            DatetimePicker 时间选择
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/inputItem" class="demo-home-nav__block">
-            Field 输入框
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/form" class="demo-home-nav__block">
-            Form 表单
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/number-keyboard" class="demo-home-nav__block">
-            NumberKeyboard 数字键盘
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/password-input" class="demo-home-nav__block">
+        <div class="demo-home-nav__group">
+          <a href="#/ui-reset/data-display/noticebar" class="demo-home-nav__block">
+            标记 Badge
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/data-display/noticebar" class="demo-home-nav__block">
+            标签 Tag
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/data-display/noticebar" class="demo-home-nav__block">
+            通告栏 NoticeBar
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+
+          <a href="#/ui-reset/data-display/list" class="demo-home-nav__block">
+            列表 List
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+
+          <a href="#/ui-reset/data-display/card" class="demo-home-nav__block">
+            列表 card
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <!-- <a href="#/password-input" class="demo-home-nav__block">
             PasswordInput 密码输入框
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/picker" class="demo-home-nav__block">
             Picker 选择器
@@ -92,12 +98,13 @@
             Switch 开关
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/uploader" class="demo-home-nav__block">
             Uploader 文件上传
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
+        </div>
       </div>
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">反馈组件</div>
-        <div class="demo-home-nav__group"><a href="#/action-sheet" class="demo-home-nav__block">
-            ActionSheet 动作面板
+        <div class="demo-home-nav__group"><a href="#/ui-reset/back-feed/action-sheet" class="demo-home-nav__block">
+            弹框 ActionSheet
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/dialog" class="demo-home-nav__block">
             Dialog 弹出框
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/dropdown-menu" class="demo-home-nav__block">
@@ -150,8 +157,6 @@
             Sticky 粘性布局
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/swipe" class="demo-home-nav__block">
             Swipe 轮播
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/tag" class="demo-home-nav__block">
-            Tag 标记
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
       </div>
       <div class="demo-home-nav">

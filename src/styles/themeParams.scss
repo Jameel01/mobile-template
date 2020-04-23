@@ -51,14 +51,43 @@ $ft-36: 36px;
 
 // 公共css
 .btitle {
-    margin: 20px 0 40px 20px;
-    color: rgba(69, 90, 100, 0.6);
+    margin: 40px 0 40px 20px;
+    color: #333;
     font-size: 30px;
     display: block;
+}
+.onetitle {
+    font-size: 36px;
+    color: #333;
 }
 .line {
     height: 20px;
     background: #eeeeee;
+}
+.pd-20 {
+    padding: 20px;
+}
+.fs-14 {
+    font-size: 28px;
+}
+.tr {
+    text-align: right;
+}
+.pl-20 {
+    padding-left: 20px;
+}
+.color-999 {
+    color: #999;
+}
+.color-red {
+    color: red;
+}
+.custom-title {
+    width: 500px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
 }
 //button
 .van-button--normal {
@@ -158,6 +187,29 @@ $ft-36: 36px;
     color: #3b71e8;
 }
 //picker
-/deep/.van-picker__cancel{
+/deep/.van-picker__cancel {
     color: #303133;
+}
+//卡片内容样式
+.van-panel-content {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    padding: 10px 10px 10px 30px;
+}
+.van-panel-footer {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    padding-left: 12px;
+}
+.van-panel-footer-content {
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+    padding-left: 12px;
+}
+.cardList {
+    border-radius: 30px;
+    margin: 30px;
 }
