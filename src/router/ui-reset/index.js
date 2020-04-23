@@ -3,7 +3,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-22 04:22:00
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-22 17:51:04
+ * @LastEditTime: 2020-04-23 16:01:08
  */
 export default [
     {
@@ -55,6 +55,36 @@ export default [
         path: "/ui-reset/back-feed/action-sheet",
         name: "action-sheet",
         component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/back-feed/action-sheet/index.vue")
+    },
+    {
+        path: "/ui-reset/back-feed/activity-indicator",
+        name: "activity-indicator",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/back-feed/activity-indicator/index.vue")
+    },
+    {
+        path: "/ui-reset/back-feed/modal",
+        name: "modal",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/back-feed/modal/index.vue")
+    },
+    {
+        path: "/ui-reset/navigation/nav-bar",
+        name: "nav-bar",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/navigation/nav-bar/index.vue")
+    },
+    {
+        path: "/ui-reset/navigation/tab",
+        name: "tab",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/navigation/tab/index.vue")
+    },
+    {
+        path: "/ui-reset/others/refresh",
+        name: "refresh",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/others/refresh/index.vue")
+    },
+    {
+        path: "/ui-reset/others/result-page",
+        name: "result-page",
+        component: () => import(/* webpackChunkName: "exceptionModule" */"@/views/ui-reset/others/result-page/index.vue")
     }
 ]
 

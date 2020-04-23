@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-22 17:57:56
+ * @LastEditTime: 2020-04-23 18:27:49
  -->
 <template>
   <div class="test">
@@ -105,11 +105,17 @@
         <div class="demo-home-nav__title">反馈组件</div>
         <div class="demo-home-nav__group"><a href="#/ui-reset/back-feed/action-sheet" class="demo-home-nav__block">
             弹框 ActionSheet
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/dialog" class="demo-home-nav__block">
-            Dialog 弹出框
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/dropdown-menu" class="demo-home-nav__block">
-            DropdownMenu 下拉菜单
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/loading" class="demo-home-nav__block">
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/back-feed/activity-indicator" class="demo-home-nav__block">
+            加载指示器 ActivityIndicator
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/back-feed/modal" class="demo-home-nav__block">
+            弹窗 Modal
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/back-feed/action-sheet" class="demo-home-nav__block">
+            消息提示 Toast
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <!-- <a href="#/loading" class="demo-home-nav__block">
             Loading 加载
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/notify" class="demo-home-nav__block">
             Notify 消息通知
@@ -122,64 +128,55 @@
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/swipe-cell" class="demo-home-nav__block">
             SwipeCell 滑动单元格
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/toast" class="demo-home-nav__block">
-            Toast 轻提示
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
+            消息提示 Toast
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
+        </div>
       </div>
       <div class="demo-home-nav">
-        <div class="demo-home-nav__title">展示组件</div>
-        <div class="demo-home-nav__group"><a href="#/circle" class="demo-home-nav__block">
-            Circle 环形进度条
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/collapse" class="demo-home-nav__block">
-            Collapse 折叠面板
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/count-down" class="demo-home-nav__block">
-            CountDown 倒计时
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/divider" class="demo-home-nav__block">
-            Divider 分割线
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/empty" class="demo-home-nav__block">
-            Empty 空状态
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/image-preview" class="demo-home-nav__block">
-            ImagePreview 图片预览
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/lazyload" class="demo-home-nav__block">
-            Lazyload 懒加载
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/list" class="demo-home-nav__block">
-            List 列表
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/notice-bar" class="demo-home-nav__block">
-            NoticeBar 通知栏
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/panel" class="demo-home-nav__block">
-            Panel 面板
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/progress" class="demo-home-nav__block">
-            Progress 进度条
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/skeleton" class="demo-home-nav__block">
-            Skeleton 骨架屏
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/steps" class="demo-home-nav__block">
-            Steps 步骤条
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/sticky" class="demo-home-nav__block">
-            Sticky 粘性布局
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/swipe" class="demo-home-nav__block">
-            Swipe 轮播
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
-      </div>
-      <div class="demo-home-nav">
-        <div class="demo-home-nav__title">导航组件</div>
-        <div class="demo-home-nav__group"><a href="#/grid" class="demo-home-nav__block">
+        <div class="demo-home-nav__title">导航 Navigation</div>
+        <div class="demo-home-nav__group">
+          <a href="#/ui-reset/navigation/nav-bar" class="demo-home-nav__block">
+            导航栏 NavBar
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/navigation/nav-bar" class="demo-home-nav__block">
+            Tabbar 标签栏
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a>
+          <a href="#/ui-reset/navigation/tab" class="demo-home-nav__block">
+            Tab 标签页
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <!-- <a href="#/grid" class="demo-home-nav__block">
             Grid 宫格
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/index-bar" class="demo-home-nav__block">
             IndexBar 索引栏
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/nav-bar" class="demo-home-nav__block">
-            NavBar 导航栏
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/pagination" class="demo-home-nav__block">
             Pagination 分页
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/sidebar" class="demo-home-nav__block">
             Sidebar 侧边导航
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/tab" class="demo-home-nav__block">
-            Tab 标签页
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/tabbar" class="demo-home-nav__block">
-            Tabbar 标签栏
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/tree-select" class="demo-home-nav__block">
             TreeSelect 分类选择
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
+            <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
+        </div>
       </div>
       <div class="demo-home-nav">
+        <div class="demo-home-nav__title">其他 Others</div>
+        <div class="demo-home-nav__group">
+          <a href="#/ui-reset/others/refresh" class="demo-home-nav__block">
+            刷新 PullToRefresh
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/ui-reset/others/refresh" class="demo-home-nav__block">
+            滑动操作 SwipeAction
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/ui-reset/others/result-page" class="demo-home-nav__block">
+            结果页 ResultPage
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+        </div>
+      </div>
+
+      <!-- <div class="demo-home-nav">
         <div class="demo-home-nav__title">业务组件</div>
         <div class="demo-home-nav__group"><a href="#/address-edit" class="demo-home-nav__block">
             AddressEdit 地址编辑
@@ -200,7 +197,7 @@
             <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/sku" class="demo-home-nav__block">
             Sku 商品规格
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
-      </div>
+      </div> -->
 
     </div>
   </div>

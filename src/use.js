@@ -2,8 +2,8 @@
  * @Description: 常用的有赞组件
  * @Autor: chenyt
  * @Date: 2020-03-21 22:15:42
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 20:13:37
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-23 10:00:42
  */
 
 import Vue from "vue"
