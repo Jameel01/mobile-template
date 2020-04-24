@@ -4,7 +4,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-21 11:02:28
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-22 10:53:47
+ * @LastEditTime: 2020-04-24 16:17:33
  -->
 
 <template>
@@ -79,28 +79,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.searchBar {
-  text-align: center;
-  padding: 30px 0px;
-}
-.icon {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  position: relative;
-}
-.icon-left {
-  left: 38vw;
-}
-.text-right {
-  color: #3b71e8;
-  letter-spacing: 0;
-  text-align: right;
-}
-[class*="van-hairline"]::after {
-  content: none;
-}
-/deep/ .van-search__content {
-  height: 28px;
-}
 </style>
