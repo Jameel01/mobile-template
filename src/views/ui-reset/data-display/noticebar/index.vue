@@ -16,10 +16,11 @@
       <van-tag v-if="show.primary" plain closeable size="medium" type="primary" @close="close('primary')">
         可删除的
       </van-tag>
+
     </div> <span class="btitle"> 通告栏 NoticeBar</span>
     <div>
       <van-notice-bar color="#28C663" background="#DFF7E8" :scrollable="false">
-        评价成功
+        <van-icon name="checked" color="#28C663" />&nbsp;评价成功
       </van-notice-bar>
       <br />
       <van-notice-bar color="#FA3E3E" background="#FFF1F1" :scrollable="false">
