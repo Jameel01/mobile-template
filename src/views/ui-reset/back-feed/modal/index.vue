@@ -4,7 +4,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-23 11:03:10
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-24 17:57:02
+ * @LastEditTime: 2020-04-26 13:36:52
  -->
 <template>
   <div class="modal">modal组件
@@ -105,7 +105,6 @@
 
   </div>
 
-  </div>
 </template>
 <script>
 export default {
