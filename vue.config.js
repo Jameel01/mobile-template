@@ -8,7 +8,6 @@ function resolve(dir) {
 }
 module.exports = {
     publicPath: isProd ? "" : "/", //配置根路径
-    // assetsRoot: path.resolve(__dirname, "../dist"),
     outputDir: "dist", //构建输出目录
     assetsDir: "assets", //静态资源目录(js\css\img)
     lintOnSave: true, //是否开启eslint
@@ -98,8 +97,10 @@ module.exports = {
         // 别名配置
         config.resolve.alias
             .set("@", resolve("src"))
-            .set("~", resolve("config"))
-            .set("src", resolve("src"))
+            .set("@components", resolve("components"))
+            .set("@style", resolve("style"))
+            .set("@utils", resolve("utils"))
+            .set("@router", resolve("router"))
         config.resolve.extensions
             .clear()
             .merge([".js", ".vue", ".json"])
