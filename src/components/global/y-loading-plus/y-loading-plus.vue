@@ -2,15 +2,15 @@
  * @Description: loading插件
  * @Autor: guoruliang
  * @Date: 2020-04-27 13:32:17
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-27 14:49:28
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-27 17:44:03
  -->
 <template>
   <div>
     <!-- 加载gif -->
     <div class="project-loading" v-show="isShow">
       <div class="loading-block">
-        <img src="@/assets/imgs/12333.gif" width="101px" />
+        <img src="@/assets/imgs/loading.gif" width="101px" />
       </div>
     </div>
   </div>
@@ -34,10 +34,12 @@ export default {
      */
     show(duration = 0) {
       this.isShow = true
-      if (!duration) { return }
+      if (!duration) {
+        return
+      }
       setTimeout(() => {
         this.isShow = false
-      }, duration) 
+      }, duration)
     },
     /**
      * @description: 隐藏
