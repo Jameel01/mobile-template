@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-27 18:08:54
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-27 14:19:14
  -->
 <template>
   <div class="test">
@@ -158,6 +158,7 @@
             <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
         </div>
       </div>
+
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">全局laoding</div>
         <div class="demo-home-nav__group">
