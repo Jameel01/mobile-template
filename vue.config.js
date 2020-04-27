@@ -1,7 +1,7 @@
 const path = require("path")
 const CompressionWebpackPlugin = require("compression-webpack-plugin")
-// const vConsolePlugin = require('vconsole-webpack-plugin')
-// const isConsole = process.env.VUE_APP_VCONSOLE === 'true'
+const vConsolePlugin = require("vconsole-webpack-plugin")
+const isConsole = process.env.VUE_APP_VCONSOLE === "true"
 const isProd = process.env.NODE_ENV === "production"
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -160,14 +160,14 @@ module.exports = {
         */
     config.plugins.delete("prefetch-index")
     config.plugins.delete("preload-index")
-    // if (isConsole) {
-    //     config
-    //         .plugin('vConsolePlugin')
-    //         .use(vConsolePlugin, [{
-    //             enable: true
-    //         }])
-    //         .end()
-    // }
+    if (isConsole) {
+      config
+        .plugin("vConsolePlugin")
+        .use(vConsolePlugin, [{
+          enable: true
+        }])
+        .end()
+    }
   },
   // 第三方插件配置
   pluginOptions: {}
