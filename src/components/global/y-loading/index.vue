@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: guoruliang
+ * @Date: 2020-04-26 10:47:36
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-27 14:46:54
+ -->
 <template>
     <div>
         <!-- 加载gif -->
@@ -19,10 +26,6 @@ export default {
     }
   },
   created() {
-    // 修改加载状态
-    this.$bus.$on("setLoading", params => {
-      this.$emit("update:yLoading", params)
-    })
   }
 }
 </script>

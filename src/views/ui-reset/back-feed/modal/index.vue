@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: zhengxn
  * @Date: 2020-04-23 11:03:10
- * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-24 17:57:02
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-26 17:44:07
  -->
 <template>
   <div class="modal">modal组件
@@ -105,7 +105,6 @@
 
   </div>
 
-  </div>
 </template>
 <script>
 export default {

@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: zhengxn
  * @Date: 2020-04-20 15:38:26
- * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-20 21:59:15
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-26 17:45:55
  -->
 <template>
   <div class="uploader">
@@ -27,8 +27,6 @@
   </div>
 </template>
 <script>
-import { Slider } from "vant"
-import { Stepper } from "vant"
 export default {
   name: "uploader",
 

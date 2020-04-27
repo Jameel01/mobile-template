@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-23 18:33:50
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-27 14:19:14
  -->
 <template>
   <div class="test">
@@ -158,6 +158,17 @@
             <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
         </div>
       </div>
+
+      <div class="demo-home-nav">
+        <div class="demo-home-nav__title">全局laoding</div>
+        <div class="demo-home-nav__group">
+          <div class="demo-home-nav__block" @click="openLoading">
+            开启loading
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </div>
+        </div>
+      </div>
+
       <div class="demo-home-nav">
         <div class="demo-home-nav__title">其他 Others</div>
         <div class="demo-home-nav__group">
@@ -215,7 +226,11 @@ export default {
   },
   created() {},
   mounted() {},
-  methods: {},
+  methods: {
+    openLoading() {
+      this.$Loading.show(2000)
+    }
+  },
   destroyed() {}
 }
 </script>
