@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-04-27 15:50:11
  * @LastEditors: chenyt
- * @LastEditTime: 2020-04-27 15:50:26
+ * @LastEditTime: 2020-04-27 16:26:57
  */
 module.exports = {
     extends: ['@commitlint/config-conventional'],
@@ -24,9 +24,5 @@ module.exports = {
                 'chore', // 其他改动
             ],
         ],
-        'type-empty': [2, 'never'], // 提交不符合规范时,也可以提交,但是会有警告
-        'subject-empty': [2, 'never'], // 提交不符合规范时,也可以提交,但是会有警告
-        'subject-full-stop': [0, 'never'],
-        'subject-case': [0, 'never'],
     }
 }
