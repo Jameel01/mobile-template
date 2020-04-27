@@ -6,11 +6,10 @@ module.exports = {
             "feat", "fix", "docs", "style", "refactor", "test", "chore", "revert"
         ]],
         'type-case': [0],
-        'type-empty': [0],
         'scope-empty': [0],
         'scope-case': [0],
         'subject-empty': [0],
         'header-max-length': [0, 'always', 72]
-        
+
     }
 };
