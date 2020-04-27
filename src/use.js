@@ -2,14 +2,14 @@
  * @Description: 常用的有赞组件
  * @Autor: chenyt
  * @Date: 2020-03-21 22:15:42
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-27 14:19:55
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-04-27 15:11:54
  */
 
 import Vue from "vue"
 import { Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search, Slider, Stepper, Tag, NoticeBar, Card } from "vant"
 
-import yLoadingPlus from "@/components/global/y-loading-plus"
+import yLoadingPlus from "@/components/global/y-loading-plus/index"
 Vue.use(yLoadingPlus)
 
 // 常用移动端组件
