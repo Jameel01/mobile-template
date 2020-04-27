@@ -3,9 +3,9 @@
  * @Autor: guoruliang
  * @Date: 2020-04-27 13:34:50
  * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-27 13:59:13
+ * @LastEditTime: 2020-04-27 15:14:08
  */
-import yloadingPlus from "./y-loading-plus"
+import yloadingPlus from "./index.vue"
 const obj = {}
 
 obj.install = function(Vue) {
