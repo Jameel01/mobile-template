@@ -1,10 +1,12 @@
-/*放置基础接口
- * @Author: chenyt 
- * @Date: 2020-03-22 12:04:29 
- * @Last Modified by: chenyt
- * @Last Modified time: 2020-03-27 18:39:41
+/*
+ * @Description: 放置基础接口
+ * @Autor: chenyt
+ * @Date: 2020-03-22 12:04:29
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-09 20:08:10
  */
-import commonApi from '../common-axios'
+
+import commonApi from "../common-axios"
 /**
  * 获取用户信息
  *
@@ -12,8 +14,8 @@ import commonApi from '../common-axios'
  * @param {*} options
  * @returns
  */
-export const getUserInfo = function (params = {}, options = {}) {
-  return commonApi.post('/usc/api/userAccount/getCurrentUser', {
+export const getUserInfo = function(params = {}, options = {}) {
+  return commonApi.post("/usc/api/userAccount/getCurrentUser", {
     data: params
   }, options).then(result => {
     return result.data
@@ -26,8 +28,8 @@ export const getUserInfo = function (params = {}, options = {}) {
  * @param {*} options
  * @returns
  */
-export const getUserInfo2 = function (params = {}, options = {}) {
-  return commonApi.post('/usc/api/userAccount/getCurrentUser', {
+export const getUserInfo2 = function(params = {}, options = {}) {
+  return commonApi.post("/usc/api/userAccount/getCurrentUser", {
     data: params
   }, options).then(result => {
     return result.data

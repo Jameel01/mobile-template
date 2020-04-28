@@ -1,12 +1,23 @@
+/*
+ * @Author: your name
+ * @Date: 2020-04-15 15:59:07
+ * @LastEditTime: 2020-04-20 11:54:34
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \移动端ui规范\postcss.config.js
+ */
 module.exports = {
   plugins: {
-    'autoprefixer': {
+    "autoprefixer": {
       // browsers: ['Android >= 4.0', 'iOS >= 7']
     },
-    'postcss-pxtorem': {
-      rootValue:37.5,
-      propList: ['*'],
-      selectorBlackList  : ['van'], // 忽略转换正则匹配项
+    "postcss-px-to-viewport": {
+      viewportWidth: 750,
+      unitPrecision: 3,
+      minPixelValue: 1,
+      selectorBlackList: [
+        ".van-",".ignore-"
+      ]
     }
   }
 }

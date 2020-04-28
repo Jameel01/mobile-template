@@ -1,27 +1,32 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: zhengxn
+ * @Date: 2020-04-24 13:57:10
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-04-27 14:51:45
+ -->
 <template>
   <div>
     <!-- 加载gif -->
-    <div class="project-loading" v-show='yLoading'>
+    <div class="project-loading" v-show="yLoading">
       <div class="loading-block">
-        <img src='@/assets/imgs/12333.gif'  width='101px'/>
+        <img src="@/assets/imgs/loading.gif" width="101px" />
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'y-loading',
+  name: "y-loading",
   props: {
-    yLoading: {//
+    yLoading: {
+      // 加载状态
       type: Boolean,
       default: true
-    },
+    }
   },
-  created () {
-    // 修改加载状态
-    this.$bus.$on('setLoading', (params) => {
-      this.$emit('update:yLoading', params)
-    })
+  created() {
   }
 }
 </script>
@@ -40,10 +45,8 @@ export default {
 .loading-block {
   position: absolute;
   top: 50%;
-  margin-top: -42px;
   left: 50%;
-  margin-left: -65px;
+  transform: translate(-50%, -50%);
 }
 </style>
-
 
