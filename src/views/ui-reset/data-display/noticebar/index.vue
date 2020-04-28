@@ -4,7 +4,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-27 17:34:36
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-28 10:41:05
+ * @LastEditTime: 2020-04-28 11:27:21
  -->
 <template>
   <div class="noticeBar">
@@ -39,11 +39,11 @@
         通知内容通知内容通知内容通知内容通知内容通知内容通知内容
       </van-notice-bar>
       <br />
-      <van-notice-bar left-icon="volume-o" :scrollable="false">
+      <van-notice-bar left-icon="volume-o" :scrollable="true">
         通知内容通知内容通知内容通知内容通知内容通知内容通知内容
       </van-notice-bar>
       <br />
-      <van-notice-bar left-icon="volume-o" :scrollable="false" mode="closeable">
+      <van-notice-bar left-icon="volume-o" :scrollable="true" mode="closeable">
         通知内容通知内容通知内容通知内容通知内容通知内容通知内容
       </van-notice-bar>
       <br />

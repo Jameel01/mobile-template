@@ -4,7 +4,7 @@
  * @Autor: zhengxn
  * @Date: 2020-04-20 09:18:40
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-28 10:35:07
+ * @LastEditTime: 2020-04-28 11:14:49
  -->
 <template>
   <div class="checkbox">
@@ -37,6 +37,11 @@
     <van-switch v-model="select1" size="25px" disabled />
     <div class="line"></div>
     <van-switch v-model="select2" size="25px" disabled />
+    <div class="line"></div>
+    <van-checkbox v-model="checked">复选框</van-checkbox>
+    <div class="line"></div>
+    <van-checkbox v-model="checked" shape="square">复选框</van-checkbox>
+    <div class="line"></div>
   </div>
 </template>
 <script>
