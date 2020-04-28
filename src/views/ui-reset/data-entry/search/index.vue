@@ -4,29 +4,23 @@
  * @Autor: zhengxn
  * @Date: 2020-04-21 11:02:28
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-24 16:17:33
+ * @LastEditTime: 2020-04-28 10:15:37
  -->
 
 <template>
   <div>
-    <div class="searchBar">
-      <span>样式一</span>
-    </div>
+    <span class="btitle">样式一</span>
     <van-search v-model="value1" :placeholder="placeholder" :input-align="align" :show-action="cancel" @focus="focus1" @blur="blur1">
       <div slot="left-icon" class="icon" :class="cancel?'':'icon-left'">
         <img :src="require('../../../../assets/imgs/searchBar/btn_serch_grey@3x.png')" alt="" width="14px" height="14px" />
       </div>
       <span slot="action" class="text-right">取消</span>
     </van-search>
-    <div class="searchBar">
-      <span>样式二</span>
-    </div>
-    <van-search v-model="value2" :placeholder="placeholder1" show-action @focus="focus2" @blur="blur2">
+    <span class="btitle">样式二</span>
+    <van-search v-model="value2" :placeholder="placeholder1" show-action>
       <span slot="action" class="text-right">搜索</span>
     </van-search>
-    <div class="searchBar">
-      <span>样式3</span>
-    </div>
+    <span class="btitle">样式三</span>
     <div style="display:flex">
       <span slot="left">
         <van-dropdown-menu>

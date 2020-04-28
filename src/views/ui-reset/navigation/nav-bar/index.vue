@@ -4,11 +4,11 @@
  * @Autor: zhengxn
  * @Date: 2020-04-23 11:43:42
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-23 14:15:51
+ * @LastEditTime: 2020-04-28 10:57:57
  -->
 <template>
   <div class="nav-bar">
-    导航栏 NavBar
+    <span class="lager-title">导航栏 NavBar</span>
     <div class="line"></div>
     <van-nav-bar title="页面标题" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
       <template #right>
@@ -73,7 +73,7 @@
       </template>
     </van-nav-bar>
     <div class="line"></div>
-    分类导航 Tab bar
+    <span class="lager-title">分类导航 Tab bar</span>
 
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o">标签</van-tabbar-item>

@@ -4,12 +4,12 @@
  * @Autor: zhengxn
  * @Date: 2020-04-20 09:18:40
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-20 10:42:14
+ * @LastEditTime: 2020-04-28 10:35:07
  -->
 <template>
   <div class="checkbox">
     <van-checkbox v-model="checked" class="check">
-      自定义图标
+      <font class="color-333 fs-14">自定义图标</font>
       <template #icon="props">
         <img class="img-icon1" :src="props.checked ? activeIcon1 : inactiveIcon1" />
       </template>
@@ -17,13 +17,13 @@
     <div class="line"></div>
     <van-radio-group v-model="radio">
       <van-radio name="1" class="radio">
-        单选框 1
+        <font class="color-333 fs-14">单选框 1</font>
         <template #icon="props">
           <img class="img-icon2" :src="props.checked ? activeIcon2 : inactiveIcon2" />
         </template>
       </van-radio>
       <van-radio name="2" class="radio">
-        单选框 2
+        <font class="color-333 fs-14">单选框 2</font>
         <template #icon="props">
           <img class="img-icon2" :src="props.checked ? activeIcon2 : inactiveIcon2" />
         </template>

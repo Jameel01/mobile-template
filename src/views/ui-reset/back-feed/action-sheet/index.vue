@@ -3,13 +3,13 @@
  * @Version: 0.1
  * @Autor: zhengxn
  * @Date: 2020-04-22 17:49:36
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-26 17:44:18
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-28 10:01:54
  -->
 <template>
 
   <div class="action-sheet">
-    弹框 ActionSheet
+    <span class="lager-title">弹框 ActionSheet</span>
     <van-cell title="展示取消按钮" @click="showAction1" is-link />
     <van-cell title="头部描述" @click="showAction2" is-link />
     <van-action-sheet v-model="show1" :actions="actions" cancel-text="取消" @cancel="onCancel" />
@@ -19,7 +19,7 @@
     <van-share-sheet v-model="showShare" title="立即分享给好友" :options="options" @select="onSelect" />
     <br />
     <br />
-    消息提示 Toast
+    <span class="lager-title">消息提示 Toast</span>
     <span class="btitle">text only</span>
     <van-button round type="primary" @click="tip()">示一行</van-button>
     <van-button round type="primary" @click="tip2()">长文字提示</van-button>

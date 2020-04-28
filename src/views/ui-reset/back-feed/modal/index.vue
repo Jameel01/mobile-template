@@ -3,15 +3,16 @@
  * @Version: 0.1
  * @Autor: zhengxn
  * @Date: 2020-04-23 11:03:10
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-27 14:52:17
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-28 11:04:11
  -->
 <template>
-  <div class="modal">modal组件
+  <div class="modal">
+    <span class="lager-title">modal组件</span>
     <br />
     <br />
     <div>
-      <van-button type="info" round @click="showPopup">弹窗一</van-button>
+      <van-button class="margin-20" type="info" round @click="showPopup">弹窗一</van-button>
       <van-popup v-model="show" closeable class="modalPop">
         <div class="popDiv">
           <p class="title">一级文字内容</p>
@@ -22,7 +23,7 @@
         </div>
       </van-popup>
 
-      <van-button type="info" round @click="showPopup2">弹窗二</van-button>
+      <van-button class="margin-20" type="info" round @click="showPopup2">弹窗二</van-button>
       <van-popup v-model="show2" closeable class="modalPop">
         <div class="popDiv">
           <van-row class="result-p" type="flex" justify="center">
@@ -43,7 +44,7 @@
 
       </van-popup>
 
-      <van-button type="info" round @click="showPopup3">弹窗三</van-button>
+      <van-button class="margin-20" type="info" round @click="showPopup3">弹窗三</van-button>
       <van-popup v-model="show3" closeable class="modalPop">
         <div class="popDiv">
           <div class="p2">
@@ -53,7 +54,7 @@
         </div>
       </van-popup>
 
-      <van-button type="info" round @click="showPopup4">弹窗四</van-button>
+      <van-button class="margin-20" type="info" round @click="showPopup4">弹窗四</van-button>
       <van-popup v-model="show4" closeable class="modalPop">
         <div class="popDiv">
           <p class="title">一级文字内容</p>
@@ -66,7 +67,7 @@
 
       </van-popup>
 
-      <van-button type="info" round @click="showPopup5">弹窗五</van-button>
+      <van-button class="margin-20" type="info" round @click="showPopup5">弹窗五</van-button>
       <van-popup v-model="show5" closeable class="modalPop">
         <div class="popDiv">
           <van-row class="result-p" type="flex" justify="center">
@@ -88,7 +89,7 @@
 
       </van-popup>
 
-      <van-button type="info" round @click="showPopup6">弹窗六</van-button>
+      <van-button class="margin-20" type="info" round @click="showPopup6">弹窗六</van-button>
       <van-popup v-model="show6" closeable class="modalPop">
         <div class="popDiv">
           <p class="title">一级文字内容</p>
