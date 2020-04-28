@@ -199,7 +199,6 @@
             Sku 商品规格
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
       </div> -->
-
     </div>
   </div>
 </template>
