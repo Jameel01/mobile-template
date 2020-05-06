@@ -2,8 +2,8 @@
  * @Description: 插件式处理
  * @Autor: guoruliang
  * @Date: 2020-04-27 13:34:50
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-27 15:06:38
+ * @LastEditors: guoruliang
+ * @LastEditTime: 2020-05-06 14:30:09
  */
 import yloadingPlus from "./index.vue"
 const obj = {}
