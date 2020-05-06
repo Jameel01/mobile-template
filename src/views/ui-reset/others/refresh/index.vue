@@ -4,21 +4,15 @@
  * @Autor: zhengxn
  * @Date: 2020-04-23 15:13:32
  * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-23 15:56:17
+ * @LastEditTime: 2020-04-28 11:04:39
  -->
 <template>
   <div class="refresh">
-    刷新 PullToRefresh
-    <br />
-    <br />
-    <br />
+    <span class="lager-title">刷新 PullToRefresh</span>
     <div class="tc">
       <van-loading color="#3B71E8" vertical>松开刷新</van-loading>
     </div>
-    <br />
-    <br />
-    <br />
-    滑动操作 SwipeAction
+    <span class="lager-title">滑动操作 SwipeAction</span>
     <br />
     <van-swipe-cell>
       <!-- <template #left>

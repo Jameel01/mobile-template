@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-27 14:19:14
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-28 11:29:56
  -->
 <template>
   <div class="test">
@@ -145,17 +145,7 @@
             Tab 标签页
             <van-icon class="demo-home-nav__icon" name="arrow" />
           </a>
-          <!-- <a href="#/grid" class="demo-home-nav__block">
-            Grid 宫格
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/index-bar" class="demo-home-nav__block">
-            IndexBar 索引栏
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/pagination" class="demo-home-nav__block">
-            Pagination 分页
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/sidebar" class="demo-home-nav__block">
-            Sidebar 侧边导航
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a><a href="#/tree-select" class="demo-home-nav__block">
-            TreeSelect 分类选择
-            <van-icon class="demo-home-nav__icon" name="arrow" /></a> -->
+
         </div>
       </div>
 
@@ -209,7 +199,6 @@
             Sku 商品规格
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
       </div> -->
-
     </div>
   </div>
 </template>
@@ -244,7 +233,8 @@ export default {
   }
 
   .demo-home__title img {
-    width: 32px;
+    width: 36px;
+    font-weight: bold;
   }
   .demo-home__title img,
   .demo-home__title span {
@@ -261,7 +251,7 @@ export default {
   .demo-home__desc {
     margin: 0 0 40px;
     color: rgba(69, 90, 100, 0.6);
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .demo-home__title {
