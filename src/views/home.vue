@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-06 14:10:36
+ * @LastEditTime: 2020-05-06 16:21:08
  -->
 <template>
   <div class="test">
@@ -150,7 +150,7 @@
       </div>
 
       <div class="demo-home-nav">
-        <div class="demo-home-nav__title">全局laoding</div>
+        <div class="demo-home-nav__title">全局loading</div>
         <div class="demo-home-nav__group">
           <div class="demo-home-nav__block" @click="openLoading">
             开启loading
@@ -172,6 +172,22 @@
           </a>
           <a href="#/ui-reset/others/result-page" class="demo-home-nav__block">
             结果页 ResultPage
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=defend" class="demo-home-nav__block">
+            维护页面
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=none" class="demo-home-nav__block">
+            查无结果
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=network" class="demo-home-nav__block">
+            网络出错
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=error" class="demo-home-nav__block">
+            出错页面
             <van-icon class="demo-home-nav__icon" name="arrow" />
           </a>
         </div>
