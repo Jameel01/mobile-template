@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-07 10:38:57
+ * @LastEditTime: 2020-05-07 16:28:08
  -->
 <template>
   <div class="test">
@@ -216,6 +216,8 @@
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
       </div> -->
     </div>
+    <y-banner>This is a banner!</y-banner>
+    <y-button :disabled='true'>Submit</y-button>
   </div>
 </template>
 <script>

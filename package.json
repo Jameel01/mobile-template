@@ -13,6 +13,7 @@
 	"dependencies": {
 		"@riophae/vue-treeselect": "^0.4.0",
 		"@ylz/dict": "^0.0.1",
+		"@ylz/mobile-components-pack": "^0.0.2",
 		"axios": "^0.19.1",
 		"core-js": "^3.4.4",
 		"css-loader": "^3.4.2",

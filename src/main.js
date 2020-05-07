@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-07 10:02:28
+ * @LastEditTime: 2020-05-07 16:27:40
  */
 import Vue from "vue"
 import App from "@/App.vue"
@@ -13,6 +13,8 @@ import router from "@/router"
 import "@/styles/common.scss"
 // 引入全部样式
 import "vant/lib/index.less"
+import "@ylz/mobile-components-pack"
+// import "@ylz/test-pack/dist/my-banner.css"
 // 自动注册全局的组件
 import "@/components/index"
 import { beforeEachHandler, beforeEachToExample } from "@/router/before-each"
