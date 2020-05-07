@@ -2,15 +2,32 @@
  * @Description: loading插件
  * @Autor: guoruliang
  * @Date: 2020-04-27 13:32:17
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-27 14:49:28
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-05-07 10:27:07
  -->
 <template>
   <div>
     <!-- 加载gif -->
     <div class="project-loading" v-show="isShow">
       <div class="loading-block">
-        <img src="@/assets/imgs/12333.gif" width="101px" />
+        <!-- <img src="@/assets/imgs/loading.gif" width="101px" /> -->
+        <div class="loadingio-spinner-spinner-4jo03t3p4rc">
+          <div class="ldio-n4zwe0gmf4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -34,10 +51,12 @@ export default {
      */
     show(duration = 0) {
       this.isShow = true
-      if (!duration) { return }
+      if (!duration) {
+        return
+      }
       setTimeout(() => {
         this.isShow = false
-      }, duration) 
+      }, duration)
     },
     /**
      * @description: 隐藏
@@ -69,5 +88,102 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+// css动画
+@keyframes ldio-n4zwe0gmf4 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.ldio-n4zwe0gmf4 div {
+  left: 97px;
+  top: 48px;
+  position: absolute;
+  animation: ldio-n4zwe0gmf4 linear 1s infinite;
+  background: $theme-blue;
+  width: 6px;
+  height: 24px;
+  border-radius: 3px / 12px;
+  transform-origin: 3px 52px;
+}
+.ldio-n4zwe0gmf4 div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -0.9166666666666666s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -0.8333333333333334s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.75s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.6666666666666666s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.5833333333333334s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.5s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.4166666666666667s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.3333333333333333s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.25s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.16666666666666666s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.08333333333333333s;
+  background: $theme-blue;
+}
+.ldio-n4zwe0gmf4 div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+  background: $theme-blue;
+}
+.loadingio-spinner-spinner-4jo03t3p4rc {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+}
+.ldio-n4zwe0gmf4 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-n4zwe0gmf4 div {
+  box-sizing: content-box;
+}
 </style>
-

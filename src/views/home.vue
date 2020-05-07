@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-06 16:21:08
+ * @LastEditTime: 2020-05-07 10:04:51
  -->
 <template>
   <div class="test">
@@ -219,6 +219,7 @@
   </div>
 </template>
 <script>
+import Perf from "page-performance-monitor"
 export default {
   components: {},
   name: "",
@@ -228,7 +229,9 @@ export default {
   data() {
     return { data: "" }
   },
-  created() {},
+  created() {
+    console.log(Perf.getPerformanceTiming())
+  },
   mounted() {},
   methods: {
     openLoading() {
