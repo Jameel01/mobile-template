@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: zhengxn
- * @LastEditTime: 2020-04-27 18:12:14
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-05-07 10:38:57
  -->
 <template>
   <div class="test">
@@ -150,7 +150,7 @@
       </div>
 
       <div class="demo-home-nav">
-        <div class="demo-home-nav__title">全局laoding</div>
+        <div class="demo-home-nav__title">全局loading</div>
         <div class="demo-home-nav__group">
           <div class="demo-home-nav__block" @click="openLoading">
             开启loading
@@ -172,6 +172,22 @@
           </a>
           <a href="#/ui-reset/others/result-page" class="demo-home-nav__block">
             结果页 ResultPage
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=defend" class="demo-home-nav__block">
+            维护页面
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=none" class="demo-home-nav__block">
+            查无结果
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=network" class="demo-home-nav__block">
+            网络出错
+            <van-icon class="demo-home-nav__icon" name="arrow" />
+          </a>
+          <a href="#/default?type=error" class="demo-home-nav__block">
+            出错页面
             <van-icon class="demo-home-nav__icon" name="arrow" />
           </a>
         </div>
@@ -199,12 +215,10 @@
             Sku 商品规格
             <van-icon class="demo-home-nav__icon" name="arrow" /></a></div>
       </div> -->
-
     </div>
   </div>
 </template>
 <script>
-// import SessionUtil from "@/utils/sessionStorage";
 export default {
   components: {},
   name: "",
@@ -234,7 +248,8 @@ export default {
   }
 
   .demo-home__title img {
-    width: 32px;
+    width: 36px;
+    font-weight: bold;
   }
   .demo-home__title img,
   .demo-home__title span {
@@ -251,7 +266,7 @@ export default {
   .demo-home__desc {
     margin: 0 0 40px;
     color: rgba(69, 90, 100, 0.6);
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .demo-home__title {

@@ -3,11 +3,10 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 21:18:41
  * @LastEditors: chenyt
- * @LastEditTime: 2020-04-16 17:39:01
+ * @LastEditTime: 2020-05-06 14:10:43
  */
 import axios from "axios"
 import { getToken } from "@/utils/auth"
-// import sessionUtil from '@/utils/sessionStorage.js'
 // import Cookies from 'js-cookie'
 // 环境变量
 const API_BASEURL = process.env.BASE_URL//api基础路径

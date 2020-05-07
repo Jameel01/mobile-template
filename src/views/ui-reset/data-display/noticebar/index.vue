@@ -1,6 +1,14 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: zhengxn
+ * @Date: 2020-04-27 17:34:36
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-28 11:27:21
+ -->
 <template>
   <div class="noticeBar">
-    <span class="btitle"> 标记 Badge</span>
+    <span class="lager-title"> 标记 Badge</span>
     <div>
       <van-icon class='mr-60' name="chat-o" color="#F56C6C;" dot />
       <van-icon class='mr-60' name="chat-o" color="#F56C6C;" badge="3" />
@@ -9,7 +17,7 @@
       <van-icon class='mr-60' name="chat-o" color="#F56C6C;" badge="..." />
       <van-icon class='mr-60' name="chat-o" color="#F56C6C;" badge="new" />
     </div>
-    <span class="btitle"> 标签 Tag</span>
+    <span class="lager-title"> 标签 Tag</span>
     <div>
       <van-tag class='mr-60' plain>基础样式</van-tag>
       <van-tag class='mr-60' plain type="primary">选中样式</van-tag>
@@ -17,7 +25,7 @@
         可删除的
       </van-tag>
 
-    </div> <span class="btitle"> 通告栏 NoticeBar</span>
+    </div> <span class="lager-title"> 通告栏 NoticeBar</span>
     <div>
       <van-notice-bar color="#28C663" background="#DFF7E8" :scrollable="false">
         <van-icon name="checked" color="#28C663" />&nbsp;评价成功
@@ -31,11 +39,11 @@
         通知内容通知内容通知内容通知内容通知内容通知内容通知内容
       </van-notice-bar>
       <br />
-      <van-notice-bar left-icon="volume-o" :scrollable="false">
+      <van-notice-bar left-icon="volume-o" :scrollable="true">
         通知内容通知内容通知内容通知内容通知内容通知内容通知内容
       </van-notice-bar>
       <br />
-      <van-notice-bar left-icon="volume-o" :scrollable="false" mode="closeable">
+      <van-notice-bar left-icon="volume-o" :scrollable="true" mode="closeable">
         通知内容通知内容通知内容通知内容通知内容通知内容通知内容
       </van-notice-bar>
       <br />

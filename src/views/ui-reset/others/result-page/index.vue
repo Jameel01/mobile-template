@@ -1,6 +1,14 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: zhengxn
+ * @Date: 2020-04-27 17:34:36
+ * @LastEditors: zhengxn
+ * @LastEditTime: 2020-04-28 11:05:43
+ -->
 <template>
-  <div class="result-page">result-page组件
-    <span class="btitle">失败</span>
+  <div class="result-page">
+    <span class="lager-title">result-page组件</span> <span class="btitle">失败</span>
     <van-row class="result-p" type="flex" justify="center">
       <van-col>
         <p>

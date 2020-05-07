@@ -2,8 +2,8 @@
  * @Description: 主入口文件
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 17:20:50
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-05-07 10:02:28
  */
 import Vue from "vue"
 import App from "@/App.vue"
@@ -20,9 +20,10 @@ import afterEachHandler from "@/router/after-each"
 import store from "@/store"
 import "@/use"
 // 移动端调试神奇
-//import "@/utils/vconsole"
-// sessionStorage处理函数
-import SessionUtil from "@/utils/sessionStorage"
+// import "@/utils/vconsole"
+import SessionUtil from "@/utils/session-storage"
+// 挂载工具
+Vue.prototype.$sessionUtil = SessionUtil
 
 // 修改路由跳转报错的bug-start
 const routerPush = Router.prototype.push
@@ -31,8 +32,6 @@ Router.prototype.push = function push(location) {
 }
 // 修改路由跳转报错的bug--end
 
-// 挂载工具
-Vue.prototype.$sessionUtil = SessionUtil
 // 总线
 var EventBus = new Vue()
 Object.defineProperties(Vue.prototype, {
