@@ -1286,9 +1286,10 @@
   version "0.0.1"
   resolved "http://47.107.67.231:4873/@ylz%2fdict/-/dict-0.0.1.tgz#d1f55c77b0e6a5f1909b76c2a3c0cd75be535782"
 
-"@ylz/mobile-components-pack@^0.0.2":
-  version "0.0.2"
-  resolved "http://47.107.67.231:4873/@ylz%2fmobile-components-pack/-/mobile-components-pack-0.0.2.tgz#aaf6a2286fa05447f76798db57876ab8a8e6b550"
+"@ylz/mobile-components-pack@^0.0.3":
+  version "0.0.3"
+  resolved "http://47.107.67.231:4873/@ylz%2fmobile-components-pack/-/mobile-components-pack-0.0.3.tgz#4d4cec86c0663a5be255381c3db28a362978e6f8"
+  integrity sha512-mLhOP+kTzDoeCXT94yJPfO8G0bP8cAJTYxCqFPdui8XpUV1eNcH8t/wHkGk5/uJPuWfI1Z02t70PxOxr1K2FjA==
   dependencies:
     core-js "^3.6.4"
     vue "^2.6.11"
