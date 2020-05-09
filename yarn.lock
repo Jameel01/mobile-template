@@ -1286,6 +1286,14 @@
   version "0.0.1"
   resolved "http://47.107.67.231:4873/@ylz%2fdict/-/dict-0.0.1.tgz#d1f55c77b0e6a5f1909b76c2a3c0cd75be535782"
 
+"@ylz/mobile-components-pack@^0.0.3":
+  version "0.0.3"
+  resolved "http://47.107.67.231:4873/@ylz%2fmobile-components-pack/-/mobile-components-pack-0.0.3.tgz#4d4cec86c0663a5be255381c3db28a362978e6f8"
+  integrity sha512-mLhOP+kTzDoeCXT94yJPfO8G0bP8cAJTYxCqFPdui8XpUV1eNcH8t/wHkGk5/uJPuWfI1Z02t70PxOxr1K2FjA==
+  dependencies:
+    core-js "^3.6.4"
+    vue "^2.6.11"
+
 JSONStream@^1.0.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -2440,6 +2448,10 @@ core-js@^2.4.0, core-js@^2.5.0:
 core-js@^3.4.4:
   version "3.6.4"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.6.4.tgz?cache=0&sync_timestamp=1578957006406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
+
+core-js@^3.6.4:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -7878,7 +7890,7 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
 
-vue@^2.6.10:
+vue@^2.6.10, vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
 
