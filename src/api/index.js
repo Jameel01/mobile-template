@@ -3,14 +3,12 @@
  * @Autor: chenyt
  * @Date: 2020-03-22 12:02:58
  * @LastEditors: chenyt
- * @LastEditTime: 2020-04-16 17:58:52
+ * @LastEditTime: 2020-05-09 15:29:53
  */
 
-import * as base from "./modules/base"
-import * as common from "./modules/common"
-import * as user from "./modules/user"
+import * as commonApi from "./modules/common-api"
+import * as loginApi from "./modules/login-api"
 export {
-  base,
-  common,
-  user
+    commonApi,
+    loginApi
 }
