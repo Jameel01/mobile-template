@@ -14,12 +14,12 @@ import commonApi from "../axios"
  * @param {*} options
  * @returns
  */
-export const getUserInfo = function (params = {}, options = {}) {
-    return commonApi.post("/usc/api/userAccount/getCurrentUser", {
-        data: params
-    }, options).then(result => {
-        return result.data
-    })
+export const getUserInfo = function(params = {}, options = {}) {
+  return commonApi.post("/usc/api/userAccount/getCurrentUser", {
+    data: params
+  }, options).then(result => {
+    return result.data
+  })
 }
 /**
  * 获取用户信息
@@ -28,10 +28,10 @@ export const getUserInfo = function (params = {}, options = {}) {
  * @param {*} options
  * @returns
  */
-export const getUserInfo2 = function (params = {}, options = {}) {
-    return commonApi.post("/usc/api/userAccount/getCurrentUser", {
-        data: params
-    }, options).then(result => {
-        return result.data
-    })
+export const getUserInfo2 = function(params = {}, options = {}) {
+  return commonApi.post("/usc/api/userAccount/getCurrentUser", {
+    data: params
+  }, options).then(result => {
+    return result.data
+  })
 }
