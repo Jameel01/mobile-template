@@ -8,13 +8,13 @@
 // 上传图片
 import commonApi from "../axios"
 export const uploadFile = formData => {
-    const res = commonApi.request({
-        method: "post",
-        url: "/upload",
-        data: formData,
-        headers: { "Content-Type": "multipart/form-data" }
-    })
-    return res
+  const res = commonApi.request({
+    method: "post",
+    url: "/upload",
+    data: formData,
+    headers: { "Content-Type": "multipart/form-data" }
+  })
+  return res
 }
 // 调用
 // async uploadFile (e) {

@@ -3,9 +3,9 @@
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:34:14
  * @LastEditors: chenyt
- * @LastEditTime: 2020-04-20 16:01:54
+ * @LastEditTime: 2020-05-09 17:18:24
  */
-import { base } from "@/api"
+import { commonApi } from "@/api"
 import store from "@/store"
 // import Cookies from 'js-cookie'
 import { getToken } from "@/utils/auth"
@@ -33,7 +33,7 @@ async function beforeEachHandler(to, from, next) {
       }
       while (limit-- > 0) {
         // 获取用户信息
-        const result = await base.getUserInfo({})
+        const result = await commonApi.getUserInfo({})
         console.log(result, result.code, "------code-------")
         if (result.code !== 0) {
           if (!hasH5Token || limit === 0) {

@@ -15,10 +15,10 @@ import commonApi from "../axios"
  * @param {*} options
  * @returns
  */
-export const prbAdd = function (params = {}, options = {}) {
-    return commonApi.post("/base/api/prb/add", {
-        data: params
-    }, options).then(result => {
-        return result.data
-    })
+export const prbAdd = function(params = {}, options = {}) {
+  return commonApi.post("/base/api/prb/add", {
+    data: params
+  }, options).then(result => {
+    return result.data
+  })
 }

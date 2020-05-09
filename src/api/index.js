@@ -9,6 +9,6 @@
 import * as commonApi from "./modules/common-api"
 import * as loginApi from "./modules/login-api"
 export {
-    commonApi,
-    loginApi
+  commonApi,
+  loginApi
 }
