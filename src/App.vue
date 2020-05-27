@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-27 11:50:30
+ * @LastEditTime: 2020-05-06 14:10:28
  -->
 <template>
   <div id="app">
@@ -16,7 +16,6 @@ export default {
   name: "app",
   data() {
     return {
-      loadingStatus: true, //加载展示
       loadingStatus: true //加载展示
     }
   },
