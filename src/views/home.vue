@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-26 18:24:57
+ * @LastEditTime: 2020-05-27 14:55:05
  -->
 <template>
   <div class="test">
@@ -229,6 +229,7 @@ export default {
   filters: {},
   data() {
     return {
+      data: "",
       data: "",
       data: ""
     }
