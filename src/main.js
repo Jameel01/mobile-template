@@ -3,12 +3,14 @@
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-07 16:27:40
+ * @LastEditTime: 2020-05-29 15:31:04
  */
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"
 import router from "@/router"
+import { Toast } from "vant"
+Vue.use(Toast)
 // 引入基础样式
 import "@/styles/common.scss"
 // 引入全部样式
@@ -26,7 +28,7 @@ import "@/use"
 import SessionUtil from "@/utils/session-storage"
 // 挂载工具
 Vue.prototype.$sessionUtil = SessionUtil
-
+Vue.prototype.$toast = Toast
 // 修改路由跳转报错的bug-start
 const routerPush = Router.prototype.push
 Router.prototype.push = function push(location) {

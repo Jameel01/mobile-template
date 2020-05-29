@@ -44,7 +44,11 @@ module.exports = {
 			sass: {
 				// @/ is an alias to src/
 				// so this assumes you have a file named `src/variables.scss`
-				prependData: `@import "@/styles/theme-params.scss";`
+                prependData: `
+                $env: ${process.env.NODE_ENV};
+                @import "@/styles/theme-params.scss";
+                @import "@/styles/common.scss";
+                @import "@/styles/animate.scss";`
 			},
 			less: {
 				modifyVars: {

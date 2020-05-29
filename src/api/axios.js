@@ -3,7 +3,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 21:18:41
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-26 18:24:19
+ * @LastEditTime: 2020-05-29 15:32:30
  */
 import axios from "axios"
 import { getToken } from "@/utils/auth"
@@ -36,11 +36,8 @@ service.interceptors.response.use(response => {
   const res = response.data
   // if the custom code is not 0, it is judged as an error.
   if (res.code !== 0) {
-    Message({
-      message: res.message || "Error",
-      type: "error",
-      duration: 5 * 1000
-    })
+
+    window.gvm.$toast(res.message || "Error")
 
     // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
     if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
