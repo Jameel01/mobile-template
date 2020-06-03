@@ -3,12 +3,15 @@
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-06 14:10:28
+ * @LastEditTime: 2020-05-29 15:29:23
  -->
 <template>
   <div id="app">
     <!-- 页面切换容器 -->
-    <router-view />
+    <keep-alive>
+      <router-view v-if='$route.meta.keepAlive' />
+    </keep-alive>
+    <router-view v-if='!$route.meta.keepAlive' />
   </div>
 </template>
 <script>

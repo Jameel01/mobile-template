@@ -3,7 +3,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 21:18:41
  * @LastEditors: chenyt
- * @LastEditTime: 2020-05-06 14:10:43
+ * @LastEditTime: 2020-05-29 15:32:30
  */
 import axios from "axios"
 import { getToken } from "@/utils/auth"
@@ -31,10 +31,24 @@ service.interceptors.request.use(config => {
 }, error => {
   return Promise.reject(error)
 })
-
 //响应拦截
 service.interceptors.response.use(response => {
-  return response
+  const res = response.data
+  // if the custom code is not 0, it is judged as an error.
+  if (res.code !== 0) {
+
+    window.gvm.$toast(res.message || "Error")
+
+    // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
+    if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+      //登录失效重新登录操作，
+      //1、或者刷新token，获取新token，
+      //2、或者清除本地登录信息，跳转到登录页
+    }
+    return Promise.reject(new Error(res.message || "Error"))
+  } else {
+    return res
+  }
 }, error => {
   return Promise.reject(error)
 })
