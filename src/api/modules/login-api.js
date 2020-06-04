@@ -6,7 +6,7 @@
  * @LastEditTime: 2020-05-09 15:25:51
  */
 
-import commonApi from "../axios"
+import request from "../axios"
 
 /**
  * 用户反馈
@@ -16,7 +16,7 @@ import commonApi from "../axios"
  * @returns
  */
 export const prbAdd = function(params = {}, options = {}) {
-  return commonApi.post("/base/api/prb/add", {
+  return request.post("/base/api/prb/add", {
     data: params
   }, options).then(result => {
     return result.data

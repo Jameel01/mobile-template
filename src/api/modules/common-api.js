@@ -6,7 +6,7 @@
  * @LastEditTime: 2020-05-09 16:17:01
  */
 
-import commonApi from "../axios"
+import request from "../axios"
 /**
  * 获取用户信息
  *
@@ -15,7 +15,7 @@ import commonApi from "../axios"
  * @returns
  */
 export const getUserInfo = function(params = {}, options = {}) {
-  return commonApi.post("/usc/api/userAccount/getCurrentUser", {
+  return request.post("/usc/api/userAccount/getCurrentUser", {
     data: params
   }, options).then(result => {
     return result.data
@@ -29,7 +29,7 @@ export const getUserInfo = function(params = {}, options = {}) {
  * @returns
  */
 export const getUserInfo2 = function(params = {}, options = {}) {
-  return commonApi.post("/usc/api/userAccount/getCurrentUser", {
+  return request.post("/usc/api/userAccount/getCurrentUser", {
     data: params
   }, options).then(result => {
     return result.data
