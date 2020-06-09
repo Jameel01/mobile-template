@@ -1,5 +1,5 @@
 /*
- * @Description: 公共路由
+ * @Description: 公共路由，以下实例：请根据具体业务修改或无用删除
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
  * @LastEditors: chenyt

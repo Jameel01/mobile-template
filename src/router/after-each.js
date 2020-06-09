@@ -5,7 +5,7 @@
  * @LastEditors: guoruliang
  * @LastEditTime: 2020-04-09 17:08:16
  */
-import setTitle from "@/utils/setTitle"
+import setTitle from "@/utils/set-title"
 function afterEachHandler(to, from) {
   let { title } = to.meta
   title || (title = to.name)

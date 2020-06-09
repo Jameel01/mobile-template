@@ -6,29 +6,6 @@
  * @LastEditTime: 2018-12-12 13:37:30
  */
 
-import Cookies from 'js-cookie'
-
-
-/**
- * @msg: 存取token
- * @param {string} token
- */
-
-let cookieExpires = 1 //天数
-export const TOKEN_KEY = 'token'
-export const setToken = (token) => {
-  Cookies.set(TOKEN_KEY, token, {
-    expires: cookieExpires || 1
-  })
-}
-export const getToken = () => {
-  const token = Cookies.get(TOKEN_KEY)
-  if (token) {
-    return token
-  } else {
-    return false
-  }
-}
 
 /**
  * @param {String} url
