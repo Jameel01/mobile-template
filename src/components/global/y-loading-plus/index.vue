@@ -73,7 +73,7 @@ export default {
 <style lang='scss' scoped>
 // 加载框样式定义
 .project-loading {
-  background: #fbfbfb;
+  background: #fff;
   width: 100%;
   height: 100%;
   position: fixed;

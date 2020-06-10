@@ -6,3 +6,30 @@
  * @LastEditors: chenyt
  * @LastEditTime: 2020-05-29 14:00:22
 --> 
+<template>
+  <div class="page-home">
+    首页
+  </div>
+</template>
+<script>
+export default {
+  components: {},
+  name: "home",
+  watch: {},
+  props: {},
+  filters: {},
+  data() {
+    return { 
+    }
+  },
+  created() {},
+  mounted() {},
+  methods: {
+  },
+  destroyed() {}
+}
+</script>
+<style lang='scss' scoped>
+.page-home{}
+</style>
+
