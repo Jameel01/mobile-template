@@ -6,9 +6,9 @@
  * @LastEditTime: 2020-05-09 15:28:33
  */
 // 上传图片
-import commonApi from "../axios"
+import request from "../axios"
 export const uploadFile = formData => {
-  const res = commonApi.request({
+  const res = request.request({
     method: "post",
     url: "/upload",
     data: formData,
