@@ -45,10 +45,10 @@ Router.prototype.push = function push(location) {
 // 修改路由跳转报错的bug--end
 
 //常用过滤函数
-import * as filters from '@/filters'; 
+import * as filters from "@/filters" 
 Object.keys(filters).forEach((key) => {
-  Vue.filter(key, filters[key]);
-});
+  Vue.filter(key, filters[key])
+})
 // EventBus总线
 var EventBus = new Vue()
 Object.defineProperties(Vue.prototype, {
