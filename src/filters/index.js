@@ -5,7 +5,6 @@
  * @Last Modified by: hch
  * @Last Modified time: 2020-03-20 15:18:22
  */
-
 /**
  * 时间格式转换
  * @param {(Object|string|number)} time
@@ -119,20 +118,38 @@ export function mobile(tel) {
 /**
  *陈伟霆 => 陈*霆
  *陈伟 => 陈*
- *迪丽热巴 => 迪**巴
+ *迪丽热巴 => 迪丽*巴
  * @export
  * @param {*} name 名字
  * @returns
  */
+const doubleSurnname=[
+  "欧阳", "太史", "端木", "上官", "司马", "东方", "独孤", "南宫", "万俟", "闻人", "夏侯", "诸葛", "尉迟", "公羊", "赫连", "澹台",
+  "皇甫", "宗政", "濮阳", "公冶", "太叔", "申屠", "公孙", "慕容", "仲孙", "钟离", "长孙", "宇文", "司徒", "鲜于", "司空", "闾丘", "子车", "亓官", "司寇", "巫马", "公西", "颛孙", "壤驷", "公良", "漆雕", "乐正", "宰父", "谷梁", "拓跋", "夹谷", "轩辕", "令狐", "段干", "百里", "呼延", "东郭", "南门", "羊舌", "微生", "公户", "公玉", "公仪", "梁丘", "公仲", "公上", "公门", "公山", "公坚", "左丘", "公伯", "西门", "公祖", "第五", "公乘", "贯丘", "公皙", "南荣", "东里", "东宫", "仲长", "子书", "子桑", "即墨", "达奚", "褚师", "吴铭"
+]
 export function name(name) {
+  let fTwo=String(name).substr(0, 2),
+  fOne=String(name).substr(0, 1),
+  eOne=String(name).substr(name.length - 1),
+  ifDoubleSur=doubleSurnname.toString().indexOf(fTwo)>-1
   if (!name) {
     return false
   } else if (String(name).length === 2) {
-    return String(name).substr(0, 1) + "*"
+    return fOne + "*"
   } else if (String(name).length === 3) {
-    return String(name).substr(0, 1) + "*" + String(name).substr(name.length - 1)
-  } else {
-    return String(name).substr(0, 1) + "*" + "*" + String(name).substr(name.length - 1)
+    if (ifDoubleSur){ //复姓3个字
+      return fTwo + "*" 
+    } else {
+      return fOne + "*" + eOne
+    }
+  } else if (String(name).length === 4){ //复姓4个字
+    if (ifDoubleSur){ //复姓
+      return fTwo + "*" + eOne
+    } else {
+      return fOne + "*" + "*" + eOne
+    }
+  } else { //大于4个字
+    return fOne + "*" + "*" + eOne
   }
 }
 
@@ -147,11 +164,27 @@ export function idcard(idcard) {
   if (!idcard) {
     return ""
   } else if (idcard.length === 15) {
-    return String(idcard).substr(0, 8) + "******" + String(idcard).substr(idcard.length - 2)
+    return String(idcard).substr(0, 3) + "***********" + String(idcard).substr(idcard.length - 4)
   } else if (idcard.length === 18) {
-    return String(idcard).substr(0, 10) + "******" + String(idcard).substr(idcard.length - 2)
+    return String(idcard).substr(0, 3) + "***********" + String(idcard).substr(idcard.length - 4)
   } else if (idcard.length === 16) { // 社会保障号
-    return String(idcard).substr(0, 9) + "******" + String(idcard).substr(idcard.length - 2)
+    return String(idcard).substr(0, 3) + "***********" + String(idcard).substr(idcard.length - 4)
+  }
+}
+/**
+ *123456789012345678 => 123456789******78
+ *
+ * @export
+ * @param {*} str 字符串脱敏：前3后4
+ * @returns
+ */
+export function strf3e4(str) {
+  if (!str) {
+    return ""
+  } else if (str.length>7){
+    return String(str).substr(0, 3) + "***********" + String(str).substr(str.length - 4)
+  } else {
+    return str
   }
 }
 

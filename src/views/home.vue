@@ -8,7 +8,7 @@
 --> 
 <template>
   <div class="page-home">
-    首页
+    {{data | name}}
   </div>
 </template>
 <script>
@@ -20,6 +20,7 @@ export default {
   filters: {},
   data() {
     return { 
+      data: "上i市零零落落"
     }
   },
   created() {},
