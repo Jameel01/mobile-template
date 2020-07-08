@@ -3,11 +3,11 @@
  * @Autor: chenyt
  * @Date: 2020-03-22 12:04:29
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-07-08 14:00:06
+ * @LastEditTime: 2020-07-08 14:55:54
  */
 
 import request from "../axios"
-const basePath="/usc/api/userAccount"
+const basePath="/usc/api/userAccount"//本业务模块下的接口基础路径提取
 /**
  * 获取用户信息
  *
