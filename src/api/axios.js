@@ -2,19 +2,17 @@
  * @Description: 接口请求统一配置
  * @Autor: chenyt
  * @Date: 2020-03-21 21:18:41
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 15:32:30
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-07-08 14:31:44
  */
 import axios from "axios"
 import { getToken } from "@/utils/auth"
 // import Cookies from 'js-cookie'
 // 环境变量
-const API_BASEURL = process.env.BASE_URL//api基础路径
+const API_BASEURL = process.env.BASE_URL//api接口基础路径
 const CLIENT_TIMEOUT = process.env.VUE_APP_TIMEOUT || 8000//链接时间
-const MOCK_SERVER = process.env.VUE_APP_MOCK_SERVER || ""//mock
-const enableMock = process.env.VUE_APP_ENABLE_MOCK === "true"//是否开启mock
 const service = axios.create({
-  baseURL: enableMock ? MOCK_SERVER : API_BASEURL,
+  baseURL: API_BASEURL,
   timeout: CLIENT_TIMEOUT,
   headers: {
     "Content-Type": "application/json"

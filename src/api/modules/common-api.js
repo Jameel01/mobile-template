@@ -2,11 +2,12 @@
  * @Description: 放置基础接口
  * @Autor: chenyt
  * @Date: 2020-03-22 12:04:29
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-09 16:17:01
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-07-08 14:55:54
  */
 
 import request from "../axios"
+const basePath="/usc/api/userAccount"//本业务模块下的接口基础路径提取
 /**
  * 获取用户信息
  *
@@ -15,11 +16,9 @@ import request from "../axios"
  * @returns
  */
 export const getUserInfo = function(params = {}, options = {}) {
-  return request.post("/usc/api/userAccount/getCurrentUser", {
+  return request.post(`${basePath}/getCurrentUser`, {
     data: params
-  }, options).then(result => {
-    return result.data
-  })
+  }, options)
 }
 /**
  * 获取用户信息
@@ -29,9 +28,8 @@ export const getUserInfo = function(params = {}, options = {}) {
  * @returns
  */
 export const getUserInfo2 = function(params = {}, options = {}) {
-  return request.post("/usc/api/userAccount/getCurrentUser", {
+  return request.post(`${basePath}/getCurrentUser2`, {
     data: params
-  }, options).then(result => {
-    return result.data
-  })
+  }, options)
 }
+

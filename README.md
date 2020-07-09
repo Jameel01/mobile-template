@@ -109,3 +109,6 @@ import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
 * `@/utils/str-util.js`常用字符串函数
 * `@/utils/compress-file.js`压缩文件工具函数
 * `@/utils/detect.js`设备判断函数
+
+### 跟新日志
+* 更新设置vant样式标准被750px  --（更新时间：2020-07-09）
