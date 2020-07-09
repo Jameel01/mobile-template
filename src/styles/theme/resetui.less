@@ -1,9 +1,13 @@
-  
+/*
+ * @Description: 官方定义的颜色, 不建议在页面使用，页面可使用styles/theme-params.csss
+ * @Version: v1.0.0
+ * @Autor: xyDideo
+ * @Date: 2020-06-01 09:16:39
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-07-09 11:16:47
+ */ 
+//  vant 样式
 // Color Palette
-@blue: #3B71E8;
-@dark-blue: #285BCC;
-@border-radius-max:22px;
-
 @black: #000;
 @white: #fff;
 @gray-1: #f7f8fa;
@@ -15,60 +19,208 @@
 @gray-7: #646566;
 @gray-8: #323233;
 @red: #ee0a24;
+@blue: #1989fa;
 @orange: #ff976a;
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
 @green: #07c160;
 
-// Border
-@border-color: @gray-3;
-@border-width-base: 1px;
-@border-radius-sm: 2px;
-@border-radius-md: 4px;
-@border-radius-lg: 8px;
-@border-radius-max: 999px;
+// Gradient Colors
+@gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+@gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+@text-color: @gray-8;
+@active-color: @gray-2;
+@active-opacity: 0.7;
+@disabled-opacity: 0.5;
+@background-color: @gray-1;
+@background-color-light: #fafafa;
+@text-link-color: #576b95;
+
+// Padding
+@padding-base: 4px * @radio;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
 
 // Font
-@font-size-xs: 10px;
-@font-size-sm: 12px;
-@font-size-md: 14px;
-@font-size-lg: 16px;
+@font-size-xs: 10px * @radio;
+@font-size-sm: 12px * @radio;
+@font-size-md: 14px * @radio;
+@font-size-lg: 16px * @radio;
 @font-weight-bold: 500;
+@base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
+@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
+
+// Animation
+@animation-duration-base: 0.3s;
+@animation-duration-fast: 0.2s;
+@animation-timing-function-enter: ease-out;
+@animation-timing-function-leave: ease-in;
+
+// Border
+@border-color: @gray-3;
+@border-width-base: 1px * @radio;
+@border-radius-sm: 2px * @radio;
+@border-radius-md: 4px * @radio;
+@border-radius-lg: 8px * @radio;
+@border-radius-max: 999px * @radio;
+
+// ActionSheet
+@action-sheet-max-height: 80%;
+@action-sheet-header-height: 44px * @radio;
+@action-sheet-header-font-size: @font-size-lg;
+@action-sheet-description-color: @gray-6;
+@action-sheet-description-font-size: @font-size-md;
+@action-sheet-description-line-height: 20px * @radio;
+@action-sheet-item-height: 50px * @radio;
+@action-sheet-item-background: @white;
+@action-sheet-item-font-size: @font-size-lg;
+@action-sheet-item-text-color: @text-color;
+@action-sheet-item-disabled-text-color: @gray-5;
+@action-sheet-subname-color: @gray-6;
+@action-sheet-subname-font-size: @font-size-sm;
+@action-sheet-close-icon-size: 22px * @radio;
+@action-sheet-close-icon-color: @gray-5;
+@action-sheet-close-icon-active-color: @gray-6;
+@action-sheet-close-icon-padding: 0 @padding-md;
+@action-sheet-cancel-padding-top: @padding-xs;
+@action-sheet-cancel-padding-color: @background-color;
+
+// AddressEdit
+@address-edit-padding: @padding-sm;
+@address-edit-buttons-padding: @padding-xl @padding-base;
+@address-edit-button-margin-bottom: @padding-sm;
+@address-edit-detail-finish-color: @blue;
+@address-edit-detail-finish-font-size: @font-size-sm;
+
+// AddressList
+@address-list-padding: 12px * @radio 12px * @radio 100px * @radio;
+@address-list-disabled-text-color: @gray-6;
+@address-list-disabled-text-padding: @padding-base * 5 0 @padding-md;
+@address-list-disabled-text-font-size: @font-size-md;
+@address-list-disabled-text-line-height: 20px * @radio;
+@address-list-add-button-z-index: 999;
+@address-list-item-padding: @padding-sm;
+@address-list-item-text-color: @text-color;
+@address-list-item-disabled-text-color: @gray-5;
+@address-list-item-font-size: 13px * @radio;
+@address-list-item-line-height: 18px * @radio;
+@address-list-item-radio-icon-color: @red;
+@address-list-edit-icon-size: 20px * @radio;
 
 // Button
-@button-large-height: 44px;
-@button-large-line-height: 44px;
-@button-default-height: 44px;
-@button-default-line-height: 42px;
+@button-mini-height: 24px * @radio;
+@button-mini-font-size: @font-size-xs;
+@button-small-height: 32px * @radio;
+@button-small-font-size: @font-size-sm;
+@button-normal-font-size: @font-size-md;
+@button-large-height: 50px * @radio;
+@button-default-height: 44px * @radio;
+@button-default-line-height: 1.2;
+@button-default-font-size: @font-size-lg;
+@button-default-color: @text-color;
+@button-default-background-color: @white;
+@button-default-border-color: @border-color;
 @button-primary-color: @white;
-@button-primary-background-color: @dark-blue;
-@button-primary-border-color: @dark-blue;
-@button-normal-font-size: 16px;
-@button-round-border-radius: @border-radius-max;
-@button-disabled-opacity: 1;
+@button-primary-background-color: @green;
+@button-primary-border-color: @green;
+@button-info-color: @white;
 @button-info-background-color: @blue;
 @button-info-border-color: @blue;
-@button-plain-color: @blue;
+@button-danger-color: @white;
+@button-danger-background-color: @red;
+@button-danger-border-color: @red;
+@button-warning-color: @white;
+@button-warning-background-color: @orange;
+@button-warning-border-color: @orange;
+@button-border-width: @border-width-base;
+@button-border-radius: @border-radius-sm;
+@button-round-border-radius: @border-radius-max;
+@button-plain-background-color: @white;
+@button-disabled-opacity: @disabled-opacity;
 
+// Calendar
+@calendar-background-color: @white;
+@calendar-popup-height: 80%;
+@calendar-header-box-shadow: 0 2px * @radio 10px * @radio rgba(125, 126, 128, 0.16);
+@calendar-header-title-height: 44px * @radio;
+@calendar-header-title-font-size: @font-size-lg;
+@calendar-header-subtitle-font-size: @font-size-md;
+@calendar-weekdays-height: 30px * @radio;
+@calendar-weekdays-font-size: @font-size-sm;
+@calendar-month-title-font-size: @font-size-md;
+@calendar-month-mark-color: fade(@gray-2, 80%);
+@calendar-month-mark-font-size: 160px * @radio;
+@calendar-day-height: 64px * @radio;
+@calendar-day-font-size: @font-size-lg;
+@calendar-range-edge-color: @white;
+@calendar-range-edge-background-color: @red;
+@calendar-range-middle-color: @red;
+@calendar-range-middle-background-opacity: 0.1;
+@calendar-selected-day-size: 54px * @radio;
+@calendar-selected-day-color: @white;
+@calendar-info-font-size: @font-size-xs;
+@calendar-info-line-height: 14px * @radio;
+@calendar-selected-day-background-color: @red;
+@calendar-day-disabled-color: @gray-5;
+@calendar-confirm-button-height: 36px * @radio;
+@calendar-confirm-button-margin: 7px * @radio 0;
 
+// Card
+@card-padding: @padding-xs @padding-md;
+@card-font-size: @font-size-sm;
+@card-text-color: @text-color;
+@card-background-color: @background-color-light;
+@card-thumb-size: 88px * @radio;
+@card-thumb-border-radius: @border-radius-lg;
+@card-title-line-height: 16px * @radio;
+@card-desc-color: @gray-7;
+@card-desc-line-height: 20px * @radio;
+@card-price-color: @gray-8;
+@card-origin-price-color: @gray-6;
+@card-num-color: @gray-6;
+@card-origin-price-font-size: @font-size-xs;
+@card-price-font-size: @font-size-sm;
+@card-price-integer-font-size: @font-size-lg;
+@card-price-font-family: @price-integer-font-family;
 
+// Cell
+@cell-font-size: @font-size-md;
+@cell-line-height: 24px * @radio;
+@cell-vertical-padding: 10px * @radio;
+@cell-horizontal-padding: @padding-md;
+@cell-text-color: @text-color;
+@cell-background-color: @white;
+@cell-border-color: @border-color;
+@cell-active-color: @active-color;
+@cell-required-color: @red;
+@cell-label-color: @gray-6;
+@cell-label-font-size: @font-size-sm;
+@cell-label-line-height: 18px * @radio;
+@cell-label-margin-top: @padding-base;
+@cell-value-color: @gray-6;
+@cell-icon-size: 16px * @radio;
+@cell-right-icon-color: @gray-6;
+@cell-large-vertical-padding: @padding-sm;
+@cell-large-title-font-size: @font-size-lg;
+@cell-large-label-font-size: @font-size-md;
 
-// Search
-@search-padding: 10px @padding-sm;
-@search-background-color: @white;
-@search-content-background-color: @gray-1;
-@search-input-height: 34px;
-@search-label-padding: 0 5px;
-@search-label-color: @text-color;
-@search-label-font-size:@font-size-sm;
-@search-left-icon-color: @gray-6;
-@search-action-padding: 0 @padding-xs;
-@search-action-text-color: @text-color;
-@search-action-font-size: @font-size-sm;
-
+// CellGroup
+@cell-group-background-color: @white;
+@cell-group-title-color: @gray-6;
+@cell-group-title-padding: @padding-md @padding-md @padding-xs;
+@cell-group-title-font-size: @font-size-md;
+@cell-group-title-line-height: 16px * @radio;
 
 // Checkbox
-@checkbox-size: 20px;
+@checkbox-size: 20px * @radio;
 @checkbox-border-color: @gray-5;
 @checkbox-transition-duration: @animation-duration-fast;
 @checkbox-label-margin: @padding-xs;
@@ -78,8 +230,355 @@
 @checkbox-disabled-label-color: @gray-5;
 @checkbox-disabled-background-color: @border-color;
 
+// Circle
+@circle-text-color: @text-color;
+@circle-text-font-weight: @font-weight-bold;
+@circle-text-font-size: @font-size-md;
+@circle-text-line-height: 18px * @radio;
+
+// Collapse
+@collapse-item-transition-duration: @animation-duration-base;
+@collapse-item-content-padding: @padding-sm @padding-md;
+@collapse-item-content-font-size: 14px * @radio;
+@collapse-item-content-line-height: 1.5;
+@collapse-item-content-text-color: @gray-6;
+@collapse-item-content-background-color: @white;
+@collapse-item-title-disabled-color: @gray-5;
+
+// ContactCard
+@contact-card-padding: @padding-md;
+@contact-card-add-icon-size: 40px * @radio;
+@contact-card-add-icon-color: @blue;
+@contact-card-value-line-height: 20px * @radio;
+
+// ContactEdit
+@contact-edit-padding: @padding-md;
+@contact-edit-fields-radius: @border-radius-md;
+@contact-edit-buttons-padding: @padding-xl 0;
+@contact-edit-button-margin-bottom: @padding-sm;
+@contact-edit-button-font-size: 16px * @radio;
+@contact-edit-field-label-width: 4em;
+
+// ContactList
+@contact-list-edit-icon-size: 16px * @radio;
+@contact-list-add-button-z-index: 999;
+@contact-list-item-padding: @padding-md;
+
+// CountDown
+@count-down-text-color: @text-color;
+@count-down-font-size: @font-size-md;
+@count-down-line-height: 20px * @radio;
+
+// Coupon
+@coupon-margin: 0 @padding-sm @padding-sm;
+@coupon-content-height: 84px * @radio;
+@coupon-content-padding: 14px * @radio 0;
+@coupon-background-color: @white;
+@coupon-active-background-color: @active-color;
+@coupon-border-radius: @border-radius-lg;
+@coupon-box-shadow: 0 0 4px * @radio rgba(0, 0, 0, 0.1);
+@coupon-head-width: 96px * @radio;
+@coupon-amount-color: @red;
+@coupon-amount-font-size: 30px * @radio;
+@coupon-currency-font-size: 40%;
+@coupon-name-font-size: @font-size-md;
+@coupon-disabled-text-color: @gray-6;
+@coupon-description-padding: @padding-xs @padding-md;
+@coupon-description-border-color: @border-color;
+
+// CouponCell
+@coupon-cell-selected-text-color: @text-color;
+
+// CouponList
+@coupon-list-background-color: @background-color;
+@coupon-list-field-padding: 5px * @radio 0 5px * @radio @padding-md;
+@coupon-list-exchange-button-height: 32px * @radio;
+@coupon-list-close-button-height: 40px * @radio;
+@coupon-list-empty-image-size: 200px * @radio;
+@coupon-list-empty-tip-color: @gray-6;
+@coupon-list-empty-tip-font-size: @font-size-md;
+@coupon-list-empty-tip-line-height: 20px * @radio;
+
+// Dialog
+@dialog-width: 320px * @radio;
+@dialog-small-screen-width: 90%;
+@dialog-font-size: @font-size-lg;
+@dialog-transition: @animation-duration-base;
+@dialog-border-radius: 16px * @radio;
+@dialog-background-color: @white;
+@dialog-header-font-weight: @font-weight-bold;
+@dialog-header-line-height: 24px * @radio;
+@dialog-header-padding-top: @padding-lg;
+@dialog-header-isolated-padding: @padding-lg 0;
+@dialog-message-padding: @padding-lg;
+@dialog-message-font-size: @font-size-md;
+@dialog-message-line-height: 20px * @radio;
+@dialog-message-max-height: 60vh;
+@dialog-has-title-message-text-color: @gray-7;
+@dialog-has-title-message-padding-top: @padding-sm;
+@dialog-confirm-button-text-color: @blue;
+
+// Divider
+@divider-margin: @padding-md 0;
+@divider-text-color: @gray-6;
+@divider-font-size: @font-size-md;
+@divider-line-height: 24px * @radio;
+@divider-border-color: @border-color;
+@divider-content-padding: @padding-md;
+@divider-content-left-width: 10%;
+@divider-content-right-width: 10%;
+
+// DropdownMenu
+@dropdown-menu-height: 48px * @radio;
+@dropdown-menu-background-color: @white;
+@dropdown-menu-title-font-size: 15px * @radio;
+@dropdown-menu-title-text-color: @text-color;
+@dropdown-menu-title-active-text-color: @blue;
+@dropdown-menu-title-disabled-text-color: @gray-6;
+@dropdown-menu-title-padding: 0 @padding-xs;
+@dropdown-menu-title-line-height: 22px * @radio;
+@dropdown-menu-option-active-color: @blue;
+@dropdown-menu-content-max-height: 80%;
+@dropdown-item-z-index: 10;
+
+// Empty
+@empty-padding: @padding-xl 0;
+@empty-image-size: 160px * @radio;
+@empty-description-margin-top: @padding-md;
+@empty-description-padding: 0 60px * @radio;
+@empty-description-color: @gray-6;
+@empty-description-font-size: 14px * @radio;
+@empty-description-line-height: 20px * @radio;
+@empty-bottom-margin-top: 24px * @radio;
+
+// Field
+@field-label-width: 6em;
+@field-label-color: @gray-7;
+@field-label-margin-right: @padding-sm;
+@field-input-text-color: @text-color;
+@field-input-error-text-color: @red;
+@field-input-disabled-text-color: @gray-5;
+@field-placeholder-text-color: @gray-5;
+@field-icon-size: 16px * @radio;
+@field-clear-icon-size: 16px * @radio;
+@field-clear-icon-color: @gray-5;
+@field-right-icon-color: @gray-6;
+@field-error-message-color: @red;
+@field-error-message-text-color: 12px * @radio;
+@field-text-area-min-height: 60px * @radio;
+@field-word-limit-color: @gray-7;
+@field-word-limit-font-size: @font-size-sm;
+@field-word-limit-line-height: 16px * @radio;
+@field-disabled-text-color: @gray-5;
+
+// GridItem
+@grid-item-content-padding: @padding-md @padding-xs;
+@grid-item-content-background-color: @white;
+@grid-item-content-active-color: @active-color;
+@grid-item-icon-size: 28px * @radio;
+@grid-item-text-color: @gray-7;
+@grid-item-text-font-size: @font-size-sm;
+
+// GoodsAction
+@goods-action-background-color: @white;
+@goods-action-height: 50px * @radio;
+@goods-action-icon-width: 48px * @radio;
+@goods-action-icon-height: 100%;
+@goods-action-icon-color: @text-color;
+@goods-action-icon-size: 18px * @radio;
+@goods-action-icon-font-size: @font-size-xs;
+@goods-action-icon-active-color: @active-color;
+@goods-action-icon-text-color: @gray-7;
+@goods-action-button-height: 40px * @radio;
+@goods-action-button-warning-color: @gradient-orange;
+@goods-action-button-danger-color: @gradient-red;
+
+// IndexAnchor
+@index-anchor-z-index: 1;
+@index-anchor-padding: 0 @padding-md;
+@index-anchor-text-color: @text-color;
+@index-anchor-font-weight: @font-weight-bold;
+@index-anchor-font-size: @font-size-md;
+@index-anchor-line-height: 32px * @radio;
+@index-anchor-background-color: transparent;
+@index-anchor-sticky-text-color: @green;
+@index-anchor-sticky-background-color: @white;
+
+// IndexBar
+@index-bar-sidebar-z-index: 2;
+@index-bar-index-font-size: @font-size-xs;
+@index-bar-index-line-height: 14px * @radio;
+@index-bar-index-active-color: @green;
+
+// Info
+@info-size: 16px * @radio;
+@info-color: @white;
+@info-padding: 0 3px * @radio;
+@info-font-size: @font-size-sm;
+@info-font-weight: @font-weight-bold;
+@info-border-width: @border-width-base;
+@info-background-color: @red;
+@info-dot-color: @red;
+@info-dot-size: 8px * @radio;
+@info-font-family: @price-integer-font-family;
+
+// Image
+@image-placeholder-text-color: @gray-6;
+@image-placeholder-font-size: @font-size-md;
+@image-placeholder-background-color: @background-color;
+@image-loading-icon-size: 22px * @radio;
+@image-error-icon-size: 22px * @radio;
+
+// ImagePreview
+@image-preview-index-text-color: @white;
+@image-preview-index-font-size: @font-size-md;
+@image-preview-index-line-height: 22px * @radio;
+@image-preview-index-text-shadow: 0 1px * @radio 1px * @radio @gray-8;
+@image-preview-overlay-background-color: rgba(0, 0, 0, 0.9);
+@image-preview-close-icon-size: 22px * @radio;
+@image-preview-close-icon-color: @gray-5;
+@image-preview-close-icon-active-color: @gray-6;
+@image-preview-close-icon-margin: @padding-md;
+@image-preview-close-icon-z-index: 1;
+
+// List
+@list-icon-margin-right: 5px * @radio;
+@list-text-color: @gray-6;
+@list-text-font-size: @font-size-md;
+@list-text-line-height: 50px * @radio;
+
+// Loading
+@loading-text-color: @gray-6;
+@loading-text-font-size: @font-size-md;
+@loading-spinner-color: @gray-5;
+@loading-spinner-size: 30px * @radio;
+@loading-spinner-animation-duration: 0.8s;
+
+// NavBar
+@nav-bar-height: 46px * @radio;
+@nav-bar-background-color: @white;
+@nav-bar-arrow-size: 16px * @radio;
+@nav-bar-icon-color: @blue;
+@nav-bar-text-color: @blue;
+@nav-bar-title-font-size: @font-size-lg;
+@nav-bar-title-text-color: @text-color;
+@nav-bar-z-index: 1;
+
+// NoticeBar
+@notice-bar-height: 40px * @radio;
+@notice-bar-padding: 0 @padding-md;
+@notice-bar-wrapable-padding: @padding-xs @padding-md;
+@notice-bar-text-color: @orange-dark;
+@notice-bar-font-size: @font-size-md;
+@notice-bar-line-height: 24px * @radio;
+@notice-bar-background-color: @orange-light;
+@notice-bar-icon-size: 16px * @radio;
+@notice-bar-icon-min-width: 24px * @radio;
+
+// Notify
+@notify-text-color: @white;
+@notify-padding: @padding-xs @padding-md;
+@notify-font-size: @font-size-md;
+@notify-line-height: 20px * @radio;
+@notify-primary-background-color: @blue;
+@notify-success-background-color: @green;
+@notify-danger-background-color: @red;
+@notify-warning-background-color: @orange;
+
+// NumberKeyboard
+@number-keyboard-background-color: @gray-2;
+@number-keyboard-key-height: 56px * @radio;
+@number-keyboard-key-font-size: 28px * @radio;
+@number-keyboard-key-active-color: @gray-3;
+@number-keyboard-delete-font-size: @font-size-lg;
+@number-keyboard-title-color: @gray-7;
+@number-keyboard-title-height: 30px * @radio;
+@number-keyboard-title-font-size: @font-size-md;
+@number-keyboard-close-padding: 0 @padding-md;
+@number-keyboard-close-color: @text-link-color;
+@number-keyboard-close-font-size: @font-size-md;
+@number-keyboard-button-text-color: @white;
+@number-keyboard-button-background-color: @blue;
+@number-keyboard-cursor-color: @text-color;
+@number-keyboard-cursor-width: 1px * @radio;
+@number-keyboard-cursor-height: 40%;
+@number-keyboard-cursor-animation-duration: 1s;
+@number-keyboard-z-index: 100;
+
+// Overlay
+@overlay-z-index: 1;
+@overlay-background-color: rgba(0, 0, 0, 0.7);
+
+// Pagination
+@pagination-height: 40px * @radio;
+@pagination-font-size: @font-size-md;
+@pagination-item-width: 36px * @radio;
+@pagination-item-default-color: @blue;
+@pagination-item-disabled-color: @gray-7;
+@pagination-item-disabled-background-color: @background-color;
+@pagination-background-color: @white;
+@pagination-desc-color: @gray-7;
+@pagination-disabled-opacity: @disabled-opacity;
+
+// Panel
+@panel-background-color: @white;
+@panel-header-value-color: @red;
+@panel-footer-padding: @padding-xs @padding-md;
+
+// PasswordInput
+@password-input-height: 50px * @radio;
+@password-input-margin: 0 @padding-md;
+@password-input-font-size: 20px * @radio;
+@password-input-border-radius: 6px * @radio;
+@password-input-background-color: @white;
+@password-input-info-color: @gray-6;
+@password-input-info-font-size: @font-size-md;
+@password-input-error-info-color: @red;
+@password-input-dot-size: 10px * @radio;
+@password-input-dot-color: @black;
+
+// Picker
+@picker-background-color: @white;
+@picker-toolbar-height: 44px * @radio;
+@picker-title-font-size: @font-size-lg;
+@picker-title-line-height: 20px * @radio;
+@picker-action-padding: 0 @padding-md;
+@picker-action-font-size: @font-size-md;
+@picker-confirm-action-color: @text-link-color;
+@picker-cancel-action-color: @gray-6;
+@picker-option-font-size: @font-size-lg;
+@picker-option-text-color: @black;
+@picker-option-disabled-opacity: 0.3;
+@picker-loading-icon-color: @blue;
+@picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+
+// Popup
+@popup-background-color: @white;
+@popup-transition: transform @animation-duration-base;
+@popup-round-border-radius: 20px * @radio;
+@popup-close-icon-size: 22px * @radio;
+@popup-close-icon-color: @gray-5;
+@popup-close-icon-active-color: @gray-6;
+@popup-close-icon-margin: 16px * @radio;
+@popup-close-icon-z-index: 1;
+
+// Progress
+@progress-height: 4px * @radio;
+@progress-color: @blue;
+@progress-background-color: @gray-3;
+@progress-pivot-padding: 0 5px * @radio;
+@progress-pivot-text-color: @white;
+@progress-pivot-font-size: @font-size-xs;
+@progress-pivot-line-height: 1.6;
+@progress-pivot-background-color: @blue;
+
+// PullRefresh
+@pull-refresh-head-height: 50px * @radio;
+@pull-refresh-head-font-size: @font-size-md;
+@pull-refresh-head-text-color: @gray-6;
+
 // Radio
-@radio-size: 20px;
+@radio-size: 20px * @radio;
 @radio-border-color: @gray-5;
 @radio-transition-duration: @animation-duration-fast;
 @radio-label-margin: @padding-xs;
@@ -89,67 +588,443 @@
 @radio-disabled-label-color: @gray-5;
 @radio-disabled-background-color: @border-color;
 
+// Rate
+@rate-icon-size: 20px * @radio;
+@rate-icon-gutter: @padding-base;
+@rate-icon-void-color: @gray-5;
+@rate-icon-full-color: @red;
+@rate-icon-disabled-color: @gray-5;
+
+// ShareSheet
+@share-sheet-header-padding: @padding-sm @padding-md @padding-base;
+@share-sheet-title-color: @text-color;
+@share-sheet-title-font-size: @font-size-md;
+@share-sheet-title-line-height: 20px * @radio;
+@share-sheet-description-color: @gray-6;
+@share-sheet-description-font-size: @font-size-sm;
+@share-sheet-description-line-height: 16px * @radio;
+@share-sheet-icon-size: 48px * @radio;
+@share-sheet-option-name-color: @gray-7;
+@share-sheet-option-name-font-size: @font-size-sm;
+@share-sheet-option-description-color: @gray-5;
+@share-sheet-option-description-font-size: @font-size-sm;
+@share-sheet-cancel-button-font-size: @font-size-lg;
+@share-sheet-cancel-button-height: 48px * @radio;
+@share-sheet-cancel-button-background: @white;
+
+// Search
+@search-padding: 10px * @radio @padding-sm;
+@search-background-color: @white;
+@search-content-background-color: @gray-1;
+@search-input-height: 34px * @radio;
+@search-label-padding: 0 5px * @radio;
+@search-label-color: @text-color;
+@search-label-font-size: @font-size-md;
+@search-left-icon-color: @gray-6;
+@search-action-padding: 0 @padding-xs;
+@search-action-text-color: @text-color;
+@search-action-font-size: @font-size-md;
+
+// Sidebar
+@sidebar-width: 85px * @radio;
+
+// SidebarItem
+@sidebar-font-size: @font-size-md;
+@sidebar-line-height: 20px * @radio;
+@sidebar-text-color: @text-color;
+@sidebar-disabled-text-color: @gray-5;
+@sidebar-padding: 20px * @radio @padding-sm;
+@sidebar-active-color: @active-color;
+@sidebar-background-color: @background-color;
+@sidebar-selected-font-weight: @font-weight-bold;
+@sidebar-selected-text-color: @text-color;
+@sidebar-selected-border-width: 4px * @radio;
+@sidebar-selected-border-height: 16px * @radio;
+@sidebar-selected-border-color: @red;
+@sidebar-selected-background-color: @white;
+
+// Skeleton
+@skeleton-row-height: 16px * @radio;
+@skeleton-row-background-color: @active-color;
+@skeleton-row-margin-top: @padding-sm;
+@skeleton-avatar-background-color: @active-color;
+@skeleton-animation-duration: 1.2s;
+
+// Slider
+@slider-active-background-color: @blue;
+@slider-inactive-background-color: @gray-3;
+@slider-disabled-opacity: @disabled-opacity;
+@slider-bar-height: 2px * @radio;
+@slider-button-width: 24px * @radio;
+@slider-button-height: 24px * @radio;
+@slider-button-border-radius: 50%;
+@slider-button-background-color: @white;
+@slider-button-box-shadow: 0 1px * @radio 2px * @radio rgba(0, 0, 0, 0.5);
+
+// Step
+@step-text-color: @gray-6;
+@step-active-color: @green;
+@step-process-text-color: @text-color;
+@step-font-size: @font-size-md;
+@step-line-color: @border-color;
+@step-finish-line-color: @green;
+@step-finish-text-color: @text-color;
+@step-icon-size: 12px * @radio;
+@step-circle-size: 5px * @radio;
+@step-circle-color: @gray-6;
+@step-horizontal-title-font-size: @font-size-sm;
+
+// Steps
+@steps-background-color: @white;
+
+// Sticky
+@sticky-z-index: 99;
+
+// Stepper
+@stepper-active-color: #e8e8e8;
+@stepper-background-color: @active-color;
+@stepper-button-icon-color: @text-color;
+@stepper-button-disabled-color: @background-color;
+@stepper-button-disabled-icon-color: @gray-5;
+@stepper-button-round-theme-color: @red;
+@stepper-input-width: 32px * @radio;
+@stepper-input-height: 28px * @radio;
+@stepper-input-font-size: @font-size-md;
+@stepper-input-line-height: normal;
+@stepper-input-text-color: @text-color;
+@stepper-input-disabled-text-color: @gray-5;
+@stepper-input-disabled-background-color: @active-color;
+@stepper-border-radius: @border-radius-md;
+
+// SubmitBar
+@submit-bar-height: 50px * @radio;
+@submit-bar-z-index: 100;
+@submit-bar-background-color: @white;
+@submit-bar-button-width: 110px * @radio;
+@submit-bar-price-color: @red;
+@submit-bar-price-font-size: @font-size-md;
+@submit-bar-currency-font-size: @font-size-md;
+@submit-bar-text-color: @text-color;
+@submit-bar-text-font-size: @font-size-md;
+@submit-bar-tip-padding: @padding-xs @padding-sm;
+@submit-bar-tip-font-size: @font-size-sm;
+@submit-bar-tip-line-height: 1.5;
+@submit-bar-tip-color: #f56723;
+@submit-bar-tip-background-color: #fff7cc;
+@submit-bar-tip-icon-size: 12px * @radio;
+@submit-bar-button-height: 40px * @radio;
+@submit-bar-padding: 0 @padding-md;
+@submit-bar-price-integer-font-size: 20px * @radio;
+@submit-bar-price-font-family: @price-integer-font-family;
+
+// Swipe
+@swipe-indicator-size: 6px * @radio;
+@swipe-indicator-margin: @padding-sm;
+@swipe-indicator-active-opacity: 1;
+@swipe-indicator-inactive-opacity: 0.3;
+@swipe-indicator-active-background-color: @blue;
+@swipe-indicator-inactive-background-color: @border-color;
+
 // Switch
-@switch-size: 30px;
+@switch-size: 30px * @radio;
 @switch-width: 2em;
 @switch-height: 1em;
 @switch-node-size: 1em;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
-@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
-  0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+@switch-node-box-shadow: 0 3px * @radio 1px * @radio 0 rgba(0, 0, 0, 0.05),
+  0 2px * @radio 2px * @radio 0 rgba(0, 0, 0, 0.1), 0 3px * @radio 3px * @radio 0 rgba(0, 0, 0, 0.05);
 @switch-background-color: @white;
 @switch-on-background-color: @blue;
 @switch-transition-duration: @animation-duration-base;
 @switch-disabled-opacity: @disabled-opacity;
 @switch-border: @border-width-base solid rgba(0, 0, 0, 0.1);
 
-// Search
-@search-padding: 8px 16px;
-@search-background-color: @white;
-@search-content-background-color: #F5F7FA;
-@border-radius-sm: 14px;
-@search-input-height: 34px;
-@search-label-padding: 0 5px;
-@search-label-color: @text-color;
-@search-label-font-size: @font-size-md;
-@search-left-icon-color: @gray-6;
-@search-action-padding: 0 16px 0 8px;
-@search-action-text-color: @text-color;
-@search-action-font-size: @font-size-md;
+// SwitchCell
+@switch-cell-padding-top: @cell-vertical-padding - 1px * @radio;
+@switch-cell-padding-bottom: @cell-vertical-padding - 1px * @radio;
+@switch-cell-large-padding-top: @cell-large-vertical-padding - 1px * @radio;
+@switch-cell-large-padding-bottom: @cell-large-vertical-padding - 1px * @radio;
 
-//inputItem
-@cell-horizontal-padding: 16px;
-@cell-vertical-padding: 13px;
-@cell-text-color: #333333;
-@cell-font-size: 16px;
-@cell-line-height: 22px;
+// Tabbar
+@tabbar-height: 50px * @radio;
+@tabbar-z-index: 1;
+@tabbar-background-color: @white;
+
+// TabbarItem
+@tabbar-item-font-size: @font-size-sm;
+@tabbar-item-text-color: @gray-7;
+@tabbar-item-active-color: @blue;
+@tabbar-item-line-height: 1;
+@tabbar-item-icon-size: 18px * @radio;
+@tabbar-item-margin-bottom: 5px * @radio;
+
+// Tab
+@tab-text-color: @gray-7;
+@tab-active-text-color: @text-color;
+@tab-disabled-text-color: @gray-5;
+@tab-font-size: @font-size-md;
+
+// Tabs
+@tabs-default-color: @red;
+@tabs-line-height: 44px * @radio;
+@tabs-card-height: 30px * @radio;
+@tabs-nav-background-color: @white;
+@tabs-bottom-bar-height: 3px * @radio;
+@tabs-bottom-bar-color: @tabs-default-color;
+
+// Tag
+@tag-padding: 0.2em 0.5em;
+@tag-font-size: @font-size-xs;
+@tag-medium-font-size: @font-size-sm;
+@tag-large-font-size: @font-size-md;
+@tag-text-color: @white;
+@tag-border-radius: 0.2em;
+@tag-round-border-radius: @border-radius-max;
+@tag-danger-color: @red;
+@tag-primary-color: @blue;
+@tag-success-color: @green;
+@tag-warning-color: @orange;
+@tag-default-color: @gray-6;
+@tag-plain-background-color: @white;
+
+// Toast
+@toast-max-width: 70%;
+@toast-font-size: @font-size-md;
+@toast-text-color: @white;
+@toast-loading-icon-color: @white;
+@toast-line-height: 20px * @radio;
+@toast-border-radius: @border-radius-lg;
+@toast-background-color: fade(@text-color, 88%);
+@toast-icon-size: 40px * @radio;
+@toast-text-min-width: 96px * @radio;
+@toast-text-padding: @padding-xs @padding-sm;
+@toast-default-padding: @padding-md;
+@toast-default-width: 88px * @radio;
+@toast-default-min-height: 88px * @radio;
+@toast-position-top-distance: 50px * @radio;
+@toast-position-bottom-distance: 50px * @radio;
+
+// TreeSelect
+@tree-select-font-size: @font-size-md;
+@tree-select-nav-background-color: @background-color;
+@tree-select-content-background-color: @white;
+@tree-select-nav-item-padding: 14px * @radio @padding-sm;
+@tree-select-item-height: 48px * @radio;
+@tree-select-item-active-color: @red;
+@tree-select-item-disabled-color: @gray-5;
+@tree-select-item-selected-size: 16px * @radio;
 
 // Uploader
-@uploader-delete-color: #333333;
-@uploader-upload-border-radius: 2px;
+@uploader-size: 80px * @radio;
+@uploader-icon-size: 24px * @radio;
+@uploader-icon-color: @gray-4;
+@uploader-text-color: @gray-6;
+@uploader-text-font-size: @font-size-sm;
+@uploader-upload-border-radius: 8px * @radio;
+@uploader-upload-background-color: @gray-1;
+@uploader-upload-active-color: @active-color;
+@uploader-delete-color: @gray-6;
+@uploader-delete-icon-size: 18px * @radio;
+@uploader-delete-background-color: @white;
+@uploader-file-background-color: @background-color;
+@uploader-file-icon-size: 20px * @radio;
+@uploader-file-icon-color: @gray-7;
+@uploader-file-name-padding: 0 @padding-base;
+@uploader-file-name-margin-top: @padding-xs;
+@uploader-file-name-font-size: @font-size-sm;
+@uploader-file-name-text-color: @gray-7;
+@uploader-mask-background-color: fade(@gray-8, 88%);
+@uploader-mask-icon-size: 22px * @radio;
+@uploader-mask-message-font-size: @font-size-sm;
+@uploader-mask-message-line-height: 14px * @radio;
+@uploader-loading-icon-size: 22px * @radio;
+@uploader-loading-icon-color: @white;
+@uploader-disabled-opacity: @disabled-opacity;
+
+// Sku
+@sku-item-background-color: @background-color;
+@sku-icon-gray-color: @gray-4;
+@sku-upload-mask-color: rgba(50, 50, 51, 0.8);
+
+
+// 医保主题设置
+// Color Palette
+@blue: #3b71e8; // 常规蓝 使用这个 ->  $blue_color
+@dark-blue: #285bcc; // 深蓝 使用这个 ->  $dark_blue_color
+@radio:2;
+@border-radius-max:22px * @radio;
+@light-blue: #5D88E8;
+
+@black: #000;
+@white: #fff;
+@gray-1: #f5f7fa; // 使用这个 ->  $second_border_color
+@gray-2: #f2f6fc; // 使用这个 ->  $second_border_color
+@gray-3: rgba(0,0,0,0.1); // 使用这个 ->  $second_border_color
+@gray-4: #cecece; // 使用这个 ->  $four_text_color
+
+@gray-5: #c0c4cc; // 使用这个 ->  $four_text_color
+@gray-6: #909399; // 使用这个 ->  $third_text_color
+@gray-7: #606266; // 使用这个 ->  $second_text_color
+@gray-8: #303133; // 使用这个 ->  $main_text_color
+
+@red: #f56c6c; // 常规红危险色 使用这个 ->  $danger_color
+@orange: #feb70f; // 常规橙警告色 使用这个 ->  $warn_color
+@orange-dark: #e6a23c; // 深蓝 使用这个 ->  $dark_warn_color
+@orange-light: #fff7ed; // 浅橙 使用这个 ->  $light_warn_color
+@green: #28c663; // 常规绿成功色 使用这个 ->  $success_color
+
+// Border
+@border-color: @gray-3;
+@border-width-base: 1px * @radio;
+@border-radius-sm: 2px * @radio;
+@border-radius-md: 4px * @radio;
+@border-radius-lg: 8px * @radio;
+@border-radius-max: 999px * @radio;
+
+// Font
+@font-size-xs: 8px * @radio;
+@font-size-sm: 12px * @radio;
+@font-size-md: 14px * @radio;
+@font-size-lg: 16px * @radio;
+@font-weight-bold: 500;
+
+// 其他
+@padding-xs: 8px * @radio;
+@padding-sm: 12px * @radio;
+@padding-md: 16px * @radio;
+@animation-duration-fast: 200ms;
+@animation-duration-base: 460ms;
+@disabled-opacity: 0.4;
+
+/************************* 按钮重置开始 *************************/
+// Button
+@button-large-height: 44px * @radio;
+@button-large-line-height: 42px * @radio;
+@button-default-height: 44px * @radio;
+@button-default-line-height: 44px * @radio;
+
+// 成功按钮
+@button-primary-color: #ffffff;
+@button-primary-background-color: @green;
+@button-primary-border-color: @green;
+
+@button-normal-font-size: 16px * @radio;
+@button-default-font-size: 16px * @radio;
+@button-round-border-radius: @border-radius-max;
+@button-disabled-opacity: @disabled-opacity;
+@button-info-background-color: @blue;
+@button-info-border-color: @blue;
+@button-plain-color: @blue;
+@button-border-radius: 50%;
+@button-default-color: @blue;
+/************************* 按钮重置结束 *************************/
+
+// Search
+@search-padding: 0px * @radio 16px * @radio; // 左右页面边距
+@search-background-color: @white;
+@search-content-background-color: @gray-1;
+@border-radius-sm: 14px * @radio;
+@search-input-height: 28px * @radio;
+@search-label-padding: 0 5px * @radio;
+@search-label-color: @gray-8;
+@search-label-font-size: @font-size-md;
+@search-left-icon-color: @gray-6;
+@search-action-padding: 0 16px * @radio 0 8px * @radio;
+@search-action-text-color: @gray-8;
+@search-action-font-size: @font-size-sm;
+
+
+// Checkbox
+@checkbox-size: 20px * @radio;
+@checkbox-border-color: @gray-5;
+@checkbox-transition-duration: @animation-duration-fast;
+@checkbox-label-margin: @padding-xs;
+@checkbox-label-color: @gray-8;
+@checkbox-checked-icon-color: @blue;
+@checkbox-disabled-icon-color: @gray-5;
+@checkbox-disabled-label-color: @gray-5;
+@checkbox-disabled-background-color: @border-color;
+
+// Radio
+@radio-size: 20px * @radio;
+@radio-border-color: @gray-5;
+@radio-transition-duration: @animation-duration-fast;
+@radio-label-margin: @padding-xs;
+@radio-label-color: @gray-8;
+@radio-checked-icon-color: @blue;
+@radio-disabled-icon-color: @gray-5;
+@radio-disabled-label-color: @gray-5;
+@radio-disabled-background-color: @border-color;
+
+// Switch
+@switch-size: 30px * @radio;
+@switch-width: 50px * @radio;
+@switch-height: 30px * @radio;
+@switch-node-size: 26px * @radio;
+@switch-node-z-index: 1;
+@switch-node-background-color: @white;
+@switch-node-box-shadow: 0 3px * @radio 1px * @radio 0 rgba(0, 0, 0, 0.05),
+  0 2px * @radio 2px * @radio 0 rgba(0, 0, 0, 0.1), 0 3px * @radio 3px * @radio 0 rgba(0, 0, 0, 0.05);
+@switch-background-color: @white;
+@switch-on-background-color: @blue;
+@switch-transition-duration: @animation-duration-base;
+@switch-disabled-opacity: @disabled-opacity;
+@switch-border: @border-width-base solid rgba(0, 0, 0, 0.1);
+
+//inputItem
+@cell-horizontal-padding: 16px * @radio;
+@cell-vertical-padding: 13px * @radio;
+@cell-text-color: @gray-8;
+@cell-font-size: @font-size-lg;
+@cell-line-height: 22px * @radio;
+
+// Cell
+@cell-font-size: @font-size-md;
+@cell-line-height: 30px * @radio;
+@cell-vertical-padding: 10px * @radio;
+@cell-horizontal-padding: @padding-md;
+@cell-text-color: @gray-8; // 标题
+@cell-background-color: @white;
+@cell-border-color: @border-color;
+@cell-active-color: @gray-1; // 点击交互背景色
+@cell-required-color: @red;
+@cell-label-color: @gray-7;
+@cell-label-font-size: @font-size-md;
+@cell-label-line-height: 18px * @radio;
+@cell-label-margin-top: 3px * @radio;
+@cell-value-color: @gray-8;
+@cell-icon-size: @font-size-lg;
+@cell-right-icon-color: @gray-6;
+@cell-large-vertical-padding: @padding-sm;
+@cell-large-title-font-size: @font-size-lg;
+@cell-large-label-font-size: @font-size-md;
+
+// Uploader
+@uploader-delete-color: @gray-8;
+@uploader-upload-border-radius: 2px * @radio;
 @uploader-upload-background-color: @white;
 
 // Slider
 @slider-active-background-color: @blue;
-@slider-button-width: 12px;
-@slider-button-height: 12px;
+@slider-button-width: 12px * @radio;
+@slider-button-height: 12px * @radio;
 @slider-button-background-color: @white;
 
 // Picker
-@picker-toolbar-height: 56px;
+@picker-toolbar-height: 56px * @radio;
 
 // Tag
-@tag-round-border-radius:20px;
-@tag-padding: 5px 8px;
+@tag-round-border-radius:20px * @radio;
+@tag-padding: 5px * @radio 8px * @radio;
 @tag-font-size: @font-size-md;
 @tag-medium-font-size: @font-size-md;
 @tag-text-color: @white;
-@tag-border-radius: 30px;
-@tag-round-border-radius: 30px;
+@tag-border-radius: 30px * @radio;
+@tag-round-border-radius: 30px * @radio;
 
 //nav-bar
-@nav-bar-icon-color: #333333;
+@nav-bar-icon-color: @gray-8;
 
 // Tab
 @tab-text-color: @gray-7;
@@ -159,8 +1034,26 @@
 
 // Tabs
 @tabs-default-color: @blue;
-@tabs-line-height: 44px;
-@tabs-card-height: 30px;
+@tabs-line-height: 44px * @radio;
+@tabs-card-height: 30px * @radio;
 @tabs-nav-background-color: @white;
-@tabs-bottom-bar-height: 3px;
+@tabs-bottom-bar-height: 3px * @radio;
 @tabs-bottom-bar-color: @blue;
+
+// Stepper
+@stepper-active-color: @blue;
+@stepper-background-color: @blue;
+@stepper-button-icon-color:@white;
+@stepper-button-disabled-color: @blue;
+@stepper-button-disabled-icon-color: @white;
+@stepper-input-width: 22px * @radio;
+@stepper-input-height: 22px * @radio;
+@stepper-input-font-size: @font-size-md;
+@stepper-input-text-color: @gray-8;
+@stepper-input-background-color: @gray-5;
+@stepper-input-disabled-text-color:@gray-5;
+@stepper-input-disabled-background-color:@white;
+@stepper-border-radius: @border-radius-md;
+
+// popup 弹出层
+@popup-round-border-radius: 12px * @radio;
