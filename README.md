@@ -111,4 +111,4 @@ import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
 * `@/utils/detect.js`设备判断函数
 
 ### 跟新日志
-* 更新设置vant样式标准被750px  --（更新时间：2020-07-09）
+* 更新设置vant样式标准为750px  --（更新时间：2020-07-09）
