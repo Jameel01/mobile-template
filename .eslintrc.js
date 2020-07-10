@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-04-09 11:26:58
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-20 22:10:53
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-07-10 10:07:18
  */
 module.exports = {
     env: {
@@ -68,11 +68,11 @@ module.exports = {
         curly: [2, "all"], // 必须使用 if(){} 中的{}
         "dot-location": [2, "property"], // 对象访问符的位置，换行的时候在行首还是行尾
         eqeqeq: [
-            2,
-            "always",
-            {
-                null: "ignore",
-            },
+            0,
+            "smart",
+            // {
+            //     null: "ignore",
+            // },
         ], // 必须使用全等
         indent: [1, 2], // 设置为2格缩进
 
