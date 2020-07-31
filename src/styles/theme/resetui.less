@@ -1,29 +1,32 @@
 /*
- * @Description: 官方定义的颜色, 不建议在页面使用，页面可使用styles/theme-params.csss
- * @Version: v1.0.0
- * @Autor: xyDideo
- * @Date: 2020-06-01 09:16:39
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-07-09 14:18:14
+ * @Description: 重置vant主题文件
+ * @Version: //
+ * @Autor: yjm
+ * @Date: 2020-07-17 18:13:52
+ * @LastEditors: xyDideo
+ * @LastEditTime: 2020-07-24 16:45:56
  */ 
-//  vant 样式
+
+@import "./theme-params.less";
+
 // Color Palette
 @black: #000;
 @white: #fff;
-@gray-1: #f7f8fa;
-@gray-2: #f2f3f5;
-@gray-3: #ebedf0;
-@gray-4: #dcdee0;
-@gray-5: #c8c9cc;
-@gray-6: #969799;
-@gray-7: #646566;
-@gray-8: #323233;
-@red: #ee0a24;
-@blue: #1989fa;
-@orange: #ff976a;
-@orange-dark: #ed6a0c;
-@orange-light: #fffbe8;
-@green: #07c160;
+@gray-1: @main_bg_color;
+@gray-2: @second_bg_color;
+@gray-3: @second_border_color;
+@gray-4: @third_text_color; // icon
+@gray-5: @border_color;
+@gray-6: @third_text_color;
+@gray-7: @second_text_color;
+@gray-8: @main_text_color;
+@red: @danger_color;
+@blue: @blue_color;
+@orange: @warn_color;
+@orange-dark: @dark_warn_color;
+@orange-light: @light_warn_color;
+@green: @success_color;
+
 
 // Gradient Colors
 @gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
@@ -39,7 +42,7 @@
 @text-link-color: #576b95;
 
 // Padding
-@padding-base: 4px * @ratio;
+@padding-base: @padding_base; // 4px * @ratio;
 @padding-xs: @padding-base * 2;
 @padding-sm: @padding-base * 3;
 @padding-md: @padding-base * 4;
@@ -47,39 +50,36 @@
 @padding-xl: @padding-base * 8;
 
 // Font
-@font-size-xs: 10px * @ratio;
-@font-size-sm: 12px * @ratio;
-@font-size-md: 14px * @ratio;
-@font-size-lg: 16px * @ratio;
-@font-weight-bold: 500;
-@base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
-  'Microsoft Yahei', sans-serif;
-@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-  sans-serif;
+@font-size-xs: @font_size_xs;
+@font-size-sm: @font_size_sm;
+@font-size-md: @font_size_md;
+@font-size-lg: @font_size_lg;
+@font-weight-bold: @font_weight_bold;
+@base-font-family: @base_font_family;
+@price-integer-font-family: @price_integer_font_family;
 
 // Animation
-@animation-duration-base: 0.3s;
-@animation-duration-fast: 0.2s;
-@animation-timing-function-enter: ease-out;
-@animation-timing-function-leave: ease-in;
+@animation-duration-base: @animation_duration_base;
+@animation-duration-fast: @animation_duration_fast;
+@animation-timing-function-enter: @animation_timing_function_enter;
+@animation-timing-function-leave: @animation_timing_function_leave;
 
 // Border
 @border-color: @gray-3;
-@border-width-base: 1px * @ratio;
-@border-radius-sm: 2px * @ratio;
-@border-radius-md: 4px * @ratio;
-@border-radius-lg: 8px * @ratio;
-@border-radius-max: 999px * @ratio;
+@border-width-base: @border_width_base;
+@border-radius-sm: @border_radius_sm;
+@border-radius-md: @border_radius_md;
+@border-radius-lg: @border_radius_lg;
+@border-radius-max: @border_radius_max;
 
 // ActionSheet
 @action-sheet-max-height: 80%;
-@action-sheet-header-height: 44px * @ratio;
+@action-sheet-header-height: 25px * @ratio;
 @action-sheet-header-font-size: @font-size-lg;
 @action-sheet-description-color: @gray-6;
 @action-sheet-description-font-size: @font-size-md;
-@action-sheet-description-line-height: 20px * @ratio;
-@action-sheet-item-height: 50px * @ratio;
+@action-sheet-description-line-height: 25px * @ratio;
+@action-sheet-item-height: 25px * @ratio;
 @action-sheet-item-background: @white;
 @action-sheet-item-font-size: @font-size-lg;
 @action-sheet-item-text-color: @text-color;
@@ -115,13 +115,15 @@
 @address-list-item-radio-icon-color: @red;
 @address-list-edit-icon-size: 20px * @ratio;
 
-// Button
+// Button / button 按钮
 @button-mini-height: 24px * @ratio;
 @button-mini-font-size: @font-size-xs;
-@button-small-height: 32px * @ratio;
-@button-small-font-size: @font-size-sm;
+@button-small-height: 28px * @ratio;
+@button-small-font-size: @font-size-md;
+@button-small-line-height: 28px * @ratio;
 @button-normal-font-size: @font-size-md;
-@button-large-height: 50px * @ratio;
+
+@button-large-height: 44px * @ratio;
 @button-default-height: 44px * @ratio;
 @button-default-line-height: 1.2;
 @button-default-font-size: @font-size-lg;
@@ -219,7 +221,7 @@
 @cell-group-title-font-size: @font-size-md;
 @cell-group-title-line-height: 16px * @ratio;
 
-// Checkbox
+// Checkbox / checkbox - 多选框
 @checkbox-size: 20px * @ratio;
 @checkbox-border-color: @gray-5;
 @checkbox-transition-duration: @animation-duration-fast;
@@ -229,6 +231,17 @@
 @checkbox-disabled-icon-color: @gray-5;
 @checkbox-disabled-label-color: @gray-5;
 @checkbox-disabled-background-color: @border-color;
+
+// Radio / radio - 单选框
+@radio-size: 20px * @ratio;
+@radio-border-color: @gray-5;
+@radio-transition-duration: @animation-duration-fast;
+@radio-label-margin: @padding-xs;
+@radio-label-color: @text-color;
+@radio-checked-icon-color: @blue;
+@radio-disabled-icon-color: @gray-5;
+@radio-disabled-label-color: @gray-5;
+@radio-disabled-background-color: @border-color;
 
 // Circle
 @circle-text-color: @text-color;
@@ -352,7 +365,7 @@
 @empty-bottom-margin-top: 24px * @ratio;
 
 // Field
-@field-label-width: 6em;
+@field-label-width: 6.2em;
 @field-label-color: @gray-7;
 @field-label-margin-right: @padding-sm;
 @field-input-text-color: @text-color;
@@ -577,17 +590,6 @@
 @pull-refresh-head-font-size: @font-size-md;
 @pull-refresh-head-text-color: @gray-6;
 
-// Radio
-@ratio-size: 20px * @ratio;
-@ratio-border-color: @gray-5;
-@ratio-transition-duration: @animation-duration-fast;
-@ratio-label-margin: @padding-xs;
-@ratio-label-color: @text-color;
-@ratio-checked-icon-color: @blue;
-@ratio-disabled-icon-color: @gray-5;
-@ratio-disabled-label-color: @gray-5;
-@ratio-disabled-background-color: @border-color;
-
 // Rate
 @rate-icon-size: 20px * @ratio;
 @rate-icon-gutter: @padding-base;
@@ -681,7 +683,7 @@
 @sticky-z-index: 99;
 
 // Stepper
-@stepper-active-color: #e8e8e8;
+@stepper-active-color: @blue_color;
 @stepper-background-color: @active-color;
 @stepper-button-icon-color: @text-color;
 @stepper-button-disabled-color: @background-color;
@@ -727,14 +729,14 @@
 
 // Switch
 @switch-size: 30px * @ratio;
-@switch-width: 2em;
-@switch-height: 1em;
-@switch-node-size: 1em;
+@switch-width: 50px * @ratio;
+@switch-height: 30px * @ratio;
+@switch-node-size: 26px * @ratio;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
 @switch-node-box-shadow: 0 3px * @ratio 1px * @ratio 0 rgba(0, 0, 0, 0.05),
   0 2px * @ratio 2px * @ratio 0 rgba(0, 0, 0, 0.1), 0 3px * @ratio 3px * @ratio 0 rgba(0, 0, 0, 0.05);
-@switch-background-color: @white;
+@switch-background-color: @four_text_color;
 @switch-on-background-color: @blue;
 @switch-transition-duration: @animation-duration-base;
 @switch-disabled-opacity: @disabled-opacity;
@@ -846,214 +848,3 @@
 @sku-item-background-color: @background-color;
 @sku-icon-gray-color: @gray-4;
 @sku-upload-mask-color: rgba(50, 50, 51, 0.8);
-
-
-// 医保主题设置
-// Color Palette
-@blue: #3b71e8; // 常规蓝 使用这个 ->  $blue_color
-@dark-blue: #285bcc; // 深蓝 使用这个 ->  $dark_blue_color
-@ratio:2;
-@border-radius-max:22px * @ratio;
-@light-blue: #5D88E8;
-
-@black: #000;
-@white: #fff;
-@gray-1: #f5f7fa; // 使用这个 ->  $second_border_color
-@gray-2: #f2f6fc; // 使用这个 ->  $second_border_color
-@gray-3: rgba(0,0,0,0.1); // 使用这个 ->  $second_border_color
-@gray-4: #cecece; // 使用这个 ->  $four_text_color
-
-@gray-5: #c0c4cc; // 使用这个 ->  $four_text_color
-@gray-6: #909399; // 使用这个 ->  $third_text_color
-@gray-7: #606266; // 使用这个 ->  $second_text_color
-@gray-8: #303133; // 使用这个 ->  $main_text_color
-
-@red: #f56c6c; // 常规红危险色 使用这个 ->  $danger_color
-@orange: #feb70f; // 常规橙警告色 使用这个 ->  $warn_color
-@orange-dark: #e6a23c; // 深蓝 使用这个 ->  $dark_warn_color
-@orange-light: #fff7ed; // 浅橙 使用这个 ->  $light_warn_color
-@green: #28c663; // 常规绿成功色 使用这个 ->  $success_color
-
-// Border
-@border-color: @gray-3;
-@border-width-base: 1px * @ratio;
-@border-radius-sm: 2px * @ratio;
-@border-radius-md: 4px * @ratio;
-@border-radius-lg: 8px * @ratio;
-@border-radius-max: 999px * @ratio;
-
-// Font
-@font-size-xs: 8px * @ratio;
-@font-size-sm: 12px * @ratio;
-@font-size-md: 14px * @ratio;
-@font-size-lg: 16px * @ratio;
-@font-weight-bold: 500;
-
-// 其他
-@padding-xs: 8px * @ratio;
-@padding-sm: 12px * @ratio;
-@padding-md: 16px * @ratio;
-@animation-duration-fast: 200ms;
-@animation-duration-base: 460ms;
-@disabled-opacity: 0.4;
-
-/************************* 按钮重置开始 *************************/
-// Button
-@button-large-height: 44px * @ratio;
-@button-large-line-height: 42px * @ratio;
-@button-default-height: 44px * @ratio;
-@button-default-line-height: 44px * @ratio;
-
-// 成功按钮
-@button-primary-color: #ffffff;
-@button-primary-background-color: @green;
-@button-primary-border-color: @green;
-
-@button-normal-font-size: 16px * @ratio;
-@button-default-font-size: 16px * @ratio;
-@button-round-border-radius: @border-radius-max;
-@button-disabled-opacity: @disabled-opacity;
-@button-info-background-color: @blue;
-@button-info-border-color: @blue;
-@button-plain-color: @blue;
-@button-border-radius: 50%;
-@button-default-color: @blue;
-/************************* 按钮重置结束 *************************/
-
-// Search
-@search-padding: 0px * @ratio 16px * @ratio; // 左右页面边距
-@search-background-color: @white;
-@search-content-background-color: @gray-1;
-@border-radius-sm: 14px * @ratio;
-@search-input-height: 28px * @ratio;
-@search-label-padding: 0 5px * @ratio;
-@search-label-color: @gray-8;
-@search-label-font-size: @font-size-md;
-@search-left-icon-color: @gray-6;
-@search-action-padding: 0 16px * @ratio 0 8px * @ratio;
-@search-action-text-color: @gray-8;
-@search-action-font-size: @font-size-sm;
-
-
-// Checkbox
-@checkbox-size: 20px * @ratio;
-@checkbox-border-color: @gray-5;
-@checkbox-transition-duration: @animation-duration-fast;
-@checkbox-label-margin: @padding-xs;
-@checkbox-label-color: @gray-8;
-@checkbox-checked-icon-color: @blue;
-@checkbox-disabled-icon-color: @gray-5;
-@checkbox-disabled-label-color: @gray-5;
-@checkbox-disabled-background-color: @border-color;
-
-// Radio
-@ratio-size: 20px * @ratio;
-@ratio-border-color: @gray-5;
-@ratio-transition-duration: @animation-duration-fast;
-@ratio-label-margin: @padding-xs;
-@ratio-label-color: @gray-8;
-@ratio-checked-icon-color: @blue;
-@ratio-disabled-icon-color: @gray-5;
-@ratio-disabled-label-color: @gray-5;
-@ratio-disabled-background-color: @border-color;
-
-// Switch
-@switch-size: 30px * @ratio;
-@switch-width: 50px * @ratio;
-@switch-height: 30px * @ratio;
-@switch-node-size: 26px * @ratio;
-@switch-node-z-index: 1;
-@switch-node-background-color: @white;
-@switch-node-box-shadow: 0 3px * @ratio 1px * @ratio 0 rgba(0, 0, 0, 0.05),
-  0 2px * @ratio 2px * @ratio 0 rgba(0, 0, 0, 0.1), 0 3px * @ratio 3px * @ratio 0 rgba(0, 0, 0, 0.05);
-@switch-background-color: @white;
-@switch-on-background-color: @blue;
-@switch-transition-duration: @animation-duration-base;
-@switch-disabled-opacity: @disabled-opacity;
-@switch-border: @border-width-base solid rgba(0, 0, 0, 0.1);
-
-//inputItem
-@cell-horizontal-padding: 16px * @ratio;
-@cell-vertical-padding: 13px * @ratio;
-@cell-text-color: @gray-8;
-@cell-font-size: @font-size-lg;
-@cell-line-height: 22px * @ratio;
-
-// Cell
-@cell-font-size: @font-size-md;
-@cell-line-height: 30px * @ratio;
-@cell-vertical-padding: 10px * @ratio;
-@cell-horizontal-padding: @padding-md;
-@cell-text-color: @gray-8; // 标题
-@cell-background-color: @white;
-@cell-border-color: @border-color;
-@cell-active-color: @gray-1; // 点击交互背景色
-@cell-required-color: @red;
-@cell-label-color: @gray-7;
-@cell-label-font-size: @font-size-md;
-@cell-label-line-height: 18px * @ratio;
-@cell-label-margin-top: 3px * @ratio;
-@cell-value-color: @gray-8;
-@cell-icon-size: @font-size-lg;
-@cell-right-icon-color: @gray-6;
-@cell-large-vertical-padding: @padding-sm;
-@cell-large-title-font-size: @font-size-lg;
-@cell-large-label-font-size: @font-size-md;
-
-// Uploader
-@uploader-delete-color: @gray-8;
-@uploader-upload-border-radius: 2px * @ratio;
-@uploader-upload-background-color: @white;
-
-// Slider
-@slider-active-background-color: @blue;
-@slider-button-width: 12px * @ratio;
-@slider-button-height: 12px * @ratio;
-@slider-button-background-color: @white;
-
-// Picker
-@picker-toolbar-height: 56px * @ratio;
-
-// Tag
-@tag-round-border-radius:20px * @ratio;
-@tag-padding: 5px * @ratio 8px * @ratio;
-@tag-font-size: @font-size-md;
-@tag-medium-font-size: @font-size-md;
-@tag-text-color: @white;
-@tag-border-radius: 30px * @ratio;
-@tag-round-border-radius: 30px * @ratio;
-
-//nav-bar
-@nav-bar-icon-color: @gray-8;
-
-// Tab
-@tab-text-color: @gray-7;
-@tab-active-text-color: @blue;
-@tab-disabled-text-color: @gray-5;
-@tab-font-size: @font-size-md;
-
-// Tabs
-@tabs-default-color: @blue;
-@tabs-line-height: 44px * @ratio;
-@tabs-card-height: 30px * @ratio;
-@tabs-nav-background-color: @white;
-@tabs-bottom-bar-height: 3px * @ratio;
-@tabs-bottom-bar-color: @blue;
-
-// Stepper
-@stepper-active-color: @blue;
-@stepper-background-color: @blue;
-@stepper-button-icon-color:@white;
-@stepper-button-disabled-color: @blue;
-@stepper-button-disabled-icon-color: @white;
-@stepper-input-width: 22px * @ratio;
-@stepper-input-height: 22px * @ratio;
-@stepper-input-font-size: @font-size-md;
-@stepper-input-text-color: @gray-8;
-@stepper-input-background-color: @gray-5;
-@stepper-input-disabled-text-color:@gray-5;
-@stepper-input-disabled-background-color:@white;
-@stepper-border-radius: @border-radius-md;
-
-// popup 弹出层
-@popup-round-border-radius: 12px * @ratio;

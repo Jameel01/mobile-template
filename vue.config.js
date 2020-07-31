@@ -7,9 +7,9 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
-  publicPath: isProd ? "" : "/", //配置根路径
+  publicPath: process.env.VUE_APP_PUBLIC_PATH, //配置根路径
   // assetsRoot: path.resolve(__dirname, "../dist"),
-  outputDir: "dist", //构建输出目录
+  outputDir: process.env.VUE_APP_OUTPUT_DIR || "dist", //构建输出目录
   assetsDir: "assets", //静态资源目录(js\css\img)
   lintOnSave: true, //是否开启eslint
   productionSourceMap: false, // 生产环境是否生成 sourceMap 文件
@@ -38,18 +38,18 @@ module.exports = {
     //如果需要css热更新就设置为false,打包时候要改为true
     extract: false,
     // 开启 CSS source maps?
-    sourceMap: true,
+    sourceMap: false,
     // css预设器配置项
     loaderOptions: {
-      sass: {
-        // @/ is an alias to src/
-        // so this assumes you have a file named `src/variables.scss`
-        prependData: `
-                $env: ${process.env.NODE_ENV};
-                @import "@/styles/theme-params.scss";
-                @import "@/styles/common.scss";
-                @import "@/styles/animate.scss";`
-      },
+
+      // sass: {
+      //   // @/ is an alias to src/
+      //   // so this assumes you have a file named `src/variables.scss`
+      //   prependData: `
+      //   $env: ${process.env.NODE_ENV};
+      //   @import "@/styles/theme-params.scss";
+      //   `
+      // },
       less: {
         modifyVars: {
           // 直接覆盖变量
@@ -98,6 +98,19 @@ module.exports = {
 
   },
   chainWebpack: config => {
+    // less 引入全局变量
+    const oneOfsMap = config.module.rule("less").oneOfs.store
+    oneOfsMap.forEach(item => {
+      item.use("style-resources-loader")
+        .loader("style-resources-loader")
+        .options({
+        // 需要插入的文件路径
+          patterns: "./src/styles/theme/theme-params.less"
+        // 需要插入的文件路径数组
+          // patterns: ["./src/styles/theme-params.less"]
+        })
+        .end()
+    })
     // 别名配置
     config.resolve.alias
       .set("@", resolve("src"))
@@ -115,20 +128,20 @@ module.exports = {
       .tap(options => Object.assign(options, {
         limit: 20240
       }))
-    // 图片质量压缩
-    // config.module
-    //   .rule('images')
-    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-    //   .use('img-loader')
-    //   .loader('img-loader').options({
-    //     plugins: [
-    //       require('imagemin-jpegtran')(),
-    //       require('imagemin-pngquant')({
-    //         quality: [0.75, 0.85]
-    //       })
-    //     ]
-    //   })
-    // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
+      // 图片质量压缩
+      // config.module
+      //   .rule('images')
+      //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+      //   .use('img-loader')
+      //   .loader('img-loader').options({
+      //     plugins: [
+      //       require('imagemin-jpegtran')(),
+      //       require('imagemin-pngquant')({
+      //         quality: [0.75, 0.85]
+      //       })
+      //     ]
+      //   })
+      // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
     config.plugin("define").tap(args => {
       args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL)
       return args
@@ -155,15 +168,16 @@ module.exports = {
       }
     })
     /*
-            preload 和 Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async chunk，
-            而用户主要使用的是对带宽较敏感的移动端，
-            那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。
-            官方文件很坑爹的官网文档是错的要自己打印出来
-            console.log(config)
-            他改名字了
-        */
+      preload 和 Prefetch 链接将会消耗带宽。如果你的应用很大且有很多 async chunk，
+      而用户主要使用的是对带宽较敏感的移动端，
+      那么你可能需要关掉 prefetch 链接并手动选择要提前获取的代码区块。
+      官方文件很坑爹的官网文档是错的要自己打印出来
+      console.log(config)
+      他改名字了
+    */
     config.plugins.delete("prefetch-index")
     config.plugins.delete("preload-index")
+    
     if (isConsole) {
       config
         .plugin("vConsolePlugin")
