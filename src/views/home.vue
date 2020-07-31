@@ -4,11 +4,11 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-07-31 10:58:14
+ * @LastEditTime: 2020-07-31 11:04:52
 --> 
 <template>
   <div class="page-home">
-    {{data | name}}
+    {{data}}
   </div>
 </template>
 <script>
