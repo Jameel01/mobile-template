@@ -65,12 +65,12 @@
   white_bg_color: #fff;
   active_blue_color: #5D88E8;
   active_bg_color: #EAF5FF;
-  padding_base: 8px;
-  padding_xs: 16px;
-  padding_sm: 24px;
-  padding_md: 32px;
-  padding_lg: 48px;
-  padding_xl: 64px;
+  space_base: 8px;
+  space_xs_8: 16px;
+  space_sm_12: 24px;
+  space_md_16: 32px;
+  space_lg_24: 48px;
+  space_xl_32: 64px;
   font_size_xs: 20px;
   font_size_sm: 24px;
   font_size_md: 28px;
