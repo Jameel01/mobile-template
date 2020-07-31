@@ -2,8 +2,8 @@
  * @Description: 主页面
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 15:29:23
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-07-31 11:11:58
  -->
 <template>
   <div id="app">
@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 #app {
   background: #fff;
   height: 100%;

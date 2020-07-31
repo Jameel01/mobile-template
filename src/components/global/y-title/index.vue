@@ -153,7 +153,7 @@ export default {
   }
 }
 </script>
-<style  lang="scss" scoped>
+<style  lang="less" scoped>
 #v_header_title {
   background-color: #fff;
   position: relative;
