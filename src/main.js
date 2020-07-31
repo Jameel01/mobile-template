@@ -2,21 +2,31 @@
  * @Description: 主入口文件
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 15:31:04
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-07-29 11:58:30
  */
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"
 import router from "@/router"
 import { Toast } from "vant"
+
+import pxToViewport from "./utils/px-to-viewport"
+Vue.prototype.$pxToViewport = pxToViewport
+
 Vue.use(Toast)
-// 引入基础样式
-import "@/styles/common.scss"
+// 引入全局iconfont
+import "@/styles/iconfonts/iconfont.css"
+
 // 引入全部样式
 import "vant/lib/index.less"
 // 自动注册全局的组件
 import "@/components/index"
+// 引入基础样式
+// import "@/styles/theme/theme-params.less"
+// import "@/styles/animate.less"
+import "@/styles/common.less"
+import "@/styles/theme/reset-vant.less"
 //vuex存储
 import store from "@/store"
 //引入常用的vant组件
@@ -44,11 +54,6 @@ Router.prototype.push = function push(location) {
 }
 // 修改路由跳转报错的bug--end
 
-//常用过滤函数
-import * as filters from "@/filters" 
-Object.keys(filters).forEach((key) => {
-  Vue.filter(key, filters[key])
-})
 // EventBus总线
 var EventBus = new Vue()
 Object.defineProperties(Vue.prototype, {
