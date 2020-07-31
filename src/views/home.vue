@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 14:00:22
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-07-31 10:58:14
 --> 
 <template>
   <div class="page-home">
@@ -20,7 +20,7 @@ export default {
   filters: {},
   data() {
     return { 
-      data: "上i市零零落落"
+      data: "首页"
     }
   },
   created() {},
