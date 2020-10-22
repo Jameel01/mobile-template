@@ -1,10 +1,17 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: Chenyt
+ * @Date: 2020-10-14 13:35:56
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-10-21 15:37:25
+-->
 ## 面包屑组件
 
 ### 如何使用
 ```js
-import Title from '@/components/Title'
 
-<Title content="标题" />
+<y-title content="标题" />
 ```
 
 ### Props

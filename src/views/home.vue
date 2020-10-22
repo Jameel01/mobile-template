@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 14:00:22
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-10-22 09:22:56
 --> 
 <template>
   <div class="page-home">
@@ -12,6 +12,7 @@
   </div>
 </template>
 <script>
+
 export default {
   components: {},
   name: "home",
