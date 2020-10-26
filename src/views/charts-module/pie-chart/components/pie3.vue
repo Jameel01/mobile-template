@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-07-08 17:59:19
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-22 14:27:21
+ * @LastEditTime: 2020-10-23 16:35:11
 --> 
 <template>
 <div class="charts-box">
@@ -69,7 +69,7 @@ export default {
       chart.guide()
         .html({
           position: ["50%", "50%"],
-          html: '<div style="text-align: center;width:150px;height: 50px;">\n      <p style="font-size: 12px;color: #999;margin: 0" ref="title"></p>\n      <p style="font-size: 18px;color: #343434;margin: 0;font-weight: bold;" ref="money"></p>\n      </div>'
+          html: '<div style="text-align: center;width:150px;height: 50px;">\n      <p style="font-size: 12px;color: #999;margin: 0" id="title"></p>\n      <p style="font-size: 18px;color: #343434;margin: 0;font-weight: bold;" id="money"></p>\n      </div>'
         })
       chart.interval()
         .position("const*money")
@@ -94,8 +94,8 @@ export default {
         onClick(ev) {
           const data = ev.data
           if (data) {
-            // _that.$refs.title.innerHTML=data.type
-            // _that.$refs.money.innerHTML=data.money
+            document.getElementById("title").innerHTML=data.type
+            document.getElementById("money").innerHTML=data.money
           }
         }
       })

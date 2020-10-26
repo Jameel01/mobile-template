@@ -2,11 +2,16 @@
  * @Description: 主页面
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 15:29:23
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-10-23 09:52:35
  -->
 <template>
   <div id="app">
+    <van-nav-bar
+      :title="$route.name"
+      :left-arrow="$route.path=='/'?false:true"
+      @click-left="onClickLeft"
+    />
     <!-- 页面切换容器 -->
     <keep-alive>
       <router-view v-if='$route.meta.keepAlive' />
@@ -25,13 +30,20 @@ export default {
   created() {
     this.$Loading.show(2000)
   },
-  methods: {}
+  methods: {
+    onClickLeft(){
+      history.go(-1)
+    }
+  },
+  watch: {
+  
+  }
 }
 </script>
 
 <style lang="scss">
 #app {
-  background: #fff;
+  background:#fff;
   height: 100%;
 }
 html,

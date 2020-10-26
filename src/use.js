@@ -2,12 +2,12 @@
  * @Description: 常用的有赞组件
  * @Autor: chenyt
  * @Date: 2020-03-21 22:15:42
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 15:13:59
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-10-23 09:47:09
  */
 
 import Vue from "vue"
-import { Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search, Slider, Stepper, Tag, NoticeBar, Card } from "vant"
+import { NavBar, Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search, Slider, Stepper, Tag, NoticeBar, Card } from "vant"
 
 import yLoadingPlus from "@/components/global/y-loading-plus/index"
 
@@ -54,4 +54,5 @@ Vue.use(Stepper)
 Vue.use(Tag)
 Vue.use(NoticeBar)
 Vue.use(Card)
+Vue.use(NavBar)
 Vue.prototype.$Toast = Toast

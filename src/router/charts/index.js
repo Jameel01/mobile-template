@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-22 16:15:58
+ * @LastEditTime: 2020-10-23 16:45:18
  */
 
 export default [
@@ -60,7 +60,34 @@ export default [
       keepAlive: false
     },
     component: () => import(/* webpackChunkName: "chartsModule" */"@/views/charts-module/horizontal-bar-chart")
+  },
+  {
+    path: "/radar-chart",
+    name: "雷达图",
+    meta: {
+      needLogin: false,
+      keepAlive: false
+    },
+    component: () => import(/* webpackChunkName: "chartsModule" */"@/views/charts-module/radar-chart")
+  },
+  {
+    path: "/progress-chart",
+    name: "半圆进度条",
+    meta: {
+      needLogin: false,
+      keepAlive: false
+    },
+    component: () => import(/* webpackChunkName: "chartsModule" */"@/views/charts-module/progress-chart")
+  },
+  {
+    path: "/map-chart",
+    name: "中国地图",
+    meta: {
+      needLogin: false,
+      keepAlive: false
+    },
+    component: () => import(/* webpackChunkName: "chartsModule" */"@/views/charts-module/map-chart")
   }
-
+ 
 ]
 

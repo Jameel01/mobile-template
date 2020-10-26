@@ -4,15 +4,15 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:55:00
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-22 09:22:56
+ * @LastEditTime: 2020-10-23 09:51:49
 --> 
 <template>
   <div class="page-home">
-    {{data | name}}
+    <van-cell :title="item.name" is-link :to="item.path"  v-for="(item,index) in routes" :key="index"/>
   </div>
 </template>
 <script>
-
+import routes from "@/router/charts"
 export default {
   components: {},
   name: "home",
@@ -21,7 +21,7 @@ export default {
   filters: {},
   data() {
     return { 
-      data: "上i市零零落落"
+      routes: routes
     }
   },
   created() {},
@@ -32,6 +32,9 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-.page-home{}
+.page-home{
+  padding:16px;
+  border-radius: 60px;
+}
 </style>
 

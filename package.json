@@ -12,6 +12,9 @@
 	},
 	"dependencies": {
 		"@antv/f2": "^3.7.7",
+		"@antv/l7": "^2.2.40",
+		"@antv/l7-district": "^2.2.39",
+		"@antv/l7-maps": "^2.2.40",
 		"@ylz/mobile-components-pack": "^0.0.3",
 		"axios": "^0.19.1",
 		"core-js": "^3.4.4",
