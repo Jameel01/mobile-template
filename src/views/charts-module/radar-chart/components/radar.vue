@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-07-08 17:59:19
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-23 15:07:02
+ * @LastEditTime: 2020-10-27 17:20:15
 --> 
 <template>
 <div class="charts-box">
@@ -14,6 +14,7 @@
 </template>
 <script>
 import F2 from "@antv/f2/lib/index-all"
+import _ from "lodash"
 export default {
   name: "charts-radar-1",
   data(){
