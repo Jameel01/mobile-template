@@ -2,12 +2,12 @@
 
 ## 安装依赖
 ```
-yarn install
+npm install
 ```
 
 ### 本地环境代理启动命令
 ```
-npm run serve
+npm run serve:proxy
 
 ```
 ### 代码提交前执行eslint规则校验与修复
