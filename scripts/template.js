@@ -5,13 +5,26 @@
  * @Last Modified time: 2020-03-27 16:45:04
  */
 module.exports = {
-  vueTemplate: compoenntName => {
+  routerTemplate: routerCont => {
+    return `export default [${routerCont}]`
+  },
+  routerStr: (moduleName, pageName, pageChineseName) => {
+    return `{
+      path: "/${moduleName}/${pageName}",
+      name: "${pageName}",
+      meta: {
+        title: "${pageChineseName}"
+      },
+      component: () => import("@/views/${moduleName}/${pageName}")
+    },`
+  },
+  vueTemplate: (pageNane,pageChineseName) => {
     return `<template>
-<div class="${compoenntName}">${compoenntName}组件</div>
+<div class="${pageNane}">${pageChineseName}页面创建成功</div>
 </template>
 <script>
 export default {
-  name: '${compoenntName}',
+  name: '${pageNane}',
   data(){
     return{
 
@@ -30,8 +43,8 @@ export default {
  
 }
 </script>
-<style lang="scss" scoped>
-.${compoenntName} {
+<style lang="less" scoped>
+.${pageNane} {
 
 }
 </style>`
