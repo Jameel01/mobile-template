@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 #app {
   background: #fff;
   height: 100%;

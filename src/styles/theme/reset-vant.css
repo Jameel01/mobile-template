@@ -1,0 +1,1080 @@
+/*
+ * @Description: 重置vant官方组件样式定制ylz组件样式
+ * @Version: v1.0.0
+ * @Autor: xyDideo
+ * @Date: 2020-06-16 17:17:34
+ * @LastEditors: xyDideo
+ * @LastEditTime: 2020-07-29 15:43:35
+ */
+/*
+ * @Description: 重置vant主题文件
+ * @Version: //
+ * @Autor: yjm
+ * @Date: 2020-07-17 18:13:52
+ * @LastEditors: xyDideo
+ * @LastEditTime: 2020-07-29 14:51:54
+ */
+/*
+ * @Description: 规范文档 XJ_C0.2_2019 调整:新增 / 删除请按照规范来【移动端与pc端不一致】
+ * @Version: v1.0.0
+ * @Autor: xyDideo
+ * @Date: 2020_06_01 09:16:39
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-07-21 14:51:39
+ */
+/*
+ * 01 标准色
+ * 规则：@{深浅}_{颜色}_{分类}_{序号} 变量统一采用下划线命名规范
+ * 分类：可为空
+ *   main：主色
+ *   font：字体色
+ *   line：线色
+ *   gradient: 渐变 (gradient1、gradient2)
+ *   second：辅色
+ *   third：次级辅色
+ * 颜色：不为空，常用颜色英文
+ * 深浅：可为空 或者 不透明的
+ *   darker：较深
+ *   dark：深
+ *   light：浅
+ *   lighter：较浅
+ */
+:export {
+  name: "less";
+  main_color: #1b65b9;
+  gradient_blue_color_1: #3ca0f6;
+  gradient_blue_color_2: #3b71e8;
+  dark_blue_color: #285bcc;
+  light_blue_color: #d9e5ff;
+  ratio: 2;
+  dark_success_color: #1ba64f;
+  success_color: #28c663;
+  light_success_color: #dff7e8;
+  dark_danger_color: #db4d4d;
+  danger_color: #f56c6c;
+  light_danger_color: #fff1f1;
+  dark_warn_color: #e6a23c;
+  warn_color: #feb70f;
+  light_warn_color: #fff7ed;
+  main_text_color: #303133;
+  second_text_color: #606266;
+  third_text_color: #909399;
+  four_text_color: #c0c4cc;
+  main_bg_color: #f5f7fa;
+  second_bg_color: #f5f6f6;
+  white_bg_color: #fff;
+  active_blue_color: #5D88E8;
+  active_bg_color: #EAF5FF;
+  space_base: 8px;
+  space_xs_8: 16px;
+  space_sm_12: 24px;
+  space_md_16: 32px;
+  space_lg_24: 48px;
+  space_xl_32: 64px;
+  font_size_xs: 20px;
+  font_size_sm: 24px;
+  font_size_md: 28px;
+  font_size_lg: 32px;
+  font_weight_bold: 500;
+  base_font_family: _apple_system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans_serif;
+  price_integer_font_family: Avenir_Heavy, PingFang SC, Helvetica Neue, Arial, sans_serif;
+  animation_duration_base: 0.3s;
+  animation_duration_fast: 0.2s;
+  animation_timing_function_enter: ease_out;
+  animation_timing_function_leave: ease_in;
+  border_width_base: 2px;
+  border_radius_sm: 4px;
+  border_radius_md: 8px;
+  border_radius_lg: 16px;
+  border_radius_max: 1998px;
+  main_border_color: #1b65b9;
+  border_color: #cecece;
+  second_border_color: #e0e1e6;
+}
+/**
+ 说明： 先重置 styles/theme/resetui.less 文件，调整不了再此文件重置
+ 说明： 先重置 styles/theme/resetui.less 文件，调整不了再此文件重置
+ 说明： 先重置 styles/theme/resetui.less 文件，调整不了再此文件重置
+ */
+/************************* button 重置开始 *************************/
+.van-button {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.van-button--round {
+  border-radius: 999px !important;
+  -webkit-border-radius: 999px !important;
+  -moz-border-radius: 999px !important;
+  -ms-border-radius: 999px !important;
+  -o-border-radius: 999px !important;
+}
+.van-button--normal {
+  width: auto;
+  height: 68px;
+  line-height: 68px;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+.van-button--small {
+  width: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.van-button--info::before {
+  background-color: #5D88E8;
+  border-color: #5D88E8;
+}
+.van-button--info:active::before {
+  opacity: 0.4;
+}
+.van-button--info.van-button--plain::before {
+  background-color: #3b71e8;
+  border-color: #3b71e8;
+}
+.van-button--info.van-button--plain:active::before {
+  opacity: 0.1;
+}
+.van-button.van-button--primary::before {
+  background-color: #45C675;
+  border-color: #45C675;
+}
+.van-button.van-button--primary:active::before {
+  opacity: 0.4;
+}
+.van-button.van-button--primary.van-button--plain::before {
+  background-color: #28c663;
+  border-color: #28c663;
+}
+.van-button.van-button--primary.van-button--plain:active::before {
+  opacity: 0.1;
+}
+.van-button.van-button--warning::before {
+  background-color: #FEC235;
+  border-color: #FEC235;
+}
+.van-button.van-button--warning:active::before {
+  opacity: 0.4;
+}
+.van-button.van-button--warning.van-button--plain::before {
+  background-color: #feb70f;
+  border-color: #feb70f;
+}
+.van-button.van-button--warning.van-button--plain:active::before {
+  opacity: 0.1;
+}
+.van-button.van-button--danger::before {
+  background-color: #F59191;
+  border-color: #F59191;
+}
+.van-button.van-button--danger:active::before {
+  opacity: 0.4;
+}
+.van-button.van-button--danger.van-button--plain::before {
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+}
+.van-button.van-button--danger.van-button--plain:active::before {
+  opacity: 0.1;
+}
+/************************* button 重置结束 *************************/
+/************************* checkbox 重置开始 *************************/
+.van-checkbox__label,
+.van-radio__label {
+  font-size: 28px;
+  height: 88px;
+  line-height: 88px;
+}
+.van-checkbox__label font,
+.van-radio__label font {
+  line-height: 88px;
+}
+.van-checkbox__label span,
+.van-radio__label span {
+  line-height: 88px;
+}
+.icon-radio-default {
+  color: #c0c4cc;
+}
+.icon-radio-choose {
+  color: #3b71e8;
+}
+.icon-check-active,
+.icon-check {
+  color: #3b71e8;
+}
+.icon-checkbox-default {
+  color: #c0c4cc;
+}
+.icon-checkbox-checked {
+  color: #3b71e8;
+}
+/************************* checkbox 重置结束 *************************/
+/*************************  开关 vanSwitch 重置开始 *************************/
+.van-switch {
+  box-sizing: border-box !important;
+  border: none 0;
+}
+.van-switch .van-switch__node {
+  top: 4px !important;
+  left: 2px;
+}
+.van-switch--on .van-switch__node {
+  transform: translateX(40px) !important;
+  -webkit-transform: translateX(40px) !important;
+  -moz-transform: translateX(40px) !important;
+  -ms-transform: translateX(40px) !important;
+  -o-transform: translateX(40px) !important;
+}
+/*************************  开关 vanSwitch 重置结束 *************************/
+/************************* search 重置开始 *************************/
+.van-search {
+  height: 88px;
+}
+.van-search .van-cell {
+  flex: 1;
+  height: 56px;
+  line-height: 40px !important;
+  padding: 8px 16px 8px 0;
+  font-size: 28px;
+}
+.van-search .van-cell .van-icon {
+  color: #909399 !important;
+}
+.van-search .van-field__body input {
+  color: #303133;
+  caret-color: #1b65b9;
+}
+.van-search .van-field__body input::-webkit-input-placeholder {
+  /*WebKit browsers*/
+  color: #909399;
+}
+.van-search .van-field__body /deep/ .van-icon-clear,
+.van-search .van-field__body .van-field__clear {
+  color: #c0c4cc !important;
+}
+.van-search .searchBar {
+  text-align: center;
+  padding: 15px 0px;
+}
+.van-search .icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  font-size: 30px;
+}
+.van-search .icon .iconfont {
+  font-size: 30px;
+  color: #909399;
+}
+.van-search .icon-left {
+  left: 38vw;
+  font-size: 30px;
+}
+.van-search .icon-left .iconfont {
+  font-size: 30px;
+  color: #909399;
+}
+.van-search .text-right {
+  color: #3b71e8;
+  letter-spacing: 0;
+  text-align: right;
+  font-size: 28px;
+}
+.dropdown-search .van-dropdown-menu {
+  height: 88px;
+}
+.dropdown-search .van-dropdown-menu__title {
+  font-size: 28px;
+}
+.dropdown-search .van-dropdown-menu__bar {
+  height: inherit;
+  box-shadow: none;
+}
+.dropdown-search .van-dropdown-item__content .van-cell .van-icon {
+  text-align: right;
+  color: #3b71e8;
+}
+/************************* search 重置结束 *************************/
+/************************* van-dropdown 下拉箭头全局大小修改 重置开始 *************************/
+.van-dropdown-menu__title {
+  font-size: 28px;
+}
+.van-dropdown-menu__title:after {
+  color: #909399 !important;
+  margin-top: -10px !important;
+  border: 6px solid !important;
+  border-color: transparent transparent currentColor currentColor !important;
+}
+.van-dropdown-menu__title--down::after {
+  margin-top: -2px !important;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.van-dropdown-item__option--active .van-dropdown-item__icon {
+  text-align: right !important;
+  color: #3b71e8 !important;
+}
+/*************************  van-dropdown 下拉箭头全局大小修改 重置结束 *************************/
+/************************* upload 重置开始 *************************/
+.van-icon-photograph::before {
+  content: "\F0A2";
+}
+.van-uploader__upload {
+  border: 1px dashed #cecece;
+  background-color: #fff;
+}
+.van-uploader__upload i::after {
+  content: "添加图片";
+  width: 120px;
+  font-size: 28px;
+  position: absolute;
+  left: 50%;
+  margin-left: -60px;
+  text-align: center;
+  top: 68px;
+  color: #909399;
+}
+.van-uploader__preview-delete {
+  width: 28px;
+  height: 28px;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  top: 2px;
+  right: 2px;
+}
+.van-uploader__preview-delete::before,
+.van-uploader__preview-delete::after {
+  content: "";
+  width: 16px;
+  height: 2px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background-color: #fff;
+  position: absolute;
+  top: 12px;
+  left: 6px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.van-uploader__preview-delete::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.van-icon.van-uploader__upload-icon {
+  font-size: 64px;
+  position: relative;
+  top: -16px;
+  color: #909399;
+}
+/************************* upload 重置结束 *************************/
+/************************* step 重置开始 *************************/
+.van-stepper__minus,
+.van-stepper__plus {
+  border-radius: 8px;
+  background-color: #3b71e8;
+}
+.van-stepper__minus:active,
+.van-stepper__plus:active {
+  opacity: 0.8;
+}
+.van-stepper__minus::before,
+.van-stepper__plus::before {
+  width: 24px;
+  height: 4px;
+  background-color: #fff;
+}
+.van-stepper__minus::after,
+.van-stepper__plus::after {
+  width: 4px;
+  height: 24px;
+  background-color: #fff;
+}
+.van-stepper__input {
+  background-color: #ffffff !important;
+  margin-left: 12px !important;
+  margin-right: 12px !important;
+}
+.pluid .van-stepper__minus::before,
+.pluid .van-stepper__plus::before,
+.pluid .van-stepper__minus::after,
+.pluid .van-stepper__plus::after {
+  background-color: #3b71e8;
+}
+.pluid .van-stepper:active {
+  background-color: #d9e5ff;
+}
+.round .van-stepper__minus,
+.round .van-stepper__plus {
+  border-radius: 28px;
+}
+.pluid .van-stepper__minus,
+.pluid .van-stepper__plus {
+  background-color: #ffffff;
+  border: 2px solid #3b71e8;
+  color: #3b71e8;
+}
+/************************* step 重置结束 *************************/
+/************************* slider 重置开始 *************************/
+.van-slider__button {
+  width: 24px;
+  height: 24px;
+  border: 4px solid #3b71e8;
+}
+/************************* slider 重置结束 *************************/
+/************************* picker 重置开始 *************************/
+.van-picker__cancel {
+  color: #303133;
+}
+.van-picker__confirm {
+  color: #3b71e8;
+}
+.van-picker__toolbar {
+  border-bottom: 1px solid rgba(206, 206, 206, 0.6);
+}
+/************************* picker 重置结束 *************************/
+/************************* badge 重置开始 *************************/
+.van-info {
+  background-color: #f56c6c;
+  font-size: 24px;
+  line-height: 32px;
+}
+/************************** badge 重置结束 *************************/
+/************************* tag 重置开始 *************************/
+.tag-disabled {
+  opacity: 0.5;
+}
+.van-tag {
+  border-radius: 999px !important;
+  padding: 8px 20px;
+  text-align: center;
+}
+.van-tag__close {
+  width: 28px;
+  height: 28px;
+  background: #f56c6c;
+  border-radius: 28px;
+  position: absolute;
+  right: -8px;
+  top: -12px;
+  z-index: 99;
+}
+.van-tag__close::before,
+.van-tag__close::after {
+  content: "";
+  width: 16px;
+  height: 2px;
+  border-radius: 8px;
+  background-color: #fff;
+  position: absolute;
+  top: 12px;
+  left: 6px;
+  transform: rotate(45deg);
+}
+.van-tag__close::after {
+  transform: rotate(-45deg);
+}
+/************************* tag 重置结束 *************************/
+/*************************  通告栏 NoticeBar 重置开始 *************************/
+.van-notice-bar__content {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.van-notice-bar__content /deep/ .van-icon {
+  position: relative;
+  top: 6px;
+}
+.notice-success {
+  color: #28c663;
+  background: #dff7e8;
+}
+.notice-danger {
+  color: #f56c6c;
+  background: #fff1f1;
+}
+.notice-warn {
+  color: #feb70f;
+  background: #fff7ed;
+}
+/*************************  通告栏 NoticeBar 重置结束 *************************/
+/*************************  列表 list 重置开始 *************************/
+.van-cell {
+  background-color: #fff;
+  word-break: keep-all;
+}
+.van-cell__left-icon {
+  margin-right: 0px;
+}
+.van-cell .list-right-value {
+  color: #909399;
+}
+.van-cell .tip-wrap {
+  display: flex;
+  align-items: center;
+  height: 48px;
+}
+.van-cell .tip-wrap .ignore-tip {
+  height: 48px;
+  max-width: 120px;
+  font-size: 28px;
+  line-height: 48px;
+  color: #909399;
+  margin-left: 32px;
+  word-break: keep-all;
+}
+.van-cell .van-icon {
+  color: #c0c4cc;
+  font-size: 36px;
+  line-height: inherit;
+  text-align: left;
+}
+.van-cell .van-icon-arrow,
+.van-cell .van-icon-arrow-down,
+.van-cell .van-icon-arrow-up,
+.van-cell .van-icon-arrow-left {
+  font-size: 30px;
+  text-align: right;
+}
+.van-cell .van-cell__label {
+  color: #909399;
+}
+.van-cell .van-cell__value .van-field__word-limit {
+  color: #c0c4cc;
+}
+.van-cell .cell-left-icon {
+  width: 38px;
+  height: 38px;
+  float: left;
+  margin-top: 6px;
+  margin-right: 8px;
+}
+/*************************  列表 list 重置结束 *************************/
+/************************* input 重置开始 *************************/
+.ignore-explain {
+  font-size: 28px;
+  display: inline-block;
+  color: #3b71e8;
+  margin-left: 32px;
+}
+.van-field__control--right {
+  padding-left: 40px !important;
+}
+.field-ignore-tip .van-field__control--right {
+  padding-left: 96px !important;
+}
+.van-field__label {
+  flex: none;
+  box-sizing: border-box;
+  width: 180px;
+}
+.van-field__label--center {
+  text-align: center;
+}
+.van-field__label--right {
+  padding-right: 32px;
+  text-align: right;
+}
+.van-field__value {
+  overflow: visible;
+}
+.van-field__body {
+  display: flex;
+  align-items: center;
+}
+.van-field__control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: #303133;
+  line-height: inherit;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
+  resize: none;
+}
+.van-field__control::placeholder {
+  color: #c0c4cc;
+}
+.van-field__control:disabled {
+  color: #909399;
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 1;
+  -webkit-text-fill-color: currentColor;
+}
+.van-field__control:read-only {
+  cursor: default;
+}
+.van-field__control--center {
+  justify-content: center;
+  text-align: center;
+}
+.van-field__control--right {
+  justify-content: flex-end;
+  text-align: right;
+}
+.van-field__control--custom {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+}
+.van-field__control[type='date'],
+.van-field__control[type='time'],
+.van-field__control[type='datetime-local'] {
+  min-height: 30px;
+}
+.van-field__control[type='search'] {
+  -webkit-appearance: none;
+}
+.van-field__clear,
+.van-field__icon,
+.van-field__button,
+.van-field__right-icon {
+  flex-shrink: 0;
+}
+.van-field__button {
+  padding-left: 8px;
+}
+.van-field__control--right::placeholder {
+  color: #c0c4cc;
+}
+.van-field__error-message {
+  color: #f56c6c;
+  font-size: 24px;
+  text-align: right;
+}
+.van-field__error-message--center {
+  text-align: center;
+}
+.van-field__error-message--right {
+  text-align: right;
+}
+.van-field__word-limit {
+  margin-top: 4px;
+  color: #606266;
+  font-size: 24px;
+  line-height: 16px;
+  text-align: right;
+}
+.van-field__word-num--full {
+  color: #f56c6c;
+}
+.van-field--error .van-field__control,
+.van-field--error .van-field__control::placeholder {
+  color: #f56c6c;
+  -webkit-text-fill-color: currentColor;
+}
+.van-field--min-height .van-field__control {
+  min-height: 60px;
+}
+.disabled-label {
+  color: #909399;
+}
+.ignore-btn-code {
+  padding-left: 24px;
+  padding-right: 16px;
+  background: #f5f7fa;
+  border-radius: 4px;
+  height: 64px;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  border: none 0;
+}
+.ignore-btn-code .icon-refresh {
+  margin-top: 0px;
+  margin-left: 12px;
+  display: inline-block;
+  margin-bottom: -6px;
+  color: #606266;
+  font-size: 36px;
+}
+/************************* input 重置结束 *************************/
+/*************************  card 重置开始 *************************/
+.card-list.van-cell {
+  height: 100px;
+  padding-top: 28px;
+}
+.card-list.van-cell:not(:last-child)::after {
+  border-bottom: 0 !important;
+}
+.card-list.van-cell .y-card-title {
+  position: relative;
+  top: -10px;
+}
+.card-list.van-cell .van-cell__title {
+  line-height: 48px;
+  font-size: 32px;
+}
+.card-list.van-cell .van-cell__title .card-title-icon {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  margin-right: 16px;
+}
+.van-panel-content {
+  font-size: 28px;
+  color: #606266;
+  line-height: 40px;
+  padding: 8px 32px 32px 50px;
+}
+.card-list-buttom {
+  text-align: right;
+  height: 72px;
+}
+.card-list-buttom .van-button {
+  display: inline-block;
+}
+.card-list-cell {
+  padding-bottom: 24px;
+  padding-left: 16px;
+  margin-top: 16px;
+}
+.card-list-cell .van-cell {
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #606266;
+  border-bottom: 0;
+}
+.card-list-cell .van-cell::after {
+  border-bottom: 0;
+}
+.van-panel-footer {
+  font-size: 28px;
+  color: #606266;
+  line-height: 40px;
+  padding-left: 24px;
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+.van-panel-footer-arrow {
+  padding: 6px 0 6px 24px;
+}
+.van-panel-footer-content {
+  font-size: 28px;
+  color: #606266;
+  line-height: 40px;
+  padding-left: 24px;
+}
+.card-list-round {
+  border-radius: 60px;
+  margin: 64px;
+  overflow: hidden;
+}
+.card-list-round-r {
+  color: #909399;
+}
+.card-list-title-label {
+  height: 136px;
+  padding-top: 32px !important;
+  margin-bottom: 20px;
+}
+.card-list-title-label .van-cell__title {
+  margin-top: 8px;
+}
+.card-list-title-label #v_header_title {
+  margin-bottom: 0 !important;
+  height: 48px !important;
+  position: relative;
+  top: -16px;
+}
+.card-list-title-label .van-cell__label {
+  font-size: 14px;
+  color: #606266;
+  margin-top: 0 !important;
+  padding-left: 16px;
+}
+.card-list-title-label .tips {
+  font-size: 36px !important;
+  color: #f56c6c;
+}
+.card-list-assist.van-cell {
+  padding: 0 0 8px 0;
+}
+.card-list-assist.van-cell:not(:last-child)::after {
+  border: 0;
+}
+.card-list-assist .van-cell__title {
+  line-height: 48px;
+  font-size: 28px;
+}
+.card-list-label .custom-title {
+  font-size: 28px;
+  color: #606266;
+}
+.card-list-label .van-cell__label {
+  font-size: 24px;
+  color: #c0c4cc;
+  margin-top: 0;
+}
+.card-list-imgs {
+  padding-top: 24px;
+  height: 144px;
+}
+.card-list-imgs .van-cell__value {
+  color: #c0c4cc;
+  font-size: 24px;
+}
+.card-list-imgs .card-list-img-title span {
+  font-size: 36px !important;
+}
+.card-list-imgs .card-list-img-title p {
+  font-size: 28px;
+  color: #909399;
+  margin: 0;
+}
+.card-list-imgs /deep/ .van-cell__title {
+  height: 60px;
+}
+.card-list-imgs-content {
+  padding: 24px 32px 32px 24px;
+  font-size: 28px;
+  color: #606266;
+}
+.card-list-imgs-content2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  color: #606266;
+  padding-left: 0;
+}
+.card-list-imgs-content2 .van-panel__footer {
+  padding: 0 !important;
+}
+.card-list-imgs-content2 .card-list {
+  padding: 0!important;
+}
+.card-list-imgs-content2 .van-cell__value {
+  font-size: 24px;
+  color: #c0c4cc;
+}
+.card-list-round {
+  border-radius: 24px;
+  margin: 32px;
+  background-color: #fff;
+  padding-bottom: 24px;
+}
+.card-list-round .van-cell:not(:last-child)::after {
+  border: 0;
+}
+.card-list-round .van-cell {
+  padding: 8px 32px;
+}
+.card-list-round .card-list-round-header {
+  height: 112px;
+  color: #606266;
+  margin-bottom: 32px;
+  padding: 24px 32px;
+}
+.card-list-round .card-list-round-header:not(:last-child)::after {
+  width: calc(100% - 32px * 2) !important;
+  border-bottom: 1px dashed #e0e1e6;
+}
+.card-list-round .card-list-round-header .van-cell__title {
+  font-size: 32px;
+}
+.card-list-round .card-list-round-r-large {
+  font-size: 32px;
+  color: #606266;
+}
+.card-list-round .card-list-round-r-default-w {
+  font-size: 28px;
+  color: #606266;
+}
+.card-list-round .card-list-round-main .card-list-round-header {
+  margin-bottom: 0;
+  color: #3b71e8 !important;
+  padding: 24px 32px;
+}
+.card-list-round .card-list-round-main .card-list-round-header .van-cell__title {
+  font-size: 32px;
+}
+.card-list-round .van-panel__content .van-cell__title {
+  color: #909399;
+}
+.card-list-round .card-color-main {
+  color: #3b71e8;
+}
+.card-list-round .card-color-main .van-cell__title {
+  color: #3b71e8;
+}
+.card-list-round .card-color-second-text {
+  color: #606266;
+}
+.card-list-round .card-color-second-text .van-cell__title {
+  color: #606266;
+}
+.card-list-round-bottom .van-cell__title {
+  color: #303133;
+}
+.card-list-round-bottom .card-list-round-header {
+  margin-bottom: 0;
+  padding-bottom: 16px;
+}
+.card-list-round-bottom .van-panel__content .van-cell {
+  padding: 0 32px;
+  color: #606266;
+}
+.card-list-round-bottom .card-list-round-r,
+.card-list-round-bottom .van-cell__title {
+  color: #606266 !important;
+}
+.card-list-round-bottom .card-list-round-bottom-border {
+  width: calc(100% - 32px * 2);
+  height: 2px;
+  margin: 16px 32px 16px 32px;
+  border-bottom: 1px dashed #e0e1e6;
+}
+/*************************  通告栏 card 重置结束 *************************/
+/*************************  popup 弹出层 action-sheet 重置开始 *************************/
+.van-action-sheet__description {
+  background-color: #f5f7fa;
+  font-size: 24px !important;
+  color: #909399 !important;
+  text-align: left !important;
+  border-radius: 24px 24px 0 0;
+}
+.van-action-sheet__item,
+.van-action-sheet__cancel {
+  height: 100px;
+}
+.van-share-sheet .van-share-sheet__title {
+  font-size: 32px;
+}
+.van-share-sheet__cancel {
+  color: #fff;
+}
+.van-share-sheet__cancel:active {
+  color: #f5f7fa !important;
+}
+.van-share-sheet__cancel::before,
+.van-share-sheet__cancel::after {
+  width: 32px;
+  height: 4px !important;
+  border-radius: 8px;
+  background-color: #909399 !important;
+  content: '' !important;
+  color: #606266;
+  position: absolute;
+  left: 50%;
+  bottom: 48px;
+  margin-left: -16px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.van-share-sheet__cancel::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+/*************************  popup 弹出层 action-sheet 重置结束 *************************/
+/*************************  modal组件 重置开始 *************************/
+.van-popup__close-icon--top-right {
+  top: 24px !important;
+  right: 24px !important;
+}
+.van-popup .pop-icon {
+  text-align: center;
+}
+.van-popup .pop-icon p {
+  margin: 32px 0 20px 0px;
+}
+.modeal-pop {
+  transition: all ease 0s;
+  padding: 20px;
+  width: 90%;
+  color: #303133;
+  border-radius: 20px;
+}
+.modeal-pop .pop-container {
+  padding: 24px 28px;
+}
+.modeal-pop .pop-container .pop-title {
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.modeal-pop .pop-container .pop-text,
+.modeal-pop .pop-container .pop-text-2 {
+  font-size: 28px;
+  line-height: 48px;
+  padding-bottom: 24px;
+  text-align: left;
+}
+.modeal-pop .pop-container .pop-text-2 {
+  padding-top: 32px;
+}
+.modeal-pop .pop-container .van-button {
+  margin-top: 20px;
+}
+.modeal-pop .pop-container .van-col {
+  padding-top: 16px;
+}
+.van-popup__close-icon {
+  color: #909399;
+}
+/*************************  modal组件 重置结束 *************************/
+/*************************  tab 组件 重置开始 *************************/
+.van-tabs__nav--card {
+  border-radius: 999px;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+  overflow: hidden;
+}
+.van-tabs__nav--card .van-tab:last-child {
+  border-right: none;
+}
+.van-tabs__line {
+  width: 27.5px !important;
+}
+ /deep/ .van-tab {
+  font-size: 32px;
+}
+ /deep/ .van-tabs__nav--card {
+  border-radius: 8px;
+}
+.van-tabs__content {
+  padding: 10px 22px;
+  font-size: 16px;
+}
+/*************************  tab 组件 重置结束 *************************/
+/*************************  tree-select 组件 重置开始 *************************/
+.van-tree-select__item--active {
+  color: #1b65b9;
+}
+/*************************  tree-select 组件 重置结束 *************************/
