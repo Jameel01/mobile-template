@@ -2,8 +2,8 @@
  * @Description: 主页面
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 15:29:23
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-10-30 15:33:46
  -->
 <template>
   <div id="app">
@@ -21,6 +21,11 @@ export default {
     return {
       loadingStatus: true //加载展示
     }
+  },
+  mounted(){
+    window.addEventListener("hashchange", () => {
+      this.$router.go(0)
+    })
   },
   created() {
     this.$Loading.show(2000)
