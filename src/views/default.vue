@@ -38,7 +38,7 @@ export default {
   methods: {}
 }
 </script>
-<style lang='scss' scoped>
+<style lang='less' scoped>
 .bottom-button {
   width: 320px;
 }

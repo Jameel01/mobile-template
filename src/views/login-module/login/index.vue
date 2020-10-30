@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-07-08 15:35:42
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-07-08 16:58:34
+ * @LastEditTime: 2020-07-31 11:16:40
 --> 
 <template>
   <div class="login">
@@ -82,7 +82,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .login {//页面父级div中的类名
   //在此添加页面样式
 }

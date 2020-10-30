@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-30 15:33:46
+ * @LastEditTime: 2020-10-30 15:35:22
  -->
 <template>
   <div id="app">
@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 #app {
   background: #fff;
   height: 100%;

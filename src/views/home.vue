@@ -30,7 +30,7 @@ export default {
   destroyed() {}
 }
 </script>
-<style lang='scss' scoped>
+<style lang='less' scoped>
 .page-home{}
 </style>
 
