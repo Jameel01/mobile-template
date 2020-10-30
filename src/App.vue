@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-23 09:52:35
+ * @LastEditTime: 2020-10-30 15:31:25
  -->
 <template>
   <div id="app">
@@ -26,6 +26,11 @@ export default {
     return {
       loadingStatus: true //加载展示
     }
+  },
+  mounted(){
+    window.addEventListener("hashchange", () => {
+      this.$router.go(0)
+    })
   },
   created() {
     this.$Loading.show(2000)
