@@ -2,8 +2,8 @@
  * @Description: 公共路由，以下实例：请根据具体业务修改或无用删除
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 15:38:41
+ * @LastEditors: chenyt
+ * @LastEditTime: 2020-05-29 13:52:08
  */
 
 export default [
@@ -16,7 +16,7 @@ export default [
     },
     component: () => import(/* webpackChunkName: "loginModule" */"@/views/home.vue")
   },
-  
+
   {
     path: "*",
     name: "not-found",
