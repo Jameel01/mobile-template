@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: chenyt
  * @Date: 2020-03-21 22:23:09
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-09 16:04:36
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-11-02 15:17:27
  -->
 <template>
   <div class='page-other'>
@@ -26,7 +26,7 @@
 </template>
 <script>
 import Vue from "vue"
-import { Empty } from "vant"
+import { Empty } from "@ylz/vant"
 Vue.use(Empty)
 export default {
   data() {

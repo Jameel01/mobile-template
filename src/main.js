@@ -2,16 +2,16 @@
  * @Description: 主入口文件
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
- * @LastEditors: yjm
- * @LastEditTime: 2020-07-29 11:58:30
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-11-02 15:18:39
  */
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"
 import router from "@/router"
-import { Toast } from "vant"
+import { Toast } from "@ylz/vant"
 
-import pxToViewport from "./utils/px-to-viewport"
+import pxToViewport from "@/utils/px-to-viewport"
 Vue.prototype.$pxToViewport = pxToViewport
 
 Vue.use(Toast)
@@ -19,7 +19,7 @@ Vue.use(Toast)
 import "@/styles/iconfonts/iconfont.css"
 
 // 引入全部样式
-import "vant/lib/index.less"
+import "@ylz/vant/lib/index.less"
 // 自动注册全局的组件
 import "@/components/index"
 // 引入基础样式
