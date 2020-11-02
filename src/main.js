@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 15:18:39
+ * @LastEditTime: 2020-11-02 16:42:49
  */
 import Vue from "vue"
 import App from "@/App.vue"
@@ -26,7 +26,8 @@ import "@/components/index"
 // import "@/styles/theme/theme-params.less"
 // import "@/styles/animate.less"
 import "@/styles/common.less"
-import "@/styles/theme/reset-vant.less"
+//先关闭医保规范样式文件
+// import "@/styles/theme/reset-vant.less"
 //vuex存储
 import store from "@/store"
 //引入常用的vant组件
