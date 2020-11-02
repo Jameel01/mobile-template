@@ -3,15 +3,19 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:15:42
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 15:14:25
+ * @LastEditTime: 2020-11-02 17:11:01
  */
 
 import Vue from "vue"
-import { Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search, Slider, Stepper, Tag, NoticeBar, Card } from "@ylz/vant"
+import { YPicker, YSelect, YUploader, YFloatBall, Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search, Slider, Stepper, Tag, NoticeBar, Card } from "@ylz/vant"
 
-import yLoadingPlus from "@/components/global/y-loading-plus/index"
+import YLoadingPlus from "@/components/global/y-loading-plus/index"
 
-Vue.use(yLoadingPlus)
+Vue.use(YLoadingPlus)
+Vue.use(YFloatBall)
+Vue.use(YUploader)
+Vue.use(YSelect)
+Vue.use(YPicker)
 
 // 常用移动端组件
 Vue.use(Button)
