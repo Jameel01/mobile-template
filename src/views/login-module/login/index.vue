@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-07-08 15:35:42
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-07-31 11:16:40
+ * @LastEditTime: 2020-11-02 16:42:25
 --> 
 <template>
   <div class="login">
@@ -31,7 +31,6 @@
         </van-button>
       </div>
   </van-form>
-  <div @click="resetBtn">重置按钮</div>
   </div>
 </template>
 <script>

@@ -2,16 +2,16 @@
  * @Description: 主入口文件
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
- * @LastEditors: yjm
- * @LastEditTime: 2020-07-29 11:58:30
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-11-02 16:42:49
  */
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"
 import router from "@/router"
-import { Toast } from "vant"
+import { Toast } from "@ylz/vant"
 
-import pxToViewport from "./utils/px-to-viewport"
+import pxToViewport from "@/utils/px-to-viewport"
 Vue.prototype.$pxToViewport = pxToViewport
 
 Vue.use(Toast)
@@ -19,14 +19,15 @@ Vue.use(Toast)
 import "@/styles/iconfonts/iconfont.css"
 
 // 引入全部样式
-import "vant/lib/index.less"
+import "@ylz/vant/lib/index.less"
 // 自动注册全局的组件
 import "@/components/index"
 // 引入基础样式
 // import "@/styles/theme/theme-params.less"
 // import "@/styles/animate.less"
 import "@/styles/common.less"
-import "@/styles/theme/reset-vant.less"
+//先关闭医保规范样式文件
+// import "@/styles/theme/reset-vant.less"
 //vuex存储
 import store from "@/store"
 //引入常用的vant组件
