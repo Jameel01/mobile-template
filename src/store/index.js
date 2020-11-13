@@ -1,46 +1,33 @@
 /*
- * @Description: vuex
- * @Autor: guoruliang
- * @Date: 2020-04-01 09:57:00
- * @LastEditors: chenyt
- * @LastEditTime: 2020-04-23 15:01:17
+ * @Description: 
+ * @Version: 0.1
+ * @Autor: Chenyt
+ * @Date: 2020-11-12 10:01:40
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-11-12 10:16:47
  */
 import Vue from "vue"
 import Vuex from "vuex"
-import modules from "./modules"
-import { getToken } from "@/utils/auth"
+import getters from "./getters"
 
 Vue.use(Vuex)
 
-const state = {
-  token: getToken(),
-  userInfo: ""
-}
+// https://webpack.js.org/guides/dependency-management/#requirecontext
+const modulesFiles = require.context("./modules", true, /\.js$/)
 
-const getters = {
+// you do not need `import app from './modules/app'`
+// it will auto require all vuex module from modules file
+const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+  // set './app.js' => 'app'
+  const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, "$1")
+  const value = modulesFiles(modulePath)
+  modules[moduleName] = value.default
+  return modules
+}, {})
 
-}
-
-const actions = {
-
-}
-
-const mutations = {
-  SET_TOKEN: (state, token) => {
-    state.token = token
-  },
-  DEL_TOKEN: (state) => {
-    state.token = ""
-  },
-  SET_USER_INFO: (state, userInfo) => {
-    state.userInfo = userInfo
-  }
-}
-
-export default new Vuex.Store({
-  state,
-  getters,
-  actions,
-  mutations,
-  modules
+const store = new Vuex.Store({
+  modules,
+  getters
 })
+
+export default store

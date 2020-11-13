@@ -4,7 +4,7 @@
  * @Autor: xyDideo
  * @Date: 2020-06-16 17:17:34
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 16:40:37
+ * @LastEditTime: 2020-11-12 11:43:27
  */ 
 
  @import "./resetui.less";
@@ -198,6 +198,9 @@
     font-size: 14px* @ratio;
     .van-icon{
       color: @third_text_color !important;
+    }
+    :after{
+      border-bottom: 1px solid @second_border_color;
     }
   }
   .van-field__body{
@@ -617,6 +620,7 @@
   flex: none;
   box-sizing: border-box;
   width: 90px * @ratio;
+  color:@main_text_color;
   &--center {
     text-align: center;
   }

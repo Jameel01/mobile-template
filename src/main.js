@@ -3,14 +3,15 @@
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 16:42:49
+ * @LastEditTime: 2020-11-13 13:57:04
  */
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"
 import router from "@/router"
 import { Toast } from "@ylz/vant"
-
+import Mixin from "./mixins"
+Vue.mixin(Mixin)
 import pxToViewport from "@/utils/px-to-viewport"
 Vue.prototype.$pxToViewport = pxToViewport
 
