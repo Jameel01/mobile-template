@@ -3,7 +3,7 @@
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-30 15:36:31
+ * @LastEditTime: 2020-11-13 15:36:31
  -->
 <template>
   <div id="app">
@@ -23,9 +23,9 @@ export default {
     }
   },
   mounted(){
-    window.addEventListener("hashchange", () => {
-      this.$router.go(0)
-    })
+    // window.addEventListener("hashchange", () => {
+    //   this.$router.go(0)
+    // })
   },
   created() {
     this.$Loading.show(2000)
