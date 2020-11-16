@@ -4,12 +4,12 @@
  * @Autor: Chenyt
  * @Date: 2020-11-12 10:22:43
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-13 14:02:04
+ * @LastEditTime: 2020-11-16 11:08:58
 -->
 <template>
 <div class="dict-demo"> 
-      <y-select-dict v-model="select" class="no-line" dict-type="sex" label="性别" is-link />
       <y-select-dict v-model="select" dict-type="sex" label="性别" is-link />
+      <y-select-dict v-model="select" dict-type="sex"  :filterabled="false" label="性别" is-link />
       <div title="Form表单组合" card>
       <van-form validate-first @failed="onFailed">
         <!-- 通过 pattern 进行正则校验 -->
