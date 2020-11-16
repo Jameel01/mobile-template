@@ -112,4 +112,4 @@ import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
 * `@/utils/common.js`公用工具函数
 
 ### 跟新日志
-* [v1.0.1](./CHANGELOG.md "2020-11-03") 
+* [v1.0.2](./CHANGELOG.md "2020-11-16") 

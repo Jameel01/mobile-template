@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-11-03 14:11:55
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-04 09:26:11
+ * @LastEditTime: 2020-11-16 11:33:35
 -->
 # 更新日志
 
@@ -17,6 +17,18 @@
 - 修订号：发布包含新特性和问题修复。
 - 次版本号：发布包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
+
+### [v1.0.2]()
+
+`2020-11-16`
+
+**Feature**
+- mixins：添加全局字典转换函数（asyncGetLabelByCodeFn、asyncGetLabelByCodesFn、asyncGetCodeByLabelFn、asyncGetCodeByLabelsFn）、全局日期转换函数（dayFormatFn）、常用校验函数（validatePostCodeFn,validatePwdFn,validateUserNameFn, validateTaxpayerNoFn,validateChineseFn, validateIdCardFn, validateMobilePhoneFn, validateHomePhoneFn, validateEmailFn, validateCodeCountFn,validateBankNo,validateUrl,）
+- 新增字典使用页面案例
+
+**chore 代码整理**
+
+- utils：整理工具函数，去除无用工具文件。 
 
 ### [v1.0.1]()
 
