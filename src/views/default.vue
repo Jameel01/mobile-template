@@ -4,7 +4,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 22:23:09
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 15:17:27
+ * @LastEditTime: 2020-11-16 10:08:08
  -->
 <template>
   <div class='page-other'>
@@ -17,9 +17,9 @@
     <van-empty class='seat' :image="require('@/assets/imgs/common/none@2x.png')" description="很抱歉，未查询到相关信息" v-else-if='type=="none"' />
     <van-empty class='seat' :image="require('@/assets/imgs/common/defend@2x.png')" description="系统维护中" v-else-if='type=="defend"'>
     </van-empty>
-    <van-empty description="描述文字" v-else>
-      <van-button type="info" round class="bottom-button" plain>
-        重新加载
+    <van-empty description="页面走丢了" v-else>
+      <van-button type="info" @click="clickFn" round class="bottom-button" plain>
+        返回上一页
       </van-button>
     </van-empty>
   </div>
@@ -33,9 +33,13 @@ export default {
     return { type: "error" }
   },
   created() {
-    this.type = this.$route.query.type || "error"
+    this.type = this.$route.query.type || "info"
   },
-  methods: {}
+  methods: {
+    clickFn(){
+      window.history.go(-1)
+    }
+  }
 }
 </script>
 <style lang='less' scoped>
