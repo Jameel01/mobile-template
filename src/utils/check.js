@@ -1,14 +1,24 @@
-const mobileRex = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+/*
+ * @Description: 常用表单校验规则
+ * @Version: 0.1
+ * @Autor: Chenyt
+ * @Date: 2020-10-20 10:25:08
+ * @LastEditors: Chenyt
+ * @LastEditTime: 2020-11-13 13:57:57
+ */
+
+const mobileRex = /1\d{10}/;//校验手机号格式
 // const mobileRex = /^(13[0-9]|14[579]|15[0-3,5-9]|16[67]|17[0135678]|18[0-9]|19[891])\d{8}$/;
-const codeRex = /^\d{6}$/; // 验证码
-const cnReg = /^([\u4e00-\u9fa5\·]{2,25})$/; //中文名正则
+const codeRex = /^\d{6}$/; // 6位数验证码
+const cnReg = /^([\u4e00-\u9fa5\·]{2,25})$/; //校验中文名正则
 const regEmail = /^\s*$|^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+(\.[a-zA-Z]{2,3})+$/; //邮箱
 const regIdCard = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/; //15位和18位身份证号码的正则表达式
 const usernameRex = /^[a-zA-Z][\da-zA-Z]{2,19}$/;
-const homePhone =/^\s*$|^\d{4}-\d{8}|\d{4}-\d{7}$/;//验证电话号码为7-8位数字并带有区号
+const homePhone =/^\s*$|^\d{4}-\d{8}|\d{4}-\d{7}$/;//验证固定电话号码为7-8位数字并带有区号
 // 纳税人识别号15|17|18|20位，字母+数字
 const taxpayerNo = /^(^[\da-zA-Z]{15}$)|(^[\da-zA-Z]{17}$)|(^[\da-zA-Z]{18}$)|(^[\da-zA-Z]{20}$)$/
-
+const postCode=/^[0-9]{6}$/;//邮政编码
+const bankNo=/^([1-9]{1})(\d{14}|\d{18})$/;//银行卡号
 /**
  * 固定电话
  * @param {String} str 
@@ -16,7 +26,13 @@ const taxpayerNo = /^(^[\da-zA-Z]{15}$)|(^[\da-zA-Z]{17}$)|(^[\da-zA-Z]{18}$)|(^
 export function checkHomePhone(str) {
   return homePhone.test(str);
 }
-
+/**
+ * 银行卡号
+ * @param {String} str 
+ */
+export function checkBankNo(str) {
+  return bankNo.test(str);
+}
 /**
  * 纳税人识别号格式校验
  * @param {String} str 
@@ -74,7 +90,7 @@ export function checkPWD(str) {
   const flag3 = rule3.test(str);
   const flag4 = rule4.test(str);
   const flag5 = rule5.test(str);
-  if (flag1 && flag5 && (flag2 || flag3)) {
+  if (flag1 && flag5 && flag2 || flag3) {
     return true;
   } else {
     return false;
@@ -120,14 +136,15 @@ export function upper(str) {
   return flag3
 }
 /**
- * 去除空格
+ * 校验邮政编码
  * @param {*} str 
  */
-export function deletenone(str) {
-  return str.replace(/\s+/g, "");
+export function checkPostCode(str) {
+  const flag = postCode.test(str);
+  return flag
 }
 /**
- * 纳税人识别号，校验组织机构代码 
+ * 校验地址码
  * @param {*} str 
  */
 // 校验地址码
@@ -146,18 +163,6 @@ export function checkAddressCode(addressCode) {
     return false;
   }
 
-}
-/**
- * 金钱格式化
- * @param {*} money 
- */
-export function formatCash(money) {
-  // 方法一
-  return money.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  // 方法二
-  // return money.split('').reverse().reduce((prev, next, index) => {
-  //   return ((index % 3) ? next : (next + ',')) + prev
-  // })
 }
 
 /*
@@ -214,36 +219,166 @@ export function validateIdCard(idCard) {
   return isOK;
 }
 
+
+
+/******全局访问********/
 /**
- * 通过身份证获取东西
- * @param {*} UUserCard 
- * @param {*} type :birth,age,sex
+ * 校验身份证正误
+ * @param {*} IdCard 
+ * @param {*} 
  */
-export function getIdCardInfo(UUserCard, type) {
-  if (type == "birth") {
-    //获取出生日期
-    birth = UUserCard.substring(6, 10) + "-" + UUserCard.substring(10, 12) + "-" + UUserCard.substring(12, 14);
-    return birth;
-  }
-  if (type == "sex") {
-    //获取性别
-    if (parseInt(UUserCard.substr(16, 1)) % 2 == 1) {
-      //男
-      return "男";
-    } else {
-      //女
-      return "女";
-    }
-  }
-  if (type == "age") {
-    //获取年龄
-    var myDate = new Date();
-    var month = myDate.getMonth() + 1;
-    var day = myDate.getDate();
-    var age = myDate.getFullYear() - UUserCard.substring(6, 10) - 1;
-    if (UUserCard.substring(10, 12) < month || UUserCard.substring(10, 12) == month && UUserCard.substring(12, 14) <= day) {
-      age++;
-    }
-    return age;
+export const validateIdCardFn=(rule, value, callback) => { 
+  if (!validateIdCard(value)) {
+    callback(new Error("请输入正确的身份证号"))
+  } else {
+    callback()
   }
 }
+/**
+ * 校验手机号正误
+ * @param {*} phone
+ * @param {*} 
+ */
+export const validateMobilePhoneFn=(rule, value, callback) => { 
+  if (!checkMobile(value)) {
+    callback(new Error("请输入正确的手机号"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验邮箱正误
+ * @param {*} email
+ * @param {*} 
+ */
+export const validateEmailFn=(rule, value, callback) => { 
+  if (!checkEmail(value)) {
+    callback(new Error("请输入正确的邮箱"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验6位数验证码正误
+ * @param {*} phone
+ * @param {*} 
+ */
+export const validateCodeCountFn=(rule, value, callback) => { 
+  if (!checkCode(value)) {
+    callback(new Error("请输入6位验证码"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验固定电话正误
+ * @param {*} phone
+ * @param {*} 
+ */
+export const validateHomePhoneFn=(rule, value, callback) => { 
+  if (!checkHomePhone(value)) {
+    callback(new Error("请输入正确的固定电话"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验是否中文
+ * @param {*} value
+ * @param {*} 
+ */
+export const validateChineseFn=(rule, value, callback) => { 
+  if (!checkCN(value)) {
+    callback(new Error("请输入中文"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验纳税人识别号
+ * @param {*} TaxpayerNo
+ * @param {*} 
+ */
+export const validateTaxpayerNoFn=(rule, value, callback) => { 
+  if (!checkTaxpayerNo(value)) {
+    callback(new Error("请输入正确是纳税人识别号"))
+  } else {
+    callback()
+  }
+}
+
+/**
+ * 校验是否大写
+ * @param {*} upper
+ * @param {*} 
+ */
+export const validateUpperFn=(rule, value, callback) => { 
+  if (!upper(value)) {
+    callback(new Error("请输入大写字母"))
+  } else {
+    callback()
+  }
+}
+
+/**
+ * 校验邮编
+ * @param {*} postcode
+ * @param {*} 
+ */
+export const validatePostCodeFn=(rule, value, callback) => { 
+  if (!checkPostCode(value)) {
+    callback(new Error("请输入正确的邮政编码"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验用户名
+ * @param {*} upper
+ * @param {*} 
+ */
+export const validateUserNameFn=(rule, value, callback) => { 
+  if (!checkUserName(value)) {
+    callback(new Error("请输入字母开头，3-20位的用户名"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验密码
+ * @param {*} pwd
+ * @param {*} 
+ */
+export const validatePwdFn=(rule, value, callback) => { 
+  if (!checkPWD(value)) {
+    callback(new Error("6-20位由字母大小写和数字组成的密码"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验银行卡号
+ * @param {*} pwd
+ * @param {*} 
+ */
+export const validateBankNo=(rule, value, callback) => { 
+  if (!checkBankNo(value)) {
+    callback(new Error("请输入正确的银行卡号"))
+  } else {
+    callback()
+  }
+}
+/**
+ * 校验网址(url,支持端口和"?+参数"和"#+参数")
+ * @param {*} pwd
+ * @param {*} 
+ */
+export const validateUrl = (rule, value, callback) => {
+  const reg = /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/
+  if (reg.test(value)) {
+    callback()
+  } else {
+    return callback(new Error('请输入正确的网址'))
+  }
+}
+

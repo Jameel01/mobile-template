@@ -18,7 +18,7 @@
     "img-loader": "^3.0.1",
     "js-cookie": "^2.2.1",
     "mockjs": "^1.1.0",
-    "@ylz/vant": "^2.11.0",
+    "@ylz/vant": "2.11.0",
     "vconsole": "^3.3.4",
     "vconsole-webpack-plugin": "^1.5.1",
     "vue": "^2.6.10",

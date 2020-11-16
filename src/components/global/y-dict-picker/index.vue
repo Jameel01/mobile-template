@@ -2,9 +2,9 @@
  * @Description: 字典转换piker
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: yjm
+ * @LastEditors: Chenyt
  * @Date: 2020-07-07 15:20:08
- * @LastEditTime: 2020-07-20 11:19:35
+ * @LastEditTime: 2020-11-04 09:21:44
 --> 
 <template>
   <van-picker
@@ -20,7 +20,7 @@
   />
 </template>
 <script>
-import { jsonToArray } from "@/utils"
+import { jsonToArray } from "@/utils/common"
 export default {
   name: "y-dict-picker",
   props: {

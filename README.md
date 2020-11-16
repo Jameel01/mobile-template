@@ -104,11 +104,12 @@ import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
 ```
 
 ### 常用工具函数--utils
-* `cookie`使用`js cookie`方法存取用户登录信息token，方法函数地址：`@/utils/auth.js`,在`router/before-each.js`的方法`beforeEachHandler`校验登录信息。配置无需登录页面白名单。
+* `cookie`使用`js-cookie`方法存取用户登录信息token，方法函数地址：`@/utils/auth.js`,在`router/before-each.js`的方法`beforeEachHandler`校验登录信息。配置无需登录页面白名单。
 * `@/utils/check.js`常用规则校验
 * `@/utils/str-util.js`常用字符串函数
 * `@/utils/compress-file.js`压缩文件工具函数
 * `@/utils/detect.js`设备判断函数
+* `@/utils/common.js`公用工具函数
 
 ### 跟新日志
-* 更新设置vant样式标准为750px  --（更新时间：2020-07-09）
+* [v1.0.2](./CHANGELOG.md "2020-11-16") 
