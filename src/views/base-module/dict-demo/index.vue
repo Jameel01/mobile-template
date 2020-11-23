@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-11-12 10:22:43
  * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-16 11:08:58
+ * @LastEditTime: 2020-11-19 13:53:27
 -->
 <template>
 <div class="dict-demo"> 
@@ -22,8 +22,8 @@
         />
         <y-select-dict
           v-model="value0"
-          dict-type="sex"
-          name="sex"
+          name="test"
+          dict-type="test"
           placeholder="数据字典"
           input-align="left"
           label="性别"
@@ -77,12 +77,22 @@ export default {
   data() {
     return {
       select: "1",
-      value0: "",
+      value0: "13",
       value1: "",
       value2: "",
       value3: "",
       level: "",
-      pattern: /\d{6}/
+      pattern: /\d{6}/,
+      columns: {
+        "11": "北京市",
+        "12": "天津市",
+        "13": "河北省"
+      },
+      format: {
+        name: "label",
+        value: "value"
+      }
+      
     }
   },
   methods: {

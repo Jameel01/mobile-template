@@ -4,7 +4,7 @@
  * @Autor: yjm
  * @LastEditors: Chenyt
  * @Date: 2020-09-21 10:59:06
- * @LastEditTime: 2020-11-12 10:50:47
+ * @LastEditTime: 2020-11-19 13:51:32
  */
 import isObject from "lodash/isObject"
 import isEmpty from "lodash/isEmpty"
@@ -72,6 +72,20 @@ export function getCodeListApi(params) {
             {
               value: "2",
               label: "女"
+            }
+          ],
+          test: [
+            {
+              label: "北京市",
+              value: "11"
+            },
+            {
+              label: "天津市",
+              value: "12"
+            },
+            {
+              label: "河北省",
+              value: "13"
             }
           ],
           level: [
