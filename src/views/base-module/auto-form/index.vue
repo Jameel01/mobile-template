@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: Chenyt
  * @Date: 2020-11-20 13:54:34
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-20 14:12:08
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-12-01 11:36:23
 -->
 <template>
 <div class="auto-form">
@@ -24,13 +24,16 @@
 </div>
 </template>
 <script>
-
+import city from "@/assets/data/city"
+import area from "@/assets/data/area"
+import province from "@/assets/data/province"
+import regionData from "@/assets/data/regionData"
 export default {
   name: "auto-form",
   data() {
     return {
-      form: {
-        sex: 1,
+      form: {//初始化表单数据
+        username: "",
         select: [],
         selectDict: []
       },
@@ -38,10 +41,13 @@ export default {
       formItemList: [
         {
           type: "input",
-          prop: "sex",
-          label: "输入框",
-          scopedSlots: {
-            extra: () => <van-icon name="good-job-o" />
+          prop: "username",
+          placeholder: "请输入姓名",
+          item: {
+            label: "姓名",
+            scopedSlots: {
+              extra: () => <van-icon name="manager-o" />
+            }
           }
         },
         {
@@ -51,6 +57,24 @@ export default {
             label: "字典选择",
             dictType: "sex"
           }
+        },
+        {
+          type: "region",
+          prop: "region",
+          item: {
+            label: "地区选择"
+          },
+          dataList: regionData
+        },
+        {
+          type: "area",
+          prop: "area",
+          item: {
+            label: "三级地区选择"
+          },
+          plist: province,
+          clist: city,
+          alist: area
         },
         {
           type: "calendar",

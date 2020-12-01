@@ -2,9 +2,9 @@
  * @Description: y-auto-form 自动表单
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Chenyt
+ * @LastEditors: yjm
  * @Date: 2020-11-13 11:44:06
- * @LastEditTime: 2020-11-20 14:12:29
+ * @LastEditTime: 2020-11-24 10:23:36
  */
 import FormItem from "./y-form-item"
 export default {
@@ -15,7 +15,9 @@ export default {
       required: true
     }
   },
+
   name: "y-auto-form",
+
   model: {
     event: "change",
     prop: "value"
@@ -52,7 +54,7 @@ export default {
     },
 
     parseFormItemList(formItemList) {
-      const isArrayValue = ["uploader"]
+      const isArrayValue = ["uploader", "region", "area"]
       // 原始配置对象
       this.rawFormItemList = formItemList
         .map(item => {

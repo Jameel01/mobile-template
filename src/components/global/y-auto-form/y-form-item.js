@@ -4,11 +4,12 @@
  * @Autor: yjm
  * @LastEditors: Please set LastEditors
  * @Date: 2020-11-13 11:44:20
- * @LastEditTime: 2020-11-23 13:37:05
+ * @LastEditTime: 2020-12-01 11:28:31
  */
 import isFunction from "lodash/isFunction"
 import isObject from "lodash/isObject"
 import merge from "lodash/merge"
+import flattenDeep from "lodash/flattenDeep"
 import { dayFormat } from "./dayjs"
 
 import "./index.less"
@@ -29,13 +30,18 @@ import {
   DatetimePicker
 } from "@ylz/vant"
 
+import Region from "../y-region-picker"
+import Area from "../y-area"
+
 export default {
   name: "y-form-item",
   data() {
     return {
       generator: "",
       showCalendar: false,
-      showDatetime: false
+      showDatetime: false,
+      showRegion: false,
+      showArea: false
     }
   },
   components: {
@@ -50,7 +56,9 @@ export default {
     RadioGroup,
     Calendar,
     Popup,
-    YSelect
+    YSelect,
+    Region,
+    Area
   },
 
   methods: {
@@ -230,6 +238,84 @@ export default {
         </div>
       )
     },
+    genRegion(field, props) {
+      const fieldProps = this.setDefaultValue({
+        config: field,
+        defaultAttrs: {
+          isLink: true,
+          readonly: true,
+          inputAlign: "right",
+          placeholder: "请选择"
+        },
+        defaultEvent: {
+          click: () => {
+            this.showRegion = true
+          }
+        }
+      })
+
+      const regionProps = this.setDefaultValue({
+        config: props,
+        defaultEvent: {
+          onConfirm: data => {
+            this.data = data.map(item => item.code).filter(Boolean)
+            this.showRegion = false
+            this.$emit("confirm", data)
+          },
+          onCancel: () => {
+            this.showRegion = false
+          }
+        },
+        defaultAttrs: {
+          isInit: true
+        }
+      })
+
+      return (
+        <div class="van-cell form-item">
+          <van-field v-model={this.regionText} {...fieldProps} />
+          <Region show={this.showRegion} {...regionProps} />
+        </div>
+      )
+    },
+    genArea(field, props) {
+      const fieldProps = this.setDefaultValue({
+        config: field,
+        defaultAttrs: {
+          isLink: true,
+          readonly: true,
+          inputAlign: "right",
+          placeholder: "请选择"
+        },
+        defaultEvent: {
+          click: () => {
+            this.showArea = true
+          }
+        }
+      })
+
+      const areaProps = this.setDefaultValue({
+        config: props,
+        defaultEvent: {
+          onConfirm: data => {
+            this.data = data.map(item => item.code).filter(Boolean)
+            this.showArea = false
+            this.$emit("confirm", data)
+          },
+          onCancel: () => {
+            this.showArea = false
+          }
+        },
+        defaultAttrs: {}
+      })
+
+      return (
+        <div class="van-cell form-item">
+          <van-field v-model={this.areaText} {...fieldProps} />
+          <Area show={this.showArea} {...areaProps} />
+        </div>
+      )
+    },
     genDatetime(field, props) {
       // 时间格式化
       const dateType = {
@@ -401,7 +487,9 @@ export default {
       selectDict: this.genSelectDict, // 码表编译选择框
       checkbox: this.genCheckbox, // 码表编译选择框
       radio: this.genRadio, // 码表编译选择框
-      datetime: this.genDatetime // 时间选择框
+      datetime: this.genDatetime, // 时间选择框
+      area: this.genArea, // 三级地区选择框
+      region: this.genRegion // 城市选择框
     }
 
     // 获取生成模板函数，创建后不在变更
@@ -416,6 +504,45 @@ export default {
       get() {
         return this.$attrs.__data
       }
+    },
+    regionText() {
+      const { dataList } = this.$attrs
+      let area = dataList
+      return this.data
+        .map(item => {
+          let res = []
+          area.some(i => {
+            if (i.code == item) {
+              res = i
+              return true
+            }
+          })
+          area = res.list
+          return res.name
+        })
+        .filter(Boolean)
+        .join("/")
+    },
+    areaText() {
+      let { plist, clist, alist } = this.$attrs
+      clist = flattenDeep(clist)
+      plist = flattenDeep(plist)
+      alist = flattenDeep(alist)
+      const area = [plist, clist, alist]
+
+      return this.data
+        .map((code, index) => {
+          let res = {}
+          area[index].some(i => {
+            if (i.value == code) {
+              res = i
+              return true
+            }
+          })
+          return res.label
+        })
+        .filter(Boolean)
+        .join("/")
     }
   },
 
