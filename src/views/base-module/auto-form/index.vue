@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-11-20 13:54:34
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:36:23
+ * @LastEditTime: 2020-12-01 11:39:48
 -->
 <template>
 <div class="auto-form">
@@ -38,7 +38,7 @@ export default {
         selectDict: []
       },
 
-      formItemList: [
+      formItemList: [//渲染表单
         {
           type: "input",
           prop: "username",
@@ -232,6 +232,12 @@ export default {
     }
   },
   methods: {
+    /**
+     * @description:表单提交
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
     handleClick() {
       this.$refs.form.validate()
       console.log(this.$refs.form)

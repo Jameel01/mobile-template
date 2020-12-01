@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: Chenyt
  * @Date: 2020-11-12 10:22:43
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-19 13:53:27
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-12-01 11:39:30
 -->
 <template>
 <div class="dict-demo"> 
@@ -96,11 +96,21 @@ export default {
     }
   },
   methods: {
-    // 校验函数返回 true 表示校验通过，false 表示不通过
+    /**
+     * @description: 校验函数返回 true 表示校验通过，false 表示不通过
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
     validatorFn(val) {
       return /\d{6}/.test(val)
     },
-    // 异步校验函数返回 Promise
+    /**
+     * @description:异步校验函数返回 Promise
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
     asyncValidator(val) {
       return new Promise(resolve => {
         this.$toast.loading("验证中...")
@@ -111,6 +121,12 @@ export default {
         }, 1000)
       })
     },
+    /**
+     * @description:失败回调
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
     onFailed(errorInfo) {
       console.log("failed", errorInfo)
     }
