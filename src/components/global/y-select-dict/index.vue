@@ -2,9 +2,9 @@
  * @Description: y-select-dict
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Chenyt
+ * @LastEditors: Please set LastEditors
  * @Date: 2020-09-29 17:24:35
- * @LastEditTime: 2020-11-13 14:06:49
+ * @LastEditTime: 2020-12-01 13:59:48
 -->
 <template>
   <y-select
@@ -13,7 +13,6 @@
     v-on="$listeners"
     :columns="columns"
     :format="format"
-    :class="classType"
   >
     <van-search
       v-model="searchValue"
@@ -28,7 +27,7 @@ import isEmpty from "lodash/isEmpty"
 export default {
   props: {
     // 字典类型
-    dictType: String,
+    dictType: [String, Object],
     value: {
       type: [Array, String, Number],
       required: true
@@ -37,10 +36,10 @@ export default {
       type: Boolean,
       default: true
     },
-    classType: {
-      type: [Array, String, Number],
-      default: "line-show"
-    }
+    // 格式化数据
+    formatter: Function,
+    // 数据字典请求api函数
+    getCodeApi: Function
   },
   model: {
     prop: "value",
@@ -50,7 +49,8 @@ export default {
   data() {
     return {
       searchValue: "",
-      list: []
+      list: [],
+      type: ""
     }
   },
   watch: {
@@ -66,11 +66,8 @@ export default {
     },
     dictionaryCodeList(val) {
       // 插入请选择数据
-      if (
-        val[this.dictType] &&
-        val[this.dictType][0][this.format.name] !== "请选择"
-      ) {
-        val[this.dictType].unshift({
+      if (val[this.type] && val[this.type][0][this.format.name] !== "请选择") {
+        val[this.type].unshift({
           [this.format.name]: "请选择",
           [this.format.value]: ""
         })
@@ -83,7 +80,7 @@ export default {
 
     columns() {
       return isEmpty(this.list)
-        ? this.dictionaryCodeList[this.dictType] || []
+        ? this.dictionaryCodeList[this.type] || []
         : this.list
     },
     select: {
@@ -101,14 +98,12 @@ export default {
     filterData(val) {
       const dictionaryCodeList = this.dictionaryCodeList
 
-      if (this.dictType && !isEmpty(dictionaryCodeList)) {
-        const dictData = dictionaryCodeList[this.dictType]
+      if (this.type && !isEmpty(dictionaryCodeList)) {
+        const dictData = dictionaryCodeList[this.type]
 
         this.list = dictData.filter(item => {
           if (item[this.format.name].includes(val)) {
             return true
-          } else {
-            this.$toast("无匹配数据")
           }
         })
       }
@@ -120,10 +115,10 @@ export default {
     //     this.list = []
     //     this.loading = true
     //     // 搜索
-    //     getCodeListApi({ types: this.dictType, keyword: query })
+    //     getCodeListApi({ types: this.type, keyword: query })
     //       .then(res => {
     //         if (res.code == 0 && !isEmpty(res.data)) {
-    //           const data = res.data[this.dictType]
+    //           const data = res.data[this.type]
     //           this.list = data
     //         }
     //         this.loading = false
@@ -135,21 +130,20 @@ export default {
     // }
   },
   created() {
-    this.dictType && this.getCodeList(this.dictType)
+    let ohterParams = {}
+    if (typeof this.dictType == "object") {
+      const { type, ...other } = this.dictType
+      ohterParams = other
+      this.type = type
+    } else {
+      this.type = this.dictType
+    }
+    this.type &&
+      this.getCodeList({
+        payload: { types: this.type, ...ohterParams },
+        formatter: this.formatter,
+        getCodeApi: this.getCodeApi
+      })
   }
 }
 </script>
-<style lang="less" scoped>
-.line-show /deep/ .van-cell:last-child::after{
-  display: block !important;
-}
-.no-line /deep/ .van-cell:last-child::after{
-  display: none !important;
-}
-.line-show /deep/ .van-cell::after {
-  border-bottom: 1px solid @second_border_color;
-}
-.line-show{
-
-}
-</style>

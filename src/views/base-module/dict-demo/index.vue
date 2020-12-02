@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-11-12 10:22:43
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:39:30
+ * @LastEditTime: 2020-12-01 18:15:47
 -->
 <template>
 <div class="dict-demo"> 
@@ -23,7 +23,7 @@
         <y-select-dict
           v-model="value0"
           name="test"
-          dict-type="test"
+          dict-type="sex"
           placeholder="数据字典"
           input-align="left"
           label="性别"
@@ -46,7 +46,17 @@
           label="家庭地址"
           :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
         />
-        <y-select-dict
+          <y-select-dict
+          v-model="certificate"
+          name="certificate"
+          dict-type="certificate"
+          placeholder="选择证书类型"
+          input-align="left"
+          label="证书类型"
+          is-link
+          :rules="[{ required: true, message: '请选择' }]"
+        />
+         <y-select-dict
           v-model="level"
           dict-type="level"
           name="level"
@@ -56,6 +66,7 @@
           is-link
           :rules="[{ required: true, message: '请选择' }]"
         />
+      
         <div style="margin: 16px;">
           <van-button
             round
@@ -72,6 +83,7 @@
     </div>
 </template>
 <script>
+import {jsonToArray} from "@/utils/common"
 export default {
   name: "dict-demo",
   data() {
@@ -82,12 +94,8 @@ export default {
       value2: "",
       value3: "",
       level: "",
+      certificate: "",
       pattern: /\d{6}/,
-      columns: {
-        "11": "北京市",
-        "12": "天津市",
-        "13": "河北省"
-      },
       format: {
         name: "label",
         value: "value"
@@ -129,9 +137,20 @@ export default {
      */
     onFailed(errorInfo) {
       console.log("failed", errorInfo)
+    },
+    /**
+     * @description:字典数据格式转换
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
+    formatter(data, params) {
+      // 数据格式转换
+      data[params.types[0]] = jsonToArray(data[params.types[0]])
+      return data
     }
-  }
  
+  }
 }
 </script>
 <style lang="less" scoped>
