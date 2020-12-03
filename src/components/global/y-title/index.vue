@@ -4,7 +4,6 @@
  * @Autor: wjn
  * @Date: 2020-07-01 17:41:13
  * @LastEditors: yjm
- * @LastEditTime: 2020-12-03 15:11:04
 --> 
 <template>
   <div class="y-title" :style="style" :class="{'set-border-bottom': mainBorder,'set-title-radius':radius}">

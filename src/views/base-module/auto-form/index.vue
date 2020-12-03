@@ -4,7 +4,6 @@
  * @Autor: Chenyt
  * @Date: 2020-11-20 13:54:34
  * @LastEditors: yjm
- * @LastEditTime: 2020-12-03 15:19:23
 -->
 <template>
 <div class="auto-form">
@@ -40,6 +39,8 @@ export default {
           prop: "username",
           placeholder: "请输入姓名",
           item: {
+            required: true,
+            rules: [{ required: true, message: "请选择" }],
             label: "姓名",
             scopedSlots: {
               extra: () => <van-icon name="manager-o" />

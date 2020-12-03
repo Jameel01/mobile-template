@@ -1,3 +1,8 @@
+/*
+ * @Description: 模拟数据
+ * @Version: 0.1
+ * @Autor: Chenyt
+ */
 import Mock from "mockjs"
 
 export const RandomNormalData = function() {
@@ -5,7 +10,7 @@ export const RandomNormalData = function() {
   const length = Math.floor(Math.random() * 100)
   for (let i = 0; i < length; i++) {
     data.push({
-      label: Mock.Random.cname(),
+      label: Mock.Random.province(),
       value: `${i}`
     })
   }
@@ -15,7 +20,7 @@ export const RandomJsonData = function() {
   const data = {}
   const length = Math.floor(Math.random() * 100)
   for (let i = 0; i < length; i++) {
-    data[`${i}`] = Mock.Random.cname()
+    data[`${i}`] = Mock.Random.province()
   }
 
   return data

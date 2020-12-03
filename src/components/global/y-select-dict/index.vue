@@ -3,8 +3,6 @@
  * @Version: 0.1
  * @Autor: yjm
  * @LastEditors: yjm
- * @Date: 2020-09-29 17:24:35
- * @LastEditTime: 2020-12-03 14:56:43
 -->
 <template>
   <y-select
@@ -15,6 +13,7 @@
     :format="format"
   >
     <van-search
+    class="y-van-search"
       v-model="searchValue"
       placeholder="请输入搜索关键词"
       v-if="filterabled"
@@ -103,7 +102,10 @@ export default {
         this.list = dictData.filter((item) => {
           if (item[this.format.name].includes(val)) {
             return true
+          } else {
+            this.$toast("无匹配数据")
           }
+
         })
         this.list.length == 0 && this.$toast("无匹配数据")
       }
@@ -147,8 +149,11 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
-/deep/ .van-field__control--right {
-  text-align: left;
+
+<style lang='less' scoped>
+.y-van-search {
+  /deep/ .van-field__control--right{
+     text-align:left;
+  }
 }
 </style>
