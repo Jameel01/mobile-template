@@ -2,35 +2,20 @@
  * @Description: 
  * @Version: 0.1
  * @Autor: chenyt
- * @Date: 2020-03-21 22:55:00
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-29 16:20:07
 --> 
 <template>
   <div class="page-home">
-    {{data}}
+    <y-title content="首页" titleDes="案例展示，项目开发时删除，去除mock"/>
+    <van-cell title="字典案例" is-link to="/base-module/dict-demo" />
+    <van-cell title="表单案例" is-link to="/base-module/auto-form" />
   </div>
 </template>
 <script>
-export default {
-  components: {},
-  name: "home",
-  watch: {},
-  props: {},
-  filters: {},
-  data() {
-    return { 
-      data: "首页"
-    }
-  },
-  created() {},
-  mounted() {},
-  methods: {
-  },
-  destroyed() {}
-}
+
 </script>
 <style lang='less' scoped>
-.page-home{}
+.page-home {
+  padding:10px;
+}
 </style>
 

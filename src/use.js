@@ -9,7 +9,7 @@
 import Vue from "vue"
 import { YPicker, YSelect, YUploader, YFloatBall, Loading, Form, List, Cell, CellGroup, Panel, PullRefresh, Toast, Button, Collapse, CollapseItem, Field, Icon, Popup, Picker, Dialog, Checkbox, CheckboxGroup, DatetimePicker, Uploader, ActionSheet, Row, Col, Image, Steps, Step, DropdownMenu, DropdownItem, Area, Notify, RadioGroup, Radio, Switch, Search, Slider, Stepper, Tag, NoticeBar, Card } from "@ylz/vant"
 
-import YLoadingPlus from "@/components/global/y-loading-plus/index"
+import YLoadingPlus from "@/components/y-loading-plus/index"
 
 Vue.use(YLoadingPlus)
 Vue.use(YFloatBall)
