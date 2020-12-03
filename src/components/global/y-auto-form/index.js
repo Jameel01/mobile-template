@@ -4,7 +4,7 @@
  * @Autor: yjm
  * @LastEditors: yjm
  * @Date: 2020-11-13 11:44:06
- * @LastEditTime: 2020-11-24 10:23:36
+ * @LastEditTime: 2020-12-03 11:20:13
  */
 import FormItem from "./y-form-item"
 export default {
@@ -93,7 +93,6 @@ export default {
       )
     }
   },
-
   watch: {
     formItemList: {
       immediate: true,

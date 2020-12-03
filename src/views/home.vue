@@ -2,66 +2,126 @@
  * @Description: 
  * @Version: 0.1
  * @Autor: chenyt
- * @Date: 2020-03-21 22:55:00
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 17:46:54
 --> 
 <template>
   <div class="page-home">
-    {{data}}
+    <h3>字典测试</h3>
+    <y-auto-form v-model="form" :formItemList="formItemList" ref="form2">
+    </y-auto-form>
+      <div style="margin: 16px">
+        <van-button
+          round
+          block
+          type="info"
+          @click="handleClick"
+          style="width: 100%"
+        >
+          提交
+        </van-button>
+      </div>
   </div>
 </template>
 <script>
-import { setCodeList, getCodeListApi} from "@/store/modules/dictionary"
+import Mock from "@/mock"
+import jsonToArray from "@/utils/json-to-array"
+
 export default {
-  components: {},
   name: "home",
-  watch: {},
-  props: {},
-  filters: {},
   data() {
-    return { 
-      data: "首页"
-    }
-  },
-  created() {
-    // 方式1:本地数据,手动设置
-    const data = {
-      sex1: [
+    return {
+      data: "测试",
+      form: {
+        selectDict: "",
+        selectDict1: "",
+        selectDict2: "",
+        selectDict3: "",
+        selectDict4: ""
+      },
+
+      formItemList: [
         {
-          value: "1",
-          label: "男"
+          type: "selectDict",
+          prop: "selectDict",
+          item: {
+            label: "字典选择sex",
+            dictType: "sex",
+            rules: [{ required: true, message: "请选择" }]
+          }
         },
         {
-          value: "0",
-          label: "女"
-        }
-      ],
-      sex2: [
-        {
-          value: "1",
-          label: "男"
+          type: "selectDict",
+          prop: "selectDict1",
+          item: {
+            label: "字典选择sex",
+            dictType: "sex"
+          }
         },
         {
-          value: "0",
-          label: "女"
+          type: "selectDict",
+          prop: "selectDict2",
+          item: {
+            label: "字典选择sex2",
+            dictType: "sex2"
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict3",
+          item: {
+            label: "字典选择sex3",
+            dictType: "sex3"
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict4",
+          item: {
+            label: "字典选择customApi",
+            dictType: "sex4"
+          },
+          // 自定义请求接口
+          getCodeApi: async(params) => {
+            const res = await Mock(params.types, true)
+            return res
+          },
+          // 格式化数据
+          formatter(data, params) {
+            // 数据格式转换
+            // sex:{ '0':'男0号 Api', '1':'男1号 Api' } =>>> 
+            // sex:[{ value:'0',label:'男0号 Api' },{ value:'1',label:'男1号 Api' }]
+            Object.keys(data).map(item => {
+              data[item] = jsonToArray(data[item])
+            })
+            return data
+          }
         }
       ]
     }
-    const types={
-      types: ["sex1", "sex2"]
-    }
-    setCodeList(data, types, "", this.$store.commit, false)
-    // 方式2:本地数据,远程设置
-    getCodeListApi()
+  },
+  created() {
+    // 字典预加载
+    this.$store.dispatch("dictionary/getCodeList", {
+      // 将要预加载的字典类型通过逗号分隔拼接成字符串赋值给 types 字段
+      // 如果接口不需要传参可以返回默认数据，则 types 字段可以赋值为空
+      payload: { types: "sex5,sex6" } 
+    })
   },
   mounted() {},
-  methods: {
+  watch: {
+    form(val){
+      console.log(val)
+    }
   },
-  destroyed() {}
+  methods: {
+    handleClick() {
+      this.$refs.form2.validate()
+    }
+  }
 }
 </script>
 <style lang='less' scoped>
-.page-home{}
+.page-home {
+  text-align: center;
+}
 </style>
 

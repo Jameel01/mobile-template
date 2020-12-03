@@ -2,15 +2,15 @@
  * @Description: y-form-item 表单子项
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Please set LastEditors
+ * @LastEditors: yjm
  * @Date: 2020-11-13 11:44:20
- * @LastEditTime: 2020-12-01 11:28:31
+ * @LastEditTime: 2020-12-03 10:31:00
  */
 import isFunction from "lodash/isFunction"
 import isObject from "lodash/isObject"
 import merge from "lodash/merge"
 import flattenDeep from "lodash/flattenDeep"
-import { dayFormat } from "./dayjs"
+import { dayFormat } from "@/utils/dayjs"
 
 import "./index.less"
 
@@ -29,9 +29,6 @@ import {
   YSelect,
   DatetimePicker
 } from "@ylz/vant"
-
-import Region from "../y-region-picker"
-import Area from "../y-area"
 
 export default {
   name: "y-form-item",
@@ -56,9 +53,7 @@ export default {
     RadioGroup,
     Calendar,
     Popup,
-    YSelect,
-    Region,
-    Area
+    YSelect
   },
 
   methods: {
@@ -274,7 +269,7 @@ export default {
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.regionText} {...fieldProps} />
-          <Region show={this.showRegion} {...regionProps} />
+          <y-region-picker show={this.showRegion} {...regionProps} />
         </div>
       )
     },
@@ -312,7 +307,7 @@ export default {
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.areaText} {...fieldProps} />
-          <Area show={this.showArea} {...areaProps} />
+          <y-area show={this.showArea} {...areaProps} />
         </div>
       )
     },

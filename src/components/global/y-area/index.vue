@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: lzx
  * @Date: 2020-05-09 09:27:41
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:23:40
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-11-24 11:19:08
  -->
 <template>
   <div class="page-container">
@@ -145,23 +145,14 @@ export default {
     plist: {
       type: Array,
       rquired: true
-      // default: () => {
-      //   return province
-      // }
     },
     clist: {
       type: Array,
       rquired: true
-      // default: () => {
-      //   return city
-      // }
     },
     alist: {
       type: Array,
       rquired: true
-      // default: () => {
-      //   return area
-      // }
     },
     //内容高度
     height: {
@@ -313,7 +304,6 @@ export default {
       this.province = this.tip1
       this.city = this.tip2
       this.area = this.tip3
-      console.log(this.province, this.city, this.area)
     }
   },
   computed: {

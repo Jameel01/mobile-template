@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: lzx
  * @Date: 2020-05-12 09:27:41
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:27:34
+ * @LastEditors: lzx
+ * @LastEditTime: 2020-08-17 11:14:27
  -->
 <template>
   <div class="page-container">
@@ -116,7 +116,6 @@ export default {
     //数据数组
     dataList: {
       type: Array
-      // default: regionData
     },
     //主题色
     themeColor: {

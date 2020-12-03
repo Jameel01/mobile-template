@@ -2,9 +2,9 @@
  * @Description: y-select-dict
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Please set LastEditors
+ * @LastEditors: yjm
  * @Date: 2020-09-29 17:24:35
- * @LastEditTime: 2020-12-01 13:59:48
+ * @LastEditTime: 2020-12-03 11:24:54
 -->
 <template>
   <y-select
@@ -29,8 +29,7 @@ export default {
     // 字典类型
     dictType: [String, Object],
     value: {
-      type: [Array, String, Number],
-      required: true
+      type: [String, Array, Number]
     },
     filterabled: {
       type: Boolean,

@@ -2,14 +2,16 @@
  * @Description: 字典表
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Please set LastEditors
+ * @LastEditors: yjm
  * @Date: 2020-09-21 10:59:06
- * @LastEditTime: 2020-12-01 18:20:34
+ * @LastEditTime: 2020-12-03 11:23:03
  */
 import isObject from "lodash/isObject"
 import isEmpty from "lodash/isEmpty"
 import isString from "lodash/isString"
 import isFunction from "lodash/isFunction"
+import jsonToArray from "@/utils/json-to-array"
+import mock from "@/mock" // mock 数据
 
 const state = {
   codeList: {}, // 字典表数据列表
@@ -25,25 +27,16 @@ const state = {
   getCodeApi: getCodeListApi, // 获取字典数据接口
   formatter: undefined // 全局数据格式化方法函数
 }
-// import {jsonToArray} from "@/utils/common"
-// function formatterFn(data, params) {
-//   if (params){
-//     params.types.filter(function(item){
-//       // 数据格式转换
-//       data[item] = jsonToArray(data[item])
-//     })
-//   }
-//   // 数据格式转换
-//   // data[params.types[0]] = jsonToArray(data[params.types[0]])
-//   return data
-// }
 const mutations = {
   SET_CODE_LIST(state, payload) {
     state.codeList = { ...state.codeList, ...payload }
   }
 }
 const actions = {
-  getCodeList({ commit }, { payload, formatter, getCodeApi }) {
+  getCodeList(
+    { commit },
+    { payload, formatter = state.formatter, getCodeApi = state.getCodeApi }
+  ) {
     const { types, ...other } = payload
     let dictionaryQueryParams = []
 
@@ -81,65 +74,21 @@ const actions = {
  */
 // eslint-disable-next-line no-unused-vars
 export function getCodeListApi(params) {
-  //每个数据字典判断缓存是否有，没有就逐个调用数据接口
-  // commonApi.getCodeList(params).then()
-  debugger
-  const res= {
-    sex: [
-      {
-        value: "1",
-        label: "男"
-      },
-      {
-        value: "0",
-        label: "女"
-      }
-    ],
-    level: [
-      {
-        value: "01",
-        label: "高级"
-      },
-      {
-        value: "02",
-        label: "中级"
-      }
-    ],
-    certificate: [
-      {
-        value: "01",
-        label: "高级"
-      },
-      {
-        value: "02",
-        label: "中级"
-      }
-    ]
-    // sex: { 
-    //   "0": "高级证书", 
-    //   "1": "初级证书" 
-    // },
-    // level: { 
-    //   "0": "高级证书", 
-    //   "1": "初级证书" 
-    // },
-    // certificate: { 
-    //   "0": "高级证书", 
-    //   "1": "初级证书" 
-    // }
-  }
-  const dataObj={}
-  dataObj[params.types[0]]=res[params.types[0]]
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({
-        code: 0,
-        data: dataObj
-      })
-    }, 2000)
-  })
+  return mock(params[state.query], false)
 }
 
+/**
+ * json data format
+ * @param {Object} data 
+ */
+// eslint-disable-next-line no-unused-vars
+function formatter(data) {
+  // 数据格式转换
+  Object.keys(data).map(item => {
+    data[item] = jsonToArray(data[item])
+  })
+  return data
+}
 /**
  * 获取字典表数据请求方法
  * @param {Function} commit 提交数据方法
@@ -185,9 +134,8 @@ function getCodeListRequest(commit, params, formatter, getCodeApi) {
       .then(res => {
         if (res.code == 0 && !isEmpty(res.data)) {
           let data = res.data
-          state.codeList=data
           // 格式化数据并缓存提交数据
-          data = setCodeList(data, params, formatter, commit)
+          data = setCodeList({ data, params, formatter, commit })
           resolve(data) // 返回当次请求接口
         } else {
           // 删除该次请求锁
@@ -207,19 +155,23 @@ function getCodeListRequest(commit, params, formatter, getCodeApi) {
  * @param {array} params 字典类型数组
  * @param {Function} formatter 格式化函数
  * @param {Function} commit actions commit
+ * @param {Boolean} disabledFormatter 禁用格式化
  */
-export function setCodeList(data, params, formatter, commit, isChangeFormatter=true) {
+export function setCodeList({
+  data,
+  params,
+  formatter,
+  commit,
+  disabledFormatter = false
+}) {
   // 格式化数据,传入格式化方法会覆盖全局格式化方法
-  if (isChangeFormatter&&(state.formatter || formatter)) {
+  if (!disabledFormatter && (state.formatter || formatter)) {
     data = formatter
       ? formatter(data, params)
       : state.formatter
         ? state.formatter(data, params)
         : data
   }
-  // state.codeList[params.types[0]]=data[params.types[0]]
-  // console.log("data", state.codeList)
-  // const cacheData=state.codeList
   // 缓存到本地
   cacheCodeListToSession(data)
   // 提交到store，触发更新
