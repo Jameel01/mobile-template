@@ -1,115 +1,153 @@
 <!--
  * @Description: 
  * @Version: 0.1
- * @Autor: Chenyt
- * @Date: 2020-11-12 10:22:43
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-16 11:08:58
--->
+ * @Autor: chenyt
+--> 
 <template>
-<div class="dict-demo"> 
-      <y-select-dict v-model="select" dict-type="sex" label="性别" is-link />
-      <y-select-dict v-model="select" dict-type="sex"  :filterabled="false" label="性别" is-link />
-      <div title="Form表单组合" card>
-      <van-form validate-first @failed="onFailed">
-        <!-- 通过 pattern 进行正则校验 -->
-        <van-field
-          v-model="value1"
-          name="pattern"
-          placeholder="正则校验，6位数值"
-          label="姓名"
-          :rules="[{ pattern, message: '请输入正确内容' }]"
-        />
-        <y-select-dict
-          v-model="value0"
-          dict-type="sex"
-          name="sex"
-          placeholder="数据字典"
-          input-align="left"
-          label="性别"
-          is-link
-          :rules="[{ required: true, message: '请选择' }]"
-        />
-        <!-- 通过 validator 进行函数校验 -->
-        <van-field
-          v-model="value2"
-          name="validator"
-          placeholder="设置函数校验规则"
-          label="电话"
-          :rules="[{ validator:validatorFn, message: '请输入正确内容' }]"
-        />
-        <!-- 通过 validator 进行异步函数校验 -->
-        <van-field
-          v-model="value3"
-          name="asyncValidator"
-          placeholder="异步函数请求校验"
-          label="家庭地址"
-          :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
-        />
-        <y-select-dict
-          v-model="level"
-          dict-type="level"
-          name="level"
-          placeholder="数据字典"
-          input-align="left"
-          label="学历"
-          is-link
-          :rules="[{ required: true, message: '请选择' }]"
-        />
-        <div style="margin: 16px;">
-          <van-button
-            round
-            block
-            type="info"
-            native-type="submit"
-            style="width:100%"
-          >
-            提交
-          </van-button>
-        </div>
-      </van-form>
-    </div>
-    </div>
+  <div class="page-home">
+    <y-title content="字典调用案例" titleDes="案例展示，项目开发时删除，去除mock"/>
+    <y-auto-form center  input-align="right" error-message-align="right" label-width="180px" v-model="form" :formItemList="formItemList" ref="form2">
+    </y-auto-form>
+      <div style="margin: 16px">
+        <van-button
+          round
+          block
+          type="info"
+          @click="handleClick"
+          style="width: 100%"
+        >
+          提交
+        </van-button>
+      </div>
+  </div>
 </template>
 <script>
+import Mock from "@/mock"
+import jsonToArray from "@/utils/json-to-array"
+
 export default {
-  name: "dict-demo",
+  name: "home",
   data() {
     return {
-      select: "1",
-      value0: "",
-      value1: "",
-      value2: "",
-      value3: "",
-      level: "",
-      pattern: /\d{6}/
+      data: "测试",
+      form: {//表单数据
+        selectDict: "",
+        selectDict1: "",
+        selectDict2: "",
+        selectDict3: "",
+        selectDict4: ""
+      },
+
+      formItemList: [//表单定义渲染
+        {
+          type: "input",
+          prop: "username",
+          placeholder: "请输入姓名",
+          item: {
+            required: true,
+            rules: [{ required: true, message: "请输入姓名" }],
+            label: "姓名",
+            scopedSlots: {
+              extra: () => <van-icon name="manager-o" />
+            }
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict",
+          item: {
+            label: "地区字典选择(必填)",
+            dictType: "test",
+            required: true,
+            rules: [{ required: true, message: "请选择" }]
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict1",
+          item: {
+            label: "地区字典选择(初始化)",
+            dictType: "test",
+            filterabled: false 
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict2",
+          item: {
+            label: "地区字典选择(初始化)",
+            dictType: "test2"
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict3",
+          item: {
+            label: "地区字典选择(初始化)",
+            dictType: "test3"
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict4",
+          item: {
+            label: "地区字典选择（自定义api）",
+            dictType: "test4"
+          },
+          // 自定义请求接口
+          getCodeApi: async(params) => {
+            const res = await Mock(params.types, true)
+            return res
+          },
+          // 如需转换数据格式，可以自定义格式化数据
+          formatter(data, params) {
+            // 例如：数据格式转换
+            // sex:{ '0':'男0号 Api', '1':'男1号 Api' } =>>> 
+            // sex:[{ value:'0',label:'男0号 Api' },{ value:'1',label:'男1号 Api' }]
+            Object.keys(data).map(item => {
+              data[item] = jsonToArray(data[item])
+            })
+            return data
+          }
+        }
+      ]
+    }
+  },
+  created() {
+    /**
+     * @description:字典初始化加载
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
+    this.$store.dispatch("dictionary/getCodeList", {
+      // 将要预加载的字典类型通过逗号分隔拼接成字符串赋值给 types 字段
+      // 如果接口不需要传参可以返回默认数据，则 types 字段可以赋值为空
+      payload: { types: "sex5,sex6" } 
+    })
+  },
+  mounted() {},
+  watch: {
+    form(val){
+      console.log(val)
     }
   },
   methods: {
-    // 校验函数返回 true 表示校验通过，false 表示不通过
-    validatorFn(val) {
-      return /\d{6}/.test(val)
-    },
-    // 异步校验函数返回 Promise
-    asyncValidator(val) {
-      return new Promise(resolve => {
-        this.$toast.loading("验证中...")
-
-        setTimeout(() => {
-          this.$toast.clear()
-          resolve(/\d{6}/.test(val))
-        }, 1000)
-      })
-    },
-    onFailed(errorInfo) {
-      console.log("failed", errorInfo)
+    /**
+     * @description:表单提交
+     * @param {type} 
+     * @return: 
+     * @author: Chenyt
+     */
+    handleClick() {
+      this.$refs.form2.validate()
     }
   }
- 
 }
 </script>
-<style lang="less" scoped>
-.dict-demo {
-
+<style lang='less' scoped>
+.page-home {
+  padding:10px;
 }
 </style>
+

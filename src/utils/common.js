@@ -2,8 +2,8 @@
  * @Description: 公共函数
  * @Author: asheng
  * @Date: 2018-12-07 11:36:27
- * @LastEditors: asheng
- * @LastEditTime: 2018-12-12 13:37:30
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-12-01 14:34:02
  */
 
 
@@ -201,27 +201,25 @@ export function objClone(jsonObj) {
  * ]
  */
 
-export function jsonToArray(data, key = 'label', value = 'value') {
-  let arr = []
+export  function jsonToArray(data, value = "label", key = "value") {
+  const arr = []
 
-  if (Object.prototype.toString(data) == '[object Object]') {
+  if (Object.prototype.toString(data) === "[object Object]") {
+    const keys = Object.keys(data)
+    const isNumbeKeys = keys.some(item => item.startsWith(0))
+    // 如果把数字编码作为json数据的键名，则需要重新排序一下数据
+    if (isNumbeKeys) {
+      keys.sort() // 降序排序
+      keys.forEach(item => {
+        arr.push({ [key]: item, [value]: data[item] })
+      })
 
-      let keys = Object.keys(data)
-      let isNumbeKeys = keys.some(item => { return item.startsWith(0) })
-      // 如果把数字编码作为json数据的键名，则需要重新排序一下数据
-      if (isNumbeKeys) {
-          
-          keys.sort() // 降序排序
-          keys.forEach(item => {
-              arr.push({ [key]: item, [value]: data[item] })
-          })
-
-          return arr
-      }
-      // 常规json数据转换
-      for (let i in data) {
-          arr.push({ [key]: i, [value]: data[i] })
-      }
+      return arr
+    }
+    // 常规json数据转换
+    Object.keys(data).forEach(item => {
+      arr.push({ [key]: item, [value]: data[item] })
+    })
   }
 
   return arr
