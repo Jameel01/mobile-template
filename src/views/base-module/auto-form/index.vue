@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: Chenyt
  * @Date: 2020-11-20 13:54:34
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:39:48
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-12-03 15:19:23
 -->
 <template>
 <div class="auto-form">
@@ -24,10 +24,6 @@
 </div>
 </template>
 <script>
-import city from "@/assets/data/city"
-import area from "@/assets/data/area"
-import province from "@/assets/data/province"
-import regionData from "@/assets/data/regionData"
 export default {
   name: "auto-form",
   data() {
@@ -63,18 +59,14 @@ export default {
           prop: "region",
           item: {
             label: "地区选择"
-          },
-          dataList: regionData
+          }
         },
         {
           type: "area",
           prop: "area",
           item: {
             label: "三级地区选择"
-          },
-          plist: province,
-          clist: city,
-          alist: area
+          }
         },
         {
           type: "calendar",

@@ -3,11 +3,11 @@
  * @Version: 0.1
  * @Autor: wjn
  * @Date: 2020-07-01 17:41:13
- * @LastEditors: lzx
- * @LastEditTime: 2020-07-30 18:36:34
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-12-03 15:11:04
 --> 
 <template>
-  <div id="v_header_title" :style="style" :class="{'set-border-bottom': mainBorder,'set-title-radius':radius}">
+  <div class="y-title" :style="style" :class="{'set-border-bottom': mainBorder,'set-title-radius':radius}">
     <div class="query-header" v-if="type === '1'" :style='contStyle'>
       <span class="header-title" :style="{'--fontContSize':this.$pxToViewport(fontContSize,ratio),'--Height':this.$pxToViewport(contentHeight,ratio)}">{{ content }}</span>
     </div>
@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import { ratio, main_color, main_text_color, gradient_blue_color_2 } from "@/styles/theme/theme-params.less"
+import { ratio, main_color, third_text_color, main_text_color, gradient_blue_color_2 } from "@/styles/theme/theme-params.less"
 export default {
   name: "y-title",
   props: {
@@ -152,7 +152,7 @@ export default {
     //标题描述字体颜色
     colorDes: {
       type: String,
-      default: main_color
+      default: third_text_color
     },
     backgroundColor: {//线条背景色
       type: String,
@@ -296,13 +296,14 @@ export default {
 }
 </script>
 <style  lang="less" scoped>
-#v_header_title {
+.y-title {
   background-color: @white_bg_color;
   position: relative;
   .border-none {
     border: 0 !important;
   }
   .content {
+    text-align: left;
     height: 30px * @ratio;
     line-height: 30px * @ratio;
     border-bottom: 0.5px * @ratio solid @border_color;
@@ -363,6 +364,7 @@ export default {
 .des-title2 {
   font-size: 7px * @ratio;
   color: @third_text_color;
+  text-align: left;
 }
 .set-title-radius {
   border-top-right-radius: 8px * @ratio;

@@ -8,17 +8,17 @@
     <h3>字典测试</h3>
     <y-auto-form v-model="form" :formItemList="formItemList" ref="form2">
     </y-auto-form>
-      <div style="margin: 16px">
-        <van-button
-          round
-          block
-          type="info"
-          @click="handleClick"
-          style="width: 100%"
-        >
-          提交
-        </van-button>
-      </div>
+    <div style="margin: 16px">
+      <van-button
+        round
+        block
+        type="info"
+        @click="handleClick"
+        style="width: 100%"
+      >
+        提交
+      </van-button>
+    </div>
   </div>
 </template>
 <script>
@@ -40,21 +40,9 @@ export default {
 
       formItemList: [
         {
-          type: "selectDict",
-          prop: "selectDict",
-          item: {
-            label: "字典选择sex",
-            dictType: "sex",
-            rules: [{ required: true, message: "请选择" }]
-          }
-        },
-        {
-          type: "selectDict",
-          prop: "selectDict1",
-          item: {
-            label: "字典选择sex",
-            dictType: "sex"
-          }
+          type: "title",
+          mainBorder: true,
+          content: "基本类型"
         },
         {
           type: "selectDict",
@@ -73,6 +61,33 @@ export default {
           }
         },
         {
+          type: "title",
+          mainBorder: true,
+          content: "同类字典并发"
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict",
+          item: {
+            label: "字典选择sex",
+            dictType: "sex",
+            rules: [{ required: true, message: "请选择" }]
+          }
+        },
+        {
+          type: "selectDict",
+          prop: "selectDict1",
+          item: {
+            label: "字典选择sex",
+            dictType: "sex"
+          }
+        },
+        {
+          type: "title",
+          mainBorder: true,
+          content: "自定义接口与数据格式化"
+        },
+        {
           type: "selectDict",
           prop: "selectDict4",
           item: {
@@ -87,9 +102,9 @@ export default {
           // 格式化数据
           formatter(data, params) {
             // 数据格式转换
-            // sex:{ '0':'男0号 Api', '1':'男1号 Api' } =>>> 
+            // sex:{ '0':'男0号 Api', '1':'男1号 Api' } =>>>
             // sex:[{ value:'0',label:'男0号 Api' },{ value:'1',label:'男1号 Api' }]
-            Object.keys(data).map(item => {
+            Object.keys(data).map((item) => {
               data[item] = jsonToArray(data[item])
             })
             return data
@@ -103,12 +118,12 @@ export default {
     this.$store.dispatch("dictionary/getCodeList", {
       // 将要预加载的字典类型通过逗号分隔拼接成字符串赋值给 types 字段
       // 如果接口不需要传参可以返回默认数据，则 types 字段可以赋值为空
-      payload: { types: "sex5,sex6" } 
+      payload: { types: "sex5,sex6" }
     })
   },
   mounted() {},
   watch: {
-    form(val){
+    form(val) {
       console.log(val)
     }
   },

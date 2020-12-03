@@ -1543,4 +1543,4 @@ var cityData = [
     }
   ]
 ]
-export default cityData
+module.exports = cityData

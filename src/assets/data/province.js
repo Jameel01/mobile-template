@@ -141,4 +141,4 @@ var provinceData = [
     value: "69"
   }
 ]
-export default provinceData
+module.exports = provinceData

@@ -4,7 +4,7 @@
  * @Autor: yjm
  * @LastEditors: yjm
  * @Date: 2020-09-29 17:24:35
- * @LastEditTime: 2020-12-03 11:24:54
+ * @LastEditTime: 2020-12-03 14:56:43
 -->
 <template>
   <y-select
@@ -100,11 +100,12 @@ export default {
       if (this.type && !isEmpty(dictionaryCodeList)) {
         const dictData = dictionaryCodeList[this.type]
 
-        this.list = dictData.filter(item => {
+        this.list = dictData.filter((item) => {
           if (item[this.format.name].includes(val)) {
             return true
           }
         })
+        this.list.length == 0 && this.$toast("无匹配数据")
       }
     }
     // 服务器搜索
@@ -146,3 +147,8 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+/deep/ .van-field__control--right {
+  text-align: left;
+}
+</style>
