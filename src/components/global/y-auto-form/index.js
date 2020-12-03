@@ -4,9 +4,10 @@
  * @Autor: yjm
  * @LastEditors: yjm
  * @Date: 2020-11-13 11:44:06
- * @LastEditTime: 2020-12-03 11:20:13
+ * @LastEditTime: 2020-12-03 13:42:45
  */
 import FormItem from "./y-form-item"
+
 export default {
   props: {
     value: Object,
@@ -50,9 +51,8 @@ export default {
           }
         }
       }
-      return <FormItem {...props} v-show={!hidden}></FormItem>
+      return props.attrs.type == "title" ? <y-title {...props} v-show={!hidden}></y-title> : <FormItem {...props} v-show={!hidden}></FormItem>
     },
-
     parseFormItemList(formItemList) {
       const isArrayValue = ["uploader", "region", "area"]
       // 原始配置对象
@@ -66,7 +66,7 @@ export default {
           return item
         })
         .filter(item => {
-          if (!item.prop) {
+          if (!item.prop && item.type != "title") {
             console.log(`缺少prop字段，掉该项配置将被过滤`, item)
             return false
           }
@@ -86,7 +86,6 @@ export default {
         }
       })
     },
-
     genSlots() {
       return (
         this.$scopedSlots.default && this.$scopedSlots.default(this.$children)

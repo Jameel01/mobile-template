@@ -4,7 +4,7 @@
  * @Autor: lzx
  * @Date: 2020-05-09 09:27:41
  * @LastEditors: yjm
- * @LastEditTime: 2020-11-24 11:19:08
+ * @LastEditTime: 2020-12-03 15:20:48
  -->
 <template>
   <div class="page-container">
@@ -171,7 +171,6 @@ export default {
   },
   data() {
     return {
-      provinceList: this.plist, //省数组
       cityList: [],
       areaList: [],
       proSelected: false, //是否选择省/市/区
@@ -307,6 +306,10 @@ export default {
     }
   },
   computed: {
+    provinceList(){
+      //省数组
+      return this.plist
+    },
     isShow: {
       set() {},
       get() {

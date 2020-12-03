@@ -4,7 +4,7 @@
  * @Autor: yjm
  * @LastEditors: yjm
  * @Date: 2020-11-13 11:44:20
- * @LastEditTime: 2020-12-03 10:31:00
+ * @LastEditTime: 2020-12-03 15:01:23
  */
 import isFunction from "lodash/isFunction"
 import isObject from "lodash/isObject"
@@ -265,7 +265,7 @@ export default {
           isInit: true
         }
       })
-
+    
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.regionText} {...fieldProps} />
@@ -501,43 +501,54 @@ export default {
       }
     },
     regionText() {
-      const { dataList } = this.$attrs
-      let area = dataList
-      return this.data
-        .map(item => {
-          let res = []
-          area.some(i => {
-            if (i.code == item) {
-              res = i
-              return true
-            }
+      if (this.$attrs.type == "region") {
+        let area = this.$attrs.dataList
+
+        return this.data
+          .map(item => {
+            let res = []
+            area.some(i => {
+              if (i.code == item) {
+                res = i
+                return true
+              }
+            })
+            area = res.list
+            return res.name
           })
-          area = res.list
-          return res.name
-        })
-        .filter(Boolean)
-        .join("/")
+          .filter(Boolean)
+          .join("/")
+      } else {
+        return ""
+      }
     },
     areaText() {
-      let { plist, clist, alist } = this.$attrs
-      clist = flattenDeep(clist)
-      plist = flattenDeep(plist)
-      alist = flattenDeep(alist)
-      const area = [plist, clist, alist]
+      if (this.$attrs.type == "area") {
 
-      return this.data
-        .map((code, index) => {
-          let res = {}
-          area[index].some(i => {
-            if (i.value == code) {
-              res = i
-              return true
-            }
+        const clist = flattenDeep(this.$attrs.clist) 
+        const plist = flattenDeep(this.$attrs.plist) 
+        const alist = flattenDeep(this.$attrs.alist) 
+
+        const area = [plist, clist, alist]
+
+        return this.data
+          .map((code, index) => {
+            let res = {}
+            area[index].some(i => {
+              if (i.value == code) {
+                res = i
+                return true
+              }
+            })
+            return res.label
           })
-          return res.label
-        })
-        .filter(Boolean)
-        .join("/")
+          .filter(Boolean)
+          .join("/")
+
+      } else {
+        return ""
+      }
+
     }
   },
 
@@ -545,9 +556,19 @@ export default {
     // eslint-disable-next-line no-unused-vars
     const { prop, type, item, __data, ...props } = this.$attrs
 
+    if (type == "region") { 
+      // 配置默认地区数据
+      this.$attrs.dataList = this.$attrs.dataList || require("@/assets/data/regionData") 
+    }
+    if (type == "area") {
+      // 配置默认地区数据
+      this.$attrs.plist = this.$attrs.plist || require("@/assets/data/province")
+      this.$attrs.clist = this.$attrs.clist || require("@/assets/data/city")
+      this.$attrs.alist = this.$attrs.alist || require("@/assets/data/area")
+    }
     return this.generator(
       this.setDefaultValue({ config: item }),
       this.setDefaultValue({ config: props, defaultAttrs: { clearable: true } })
-    )
+    ) 
   }
 }
