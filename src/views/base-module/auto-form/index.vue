@@ -4,7 +4,7 @@
  * @Autor: Chenyt
  * @Date: 2020-11-20 13:54:34
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:39:48
+ * @LastEditTime: 2020-12-03 14:22:42
 -->
 <template>
 <div class="auto-form">
@@ -44,6 +44,8 @@ export default {
           prop: "username",
           placeholder: "请输入姓名",
           item: {
+            required: true,
+            rules: [{ required: true, message: "请选择" }],
             label: "姓名",
             scopedSlots: {
               extra: () => <van-icon name="manager-o" />

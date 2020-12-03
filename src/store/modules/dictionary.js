@@ -2,9 +2,9 @@
  * @Description: 字典表
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: yjm
+ * @LastEditors: Please set LastEditors
  * @Date: 2020-09-21 10:59:06
- * @LastEditTime: 2020-12-03 11:23:03
+ * @LastEditTime: 2020-12-03 14:06:14
  */
 import isObject from "lodash/isObject"
 import isEmpty from "lodash/isEmpty"
@@ -74,6 +74,8 @@ const actions = {
  */
 // eslint-disable-next-line no-unused-vars
 export function getCodeListApi(params) {
+  // 测试请求数据：第一个参数为请求的字典类型，第二个参数isJson=true：设置返回的数据为json格式，需要设置formatter函数：全局数据格式化方法函数
+  // return mock(params[state.query], true)
   return mock(params[state.query], false)
 }
 
