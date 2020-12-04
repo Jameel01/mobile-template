@@ -102,10 +102,7 @@ export default {
         this.list = dictData.filter((item) => {
           if (item[this.format.name].includes(val)) {
             return true
-          } else {
-            this.$toast("无匹配数据")
-          }
-
+          } 
         })
         this.list.length == 0 && this.$toast("无匹配数据")
       }
