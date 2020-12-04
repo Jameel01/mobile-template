@@ -5,7 +5,6 @@
 --> 
 <template>
   <div class="page-home">
-    <y-title content="字典调用案例" titleDes="案例展示，项目开发时删除，去除mock"/>
     <y-auto-form center  input-align="right" error-message-align="right" label-width="180px" v-model="form" :formItemList="formItemList" ref="form2">
     </y-auto-form>
       <div style="margin: 16px">
@@ -39,6 +38,12 @@ export default {
       },
 
       formItemList: [//表单定义渲染
+        {
+          type: "title",
+          content: "基础信息",
+          lineTop: "12",
+          titleDes: "案例展示，项目开发时删除，去除mock"
+        },
         {
           type: "input",
           prop: "username",
