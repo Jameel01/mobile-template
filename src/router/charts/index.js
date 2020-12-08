@@ -2,8 +2,8 @@
  * @Description: 公共路由，以下实例：请根据具体业务修改或无用删除
  * @Autor: guoruliang
  * @Date: 2020-04-01 09:57:00
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-10-23 16:45:18
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-12-08 09:11:38
  */
 
 export default [
@@ -87,6 +87,15 @@ export default [
       keepAlive: false
     },
     component: () => import(/* webpackChunkName: "chartsModule" */"@/views/charts-module/map-chart")
+  },
+  {
+    path: "/data-chart",
+    name: "数据展示",
+    meta: {
+      needLogin: false,
+      keepAlive: false
+    },
+    component: () => import(/* webpackChunkName: "chartsModule" */"@/views/charts-module/data-chart")
   }
  
 ]
