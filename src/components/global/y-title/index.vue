@@ -3,11 +3,10 @@
  * @Version: 0.1
  * @Autor: wjn
  * @Date: 2020-07-01 17:41:13
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-03 15:00:14
+ * @LastEditors: yjm
 --> 
 <template>
-  <div id="v_header_title" :style="style" :class="{'set-border-bottom': mainBorder,'set-title-radius':radius}">
+  <div class="y-title" :style="style" :class="{'set-border-bottom': mainBorder,'set-title-radius':radius}">
     <div class="query-header" v-if="type === '1'" :style='contStyle'>
       <span class="header-title" :style="{'--fontContSize':this.$pxToViewport(fontContSize,ratio),'--Height':this.$pxToViewport(contentHeight,ratio)}">{{ content }}</span>
     </div>
@@ -296,7 +295,7 @@ export default {
 }
 </script>
 <style  lang="less" scoped>
-#v_header_title {
+.y-title {
   background-color: @white_bg_color;
   position: relative;
   .border-none {

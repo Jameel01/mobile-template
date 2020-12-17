@@ -2,9 +2,7 @@
  * @Description: y-select-dict
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Please set LastEditors
- * @Date: 2020-09-29 17:24:35
- * @LastEditTime: 2020-12-03 14:54:06
+ * @LastEditors: yjm
 -->
 <template>
   <y-select
@@ -101,14 +99,12 @@ export default {
       if (this.type && !isEmpty(dictionaryCodeList)) {
         const dictData = dictionaryCodeList[this.type]
 
-        this.list = dictData.filter(item => {
+        this.list = dictData.filter((item) => {
           if (item[this.format.name].includes(val)) {
             return true
-          } else {
-            this.$toast("无匹配数据")
-          }
-
+          } 
         })
+        this.list.length == 0 && this.$toast("无匹配数据")
       }
     }
     // 服务器搜索
