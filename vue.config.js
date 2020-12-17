@@ -7,7 +7,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
-  publicPath: process.env.VUE_APP_PUBLIC_PATH, //配置根路径
+  publicPath: "./", //配置根路径
   // assetsRoot: path.resolve(__dirname, "../dist"),
   outputDir: process.env.VUE_APP_OUTPUT_DIR || "dist", //构建输出目录
   assetsDir: "assets", //静态资源目录(js\css\img)
