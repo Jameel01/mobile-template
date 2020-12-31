@@ -3,8 +3,6 @@
  * @Version: 0.1
  * @Autor: yjm
  * @LastEditors: yjm
- * @Date: 2020-11-13 11:44:06
- * @LastEditTime: 2020-12-03 13:42:45
  */
 import FormItem from "./y-form-item"
 
@@ -75,18 +73,13 @@ export default {
       // 原始form item 的 v-model 绑定值对象
 
       this.rawFormItemList.map(item => {
-        if (
-          isArrayValue.includes(item.type) ||
-          item.checkboxGroup ||
-          item.radioGroup
-        ) {
-          this.rawFormItem[item.prop] = []
-        } else {
-          this.rawFormItem[item.prop] = null
+        if (item.prop) {
+          this.rawFormItem[item.prop] =
+            isArrayValue.includes(item.type) || item.checkboxGroup || item.radioGroup ? [] : null
         }
       })
     },
-    genSlots() {
+    genDefaultSlots() {
       return (
         this.$scopedSlots.default && this.$scopedSlots.default(this.$children)
       )
@@ -124,7 +117,7 @@ export default {
         {this.rawFormItemList.map(item => {
           return this.genFormItem(item)
         })}
-        {this.genSlots()}
+        {this.genDefaultSlots()}
       </van-form>
     )
   }
