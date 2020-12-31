@@ -5,6 +5,7 @@
  * @LastEditors: yjm
  */
 import FormItem from "./y-form-item"
+import merge from "lodash/merge"
 
 export default {
   props: {
@@ -27,7 +28,11 @@ export default {
   data() {
     return {
       rawFormItemList: [],
-      rawFormItem: {}
+      rawFormItem: {},
+      generateMap: {
+        "title": this.genTitle,
+        "slot": this.genSlot
+      }
     }
   },
 
@@ -49,7 +54,7 @@ export default {
           }
         }
       }
-      return props.attrs.type == "title" ? <y-title {...props} v-show={!hidden}></y-title> : <FormItem {...props} v-show={!hidden}></FormItem>
+      return <FormItem {...props} v-show={!hidden}></FormItem>
     },
     parseFormItemList(formItemList) {
       const isArrayValue = ["uploader", "region", "area"]
@@ -64,7 +69,7 @@ export default {
           return item
         })
         .filter(item => {
-          if (!item.prop && item.type != "title") {
+          if (!item.prop && item.type != "title" && item.type != "slot") {
             console.log(`缺少prop字段，掉该项配置将被过滤`, item)
             return false
           }
@@ -83,6 +88,65 @@ export default {
       return (
         this.$scopedSlots.default && this.$scopedSlots.default(this.$children)
       )
+    },
+    genSlot(props) {
+      const { render } = props
+      if (!render) { throw Error("缺少渲染函数 render 字段") }
+      return render()
+    },
+    genTitle(props) {
+      const titleProps = this.renderOptions({ config: props })
+      return <y-title {...titleProps} v-show={!props.hidden}></y-title>
+    },
+    /**
+     * 配置默认值
+     * @param {Object} config VNode配置对象
+     * @param {Object} defaultEvent 默认事件
+     * @param {Object} defaultAttrs 默认属性
+     * @param {Object} defaultScopedSlots 默认插槽
+     */
+    renderOptions({
+      config = {},
+      defaultEvent,
+      defaultAttrs,
+      defaultScopedSlots
+    }) {
+
+      const {
+        scopedSlots,
+        on,
+        attrs,
+        style,
+        props,
+        domProps,
+        directives,
+        nativeOn,
+        slot,
+        key,
+        ref,
+        refInFor,
+        ...other
+      } = config
+
+      // 关键词class字段替换
+      const className = other.class
+      delete other.class
+
+      return {
+        scopedSlots: merge(defaultScopedSlots, scopedSlots),
+        on: merge(defaultEvent, on),
+        attrs: merge(defaultAttrs, other, attrs),
+        class: className,
+        style,
+        props,
+        domProps,
+        directives,
+        nativeOn,
+        slot,
+        key,
+        ref,
+        refInFor
+      }
     }
   },
   watch: {
@@ -115,7 +179,8 @@ export default {
     return (
       <van-form ref="form" {...props}>
         {this.rawFormItemList.map(item => {
-          return this.genFormItem(item)
+          const generate = this.generateMap[item.type] || this.genFormItem
+          return generate(item)
         })}
         {this.genDefaultSlots()}
       </van-form>

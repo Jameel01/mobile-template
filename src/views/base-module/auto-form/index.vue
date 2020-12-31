@@ -6,34 +6,42 @@
  * @LastEditors: yjm
 -->
 <template>
-<div class="auto-form">
-      <y-auto-form v-model="form" :formItemList="formItemList" ref="form">
-        <div style="margin: 16px">
-          <van-button
-            round
-            block
-            type="info"
-            native-type="submit"
-            style="width: 100%"
-          >
-            提交
-          </van-button>
-        </div>
-      </y-auto-form>
-</div>
+  <div class="auto-form">
+    <y-auto-form v-model="form" :formItemList="formItemList" ref="form">
+      <div style="margin: 16px">
+        <van-button
+          round
+          block
+          type="info"
+          native-type="submit"
+          style="width: 100%"
+        >
+          提交
+        </van-button>
+      </div>
+    </y-auto-form>
+  </div>
 </template>
 <script>
 export default {
   name: "auto-form",
   data() {
     return {
-      form: {//初始化表单数据
+      form: {
+        //初始化表单数据
         username: "",
         select: [],
         selectDict: []
       },
 
-      formItemList: [//渲染表单
+      formItemList: [
+        //渲染表单
+        {
+          type: "title",
+          content: "自动表单",
+          pleft: "20"
+        },
+        
         {
           type: "input",
           prop: "username",
@@ -74,7 +82,7 @@ export default {
           prop: "calendar",
           calendarType: "range",
           on: {
-            confrm: data => {
+            confrm: (data) => {
               console.log(data)
             }
           },
@@ -123,7 +131,20 @@ export default {
             label: "年龄"
           }
         },
-
+        {
+          type: "slot",
+          render: () => {
+            return (
+              <van-field
+                v-model={this.form.slot}
+                label="插槽"
+                placeholder="插槽表单输入项"
+                required
+                rules={[{ required: true, message: "请填写插槽表单输入项" }]}
+              />
+            )
+          }
+        },
         {
           type: "switch",
           prop: "switch",
@@ -212,7 +233,7 @@ export default {
           openCompress: true,
           compressMaxSize: 500 * 1024,
           on: {
-            oversize: file => {
+            oversize: (file) => {
               console.log(file)
               this.$toast("文件大小不能超过 500kb")
             }
@@ -227,8 +248,8 @@ export default {
   methods: {
     /**
      * @description:表单提交
-     * @param {type} 
-     * @return: 
+     * @param {type}
+     * @return:
      * @author: Chenyt
      */
     handleClick() {
@@ -237,22 +258,13 @@ export default {
     }
   },
   watch: {
-    form(val) {
-      console.log("demo", val)
+    form: {
+      deep: true,
+      handler(val) {
+        console.log("demo", val)
+      }
     }
-  },
-  computed: {
-  },
-  mounted() {
-  },
-  created(){
-
   }
- 
+
 }
 </script>
-<style lang="less" scoped>
-.auto-form {
-
-}
-</style>
