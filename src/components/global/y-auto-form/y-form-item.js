@@ -3,8 +3,6 @@
  * @Version: 0.1
  * @Autor: yjm
  * @LastEditors: yjm
- * @Date: 2020-11-13 11:44:20
- * @LastEditTime: 2020-12-03 15:01:23
  */
 import isFunction from "lodash/isFunction"
 import isObject from "lodash/isObject"
@@ -89,7 +87,7 @@ export default {
             {checkboxGroup ? (
               <van-checkbox-group
                 v-model={this.data}
-                {...this.setDefaultValue({
+                {...this.renderOptions({
                   config: checkboxGroupProps,
                   defaultAttrs: { direction: "horizontal" }
                 })}
@@ -98,7 +96,7 @@ export default {
                   const { text, ...otherProp } = prop
                   return (
                     <van-checkbox
-                      {...this.setDefaultValue({ config: otherProp })}
+                      {...this.renderOptions({ config: otherProp })}
                     >
                       {text}
                     </van-checkbox>
@@ -124,7 +122,7 @@ export default {
             {radioGroup ? (
               <van-radio-group
                 v-model={this.data}
-                {...this.setDefaultValue({
+                {...this.renderOptions({
                   config: radioGroupProps,
                   defaultAttrs: { direction: "horizontal" }
                 })}
@@ -132,7 +130,7 @@ export default {
                 {radios.map(prop => {
                   const { text, ...otherProp } = prop
                   return (
-                    <van-radio {...this.setDefaultValue({ config: otherProp })}>
+                    <van-radio {...this.renderOptions({ config: otherProp })}>
                       {text}
                     </van-radio>
                   )
@@ -177,7 +175,7 @@ export default {
     genCalendar(field, props) {
       const calendarType = props.attrs.calendarType || "single"
 
-      const fieldProps = this.setDefaultValue({
+      const fieldProps = this.renderOptions({
         config: field,
         defaultAttrs: {
           isLink: true,
@@ -193,7 +191,7 @@ export default {
         }
       })
 
-      const calendarProps = this.setDefaultValue({
+      const calendarProps = this.renderOptions({
         config: props,
         defaultEvent: {
           confirm: data => {
@@ -234,7 +232,7 @@ export default {
       )
     },
     genRegion(field, props) {
-      const fieldProps = this.setDefaultValue({
+      const fieldProps = this.renderOptions({
         config: field,
         defaultAttrs: {
           isLink: true,
@@ -249,7 +247,7 @@ export default {
         }
       })
 
-      const regionProps = this.setDefaultValue({
+      const regionProps = this.renderOptions({
         config: props,
         defaultEvent: {
           onConfirm: data => {
@@ -265,7 +263,7 @@ export default {
           isInit: true
         }
       })
-    
+
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.regionText} {...fieldProps} />
@@ -274,7 +272,7 @@ export default {
       )
     },
     genArea(field, props) {
-      const fieldProps = this.setDefaultValue({
+      const fieldProps = this.renderOptions({
         config: field,
         defaultAttrs: {
           isLink: true,
@@ -289,7 +287,7 @@ export default {
         }
       })
 
-      const areaProps = this.setDefaultValue({
+      const areaProps = this.renderOptions({
         config: props,
         defaultEvent: {
           onConfirm: data => {
@@ -323,7 +321,7 @@ export default {
 
       const type = props.attrs.dateType || "time"
 
-      const fieldProps = this.setDefaultValue({
+      const fieldProps = this.renderOptions({
         config: field,
         defaultAttrs: {
           isLink: true,
@@ -338,7 +336,7 @@ export default {
         }
       })
 
-      const datetimeProps = this.setDefaultValue({
+      const datetimeProps = this.renderOptions({
         config: props,
         defaultEvent: {
           confirm: data => {
@@ -353,7 +351,7 @@ export default {
 
       datetimeProps.attrs.type = type
 
-      const popupProps = this.setDefaultValue({
+      const popupProps = this.renderOptions({
         config: datetimeProps.attrs.popup,
         defaultAttrs: {
           position: "bottom"
@@ -371,7 +369,7 @@ export default {
     },
     genSelect(field, props) {
       let fieldProps = merge(props, field)
-      fieldProps = this.setDefaultValue({
+      fieldProps = this.renderOptions({
         config: fieldProps,
         defaultAttrs: {
           isLink: true
@@ -387,7 +385,7 @@ export default {
     },
     genSelectDict(field, props) {
       let fieldProps = merge(props, field)
-      fieldProps = this.setDefaultValue({
+      fieldProps = this.renderOptions({
         config: fieldProps,
         defaultAttrs: {
           isLink: true
@@ -423,15 +421,13 @@ export default {
      * @param {Object} defaultAttrs 默认属性
      * @param {Object} defaultScopedSlots 默认插槽
      */
-    setDefaultValue({
-      config,
+    renderOptions({
+      config = {},
       defaultEvent,
       defaultAttrs,
       defaultScopedSlots
     }) {
-      if (!config) {
-        config = {}
-      }
+
       const {
         scopedSlots,
         on,
@@ -525,9 +521,9 @@ export default {
     areaText() {
       if (this.$attrs.type == "area") {
 
-        const clist = flattenDeep(this.$attrs.clist) 
-        const plist = flattenDeep(this.$attrs.plist) 
-        const alist = flattenDeep(this.$attrs.alist) 
+        const clist = flattenDeep(this.$attrs.clist)
+        const plist = flattenDeep(this.$attrs.plist)
+        const alist = flattenDeep(this.$attrs.alist)
 
         const area = [plist, clist, alist]
 
@@ -556,9 +552,9 @@ export default {
     // eslint-disable-next-line no-unused-vars
     const { prop, type, item, __data, ...props } = this.$attrs
 
-    if (type == "region") { 
+    if (type == "region") {
       // 配置默认地区数据
-      this.$attrs.dataList = this.$attrs.dataList || require("@/assets/data/regionData") 
+      this.$attrs.dataList = this.$attrs.dataList || require("@/assets/data/regionData")
     }
     if (type == "area") {
       // 配置默认地区数据
@@ -567,8 +563,8 @@ export default {
       this.$attrs.alist = this.$attrs.alist || require("@/assets/data/area")
     }
     return this.generator(
-      this.setDefaultValue({ config: item }),
-      this.setDefaultValue({ config: props, defaultAttrs: { clearable: true } })
-    ) 
+      this.renderOptions({ config: item }),
+      this.renderOptions({ config: props, defaultAttrs: { clearable: true } })
+    )
   }
 }
