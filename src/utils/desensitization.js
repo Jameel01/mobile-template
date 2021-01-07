@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: Chenyt
  * @Date: 2020-11-12 10:12:48
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-13 13:54:05
+ * @LastEditors: yjm
+ * @LastEditTime: 2020-12-31 11:36:27
  */
 /**
  *17350800661 => 173****0661
@@ -17,14 +17,6 @@ export function mobile(str) {
   return rule(str, 3, 4)
 }
 
-export function name(str) {
-  const length = str.length
-  if (length === 2) {
-    return rule(str, 1, 0, 1)
-  } else {
-    return rule(str, 1, 1, length - 2)
-  }
-}
 
 export function address(str, placeholder = 4) {
   return rule(str, 3, 4, placeholder)
@@ -60,29 +52,7 @@ export function rule(val, front, back, placeholder) {
   return val
 }
 
-const Type = {
-  mobile,
-  name,
-  address,
-  idCard
-}
 
-/**
- * 脱敏规则
- * @param {string} val 脱敏目标值
- * @param {string|number} type 当type值可以在Type中取到值则该字段返回已定义的脱敏规则函数，否则该字段作为截取前几字符位个数
- * @param {number} back 截取后几位字符个数
- * @param {number} placeholder 中间占位个数
- */
-export default function desensitization(val, type, back, placeholder) {
-  if (Type[type]) {
-    return Type[type](val)
-  } else {
-    // 重载
-    const front = type
-    return rule(val, front, back, placeholder)
-  }
-}
 
 
 /**
@@ -147,6 +117,31 @@ export function strf3e4(str) {
     return String(str).substr(0, 3) + "***********" + String(str).substr(str.length - 4)
   } else {
     return str
+  }
+}
+
+
+const Type = {
+  mobile,
+  name,
+  address,
+  idCard
+}
+
+/**
+ * 脱敏规则
+ * @param {string} val 脱敏目标值
+ * @param {string|number} type 当type值可以在Type中取到值则该字段返回已定义的脱敏规则函数，否则该字段作为截取前几字符位个数
+ * @param {number} back 截取后几位字符个数
+ * @param {number} placeholder 中间占位个数
+ */
+export default function desensitization(val, type, back, placeholder) {
+  if (Type[type]) {
+    return Type[type](val)
+  } else {
+    // 重载
+    const front = type
+    return rule(val, front, back, placeholder)
   }
 }
 
