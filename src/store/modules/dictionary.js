@@ -4,13 +4,13 @@
  * @Autor: yjm
  * @LastEditors: Please set LastEditors
  * @Date: 2020-09-21 10:59:06
- * @LastEditTime: 2020-12-03 14:06:14
+ * @LastEditTime: 2021-01-07 09:43:07
  */
 import isObject from "lodash/isObject"
 import isEmpty from "lodash/isEmpty"
 import isString from "lodash/isString"
 import isFunction from "lodash/isFunction"
-import jsonToArray from "@/utils/json-to-array"
+import jsonToArray from "@/utils/common"
 import mock from "@/mock" // mock 数据
 
 const state = {

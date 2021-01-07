@@ -22,7 +22,7 @@
 </template>
 <script>
 import Mock from "@/mock"
-import jsonToArray from "@/utils/json-to-array"
+import jsonToArray from "@/utils/common"
 
 export default {
   name: "home",
