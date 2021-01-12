@@ -3,7 +3,7 @@
  * @Autor: chenyt
  * @Date: 2020-03-21 21:18:41
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-12 12:50:57
+ * @LastEditTime: 2021-01-12 13:32:31
  */
 import axios from "axios"
 import { getToken } from "@/utils/cookie"
@@ -11,8 +11,9 @@ import { getToken } from "@/utils/cookie"
 const API_BASEURL = process.env.BASE_URL//api接口基础路径
 const CLIENT_TIMEOUT = process.env.VUE_APP_TIMEOUT || 8000//链接时间
 const MOCK_SERVER = process.env.VUE_APP_MOCK_SERVER || ""//mock
+
 const service = axios.create({
-  baseURL: MOCK_SERVER ? MOCK_SERVER : API_BASEURL,
+  baseURL: MOCK_SERVER ? "" : API_BASEURL,
   timeout: CLIENT_TIMEOUT,
   headers: {
     "Content-Type": "application/json"

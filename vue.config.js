@@ -20,17 +20,17 @@ module.exports = {
     https: false, //是否配置https
     hot: true,
     hotOnly: true, //是否热更新
-    disableHostCheck: true,
-    proxy: { //配置跨域
-      "/api": {//设置代理路径
-        target: "", //设置代理地址
-        ws: true,
-        changOrigin: true,
-        pathRewrite: {
-          "^/api": ""
-        }
-      }
-    }
+    disableHostCheck: true
+    // proxy: { //配置跨域
+    //   "/api": {//设置代理路径
+    //     target: "", //设置代理地址
+    //     ws: true,
+    //     changOrigin: true,
+    //     pathRewrite: {
+    //       "^/api": ""
+    //     }
+    //   }
+    // }
   },
 
   css: {
