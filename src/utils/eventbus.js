@@ -1,3 +1,8 @@
+/*
+ * @Description: eventBus
+ * @Version: 0.1
+ * @Autor: Chenyt
+ */
 import Vue from 'vue'
 
 const vm = new Vue()

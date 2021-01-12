@@ -2,10 +2,8 @@
  * @Description: 判断设备信息
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-05-27 14:34:11
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-04 09:20:48
  */
+
 'use strict'
 
 const detect = {}

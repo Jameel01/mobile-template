@@ -1,9 +1,7 @@
 <!--
- * @Description: 
+ * @Description: 表单组件使用案例
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-20 13:54:34
- * @LastEditors: yjm
 -->
 <template>
   <div class="auto-form">

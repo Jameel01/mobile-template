@@ -1,11 +1,9 @@
 /*
  * @Description: 字典表
  * @Version: 0.1
- * @Autor: yjm
- * @LastEditors: Please set LastEditors
- * @Date: 2020-09-21 10:59:06
- * @LastEditTime: 2021-01-12 10:51:39
+ * @Autor: Chenyt
  */
+
 import isObject from "lodash/isObject"
 import isEmpty from "lodash/isEmpty"
 import isString from "lodash/isString"

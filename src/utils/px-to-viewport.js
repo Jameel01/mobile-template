@@ -2,9 +2,6 @@
  * @Description: js中的px转成rem
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: Chenyt
- * @Date: 2020-07-29 10:56:34
- * @LastEditTime: 2020-11-04 09:15:30
  */
 
 

@@ -1,3 +1,9 @@
+/*
+ * @Description: 常用字符串处理函数
+ * @Version: 0.1
+ * @Autor: Chenyt
+ */
+
 // 产生8位数字、字母随机数
 export function randomStr () {
   const source = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'

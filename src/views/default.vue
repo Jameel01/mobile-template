@@ -1,10 +1,7 @@
 <!--
- * @Description: 
+ * @Description: 默认404页面、查无结果页面、断网、系统维护
  * @Version: 0.1
  * @Autor: chenyt
- * @Date: 2020-03-21 22:23:09
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-16 10:08:08
  -->
 <template>
   <div class='page-other'>

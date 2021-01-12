@@ -2,9 +2,6 @@
  * @Description: 全局混入的方法
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-05 14:05:58
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-06 10:38:55
  */
 import { validateUrl, validateBankNo, validatePostCodeFn, validatePwdFn, validateUserNameFn, validateTaxpayerNoFn, validateChineseFn, validateIdCardFn, validateMobilePhoneFn, validateHomePhoneFn, validateEmailFn, validateCodeCountFn} from "@/utils/check"
 import {asyncGetLabelByCode, asyncGetLabelByCodes, asyncGetCodeByLabel, asyncGetCodeByLabels} from "@/utils/dictionary"

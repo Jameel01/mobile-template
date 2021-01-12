@@ -1,11 +1,9 @@
 /*
- * @Description: 
+ * @Description: 日期函数
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-12 10:13:13
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-13 13:50:06
  */
+
 import dayjs from "dayjs"
 
 const DEFAULT_FORMATS = {

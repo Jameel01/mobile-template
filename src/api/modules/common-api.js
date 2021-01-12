@@ -1,9 +1,7 @@
 /*
  * @Description: 放置基础接口
- * @Autor: chenyt
- * @Date: 2020-03-22 12:04:29
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-12 13:27:39
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
 
 import request from "../axios"

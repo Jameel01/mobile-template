@@ -1,3 +1,8 @@
+/*
+ * @Description: 字典函数工具
+ * @Version: 0.1
+ * @Autor: Chenyt
+ */
 import store from "@/store"
 import isEmpty from "lodash/isEmpty"
 import isObject from "lodash/isObject"

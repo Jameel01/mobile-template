@@ -1,10 +1,9 @@
 /*
  * @Description: 主入口文件
- * @Autor: guoruliang
- * @Date: 2020-04-08 09:32:12
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-12 11:36:15
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"

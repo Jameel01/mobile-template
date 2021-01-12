@@ -1,11 +1,8 @@
 /*
- * Des: 全局过滤器
- * @Author: hch
- * @Date: 2020-03-19 15:22:41
- * @Last Modified by: hch
- * @Last Modified time: 2020-03-20 15:18:22
+ * @Description: 全局过滤器
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
-
 export {
   getCodeByLabel,
   getCodeByLabels,

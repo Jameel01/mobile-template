@@ -1,9 +1,7 @@
 /*
  * @Description: 公共路由，以下实例：请根据具体业务修改或无用删除
- * @Autor: guoruliang
- * @Date: 2020-04-01 09:57:00
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 15:38:41
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
 
 export default [

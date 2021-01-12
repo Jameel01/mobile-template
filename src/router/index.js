@@ -1,10 +1,9 @@
 /*
  * @Description: 路由主入口
- * @Autor: guoruliang
- * @Date: 2020-04-01 09:57:00
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-29 13:53:04
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 import Vue from "vue"
 import Router from "vue-router"
 Vue.use(Router)

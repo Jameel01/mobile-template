@@ -1,9 +1,8 @@
+
 /*
- * @Description: 常用的有赞组件
- * @Autor: chenyt
- * @Date: 2020-03-21 22:15:42
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-02 17:11:01
+ * @Description: 全局常用的组件
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
 
 import Vue from "vue"

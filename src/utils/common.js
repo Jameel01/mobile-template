@@ -1,8 +1,9 @@
 /*
- * @Description: 公共函数
- * @Author: asheng
- * @Date: 2018-12-07 11:36:27
+ * @Description: 公共工具函数
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 
 /**
  * 数据格式转换

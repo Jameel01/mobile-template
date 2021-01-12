@@ -1,9 +1,7 @@
 /*
  * @Description: 自动注册全局的组件
- * @Autor: chenyt
- * @Date: 2020-03-27 15:36:13
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-12-01 11:35:56
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
 
 import Vue from "vue"

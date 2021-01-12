@@ -1,8 +1,9 @@
 /*
  * @Description: 设置sessionStorage
- * @Autor: guoruliang
- * @Date: 2020-04-03 16:53:12
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 const ls = window.sessionStorage
 export default {
     getItem(key) {

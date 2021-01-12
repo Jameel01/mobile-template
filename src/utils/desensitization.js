@@ -1,11 +1,9 @@
 /*
- * @Description: 
+ * @Description: 脱敏
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-12 10:12:48
- * @LastEditors: yjm
- * @LastEditTime: 2020-12-31 11:36:27
  */
+
 /**
  *17350800661 => 173****0661
  *

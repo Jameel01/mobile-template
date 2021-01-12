@@ -1,10 +1,9 @@
 /*
  * @Description: 设置Cookies
- * @Autor: guoruliang
- * @Date: 2020-03-23 17:02:15
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-04 09:20:32
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 import Cookies from "js-cookie"
 
 const TokenKey = process.env.VUE_APP_TOKEN

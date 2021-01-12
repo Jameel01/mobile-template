@@ -1,10 +1,9 @@
 /*
  * @Description: 接口请求统一配置
- * @Autor: chenyt
- * @Date: 2020-03-21 21:18:41
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-12 13:32:31
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 import axios from "axios"
 import { getToken } from "@/utils/cookie"
 // 环境变量

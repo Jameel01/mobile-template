@@ -1,11 +1,9 @@
 /*
- * @Description: 
+ * @Description: 基础页面路由
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-12 10:22:14
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-20 14:06:24
  */
+
 export default [{
   path: "/base-module/dict-demo",
   name: "dict-demo",

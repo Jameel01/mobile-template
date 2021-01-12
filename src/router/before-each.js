@@ -1,10 +1,9 @@
 /*
  * @Description: 路由拦截
- * @Autor: guoruliang
- * @Date: 2020-04-08 09:34:14
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-12 09:56:48
+ * @Version: 0.1
+ * @Autor: Chenyt
  */
+
 import { commonApi } from "@/api"
 import store from "@/store"
 // import Cookies from 'js-cookie'

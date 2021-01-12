@@ -2,9 +2,6 @@
  * @Description: 
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-12 10:01:40
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-12 10:16:47
  */
 import Vue from "vue"
 import Vuex from "vuex"

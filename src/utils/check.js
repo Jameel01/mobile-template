@@ -2,10 +2,8 @@
  * @Description: 常用表单校验规则
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-10-20 10:25:08
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-13 13:57:57
  */
+
 
 const mobileRex = /1\d{10}/;//校验手机号格式
 // const mobileRex = /^(13[0-9]|14[579]|15[0-3,5-9]|16[67]|17[0135678]|18[0-9]|19[891])\d{8}$/;
