@@ -33,20 +33,6 @@ npm run build:test
 ```
 npm run build:prod
 ```
-
-### 更多自定义配置
-See [Configuration Reference](https://cli.vuejs.org/zh/config/).
-
-### 使用基础UI组件库-Vant，组件UI主题符合规范
-
-### 移动端适配设置
-* 使用插件：postcss-px-to-viewport，将750px标准的设计稿转为vw和vh适配单位
-* 设置忽略vant-组件px单位转换
-
-### Api接口访问跨域代理
-本地设置跨域代理
-### 访问环境变量方式
- `console.log(process.env.VUE_APP_SECRET)`
 ### 自动创建组件模板命令
 ```
 npm run new:comp
@@ -60,6 +46,16 @@ npm run new:view
 ```
 
 运行命令后，输入页面名称，自动在文件夹`views`创建页面模板
+
+### 使用基础UI组件库-Vant
+
+### 移动端适配设置
+* 使用插件：postcss-px-to-viewport，将750px标准的设计稿转为vw和vh适配单位，js中单位也能转换
+
+### Api接口访问跨域代理
+本地设置跨域代理
+### 访问环境变量方式
+ `console.log(process.env.VUE_APP_SECRET)`
 
 ### 路由自动加载
 在文件夹`router`下创建模块路由文件,例如：`router/login/index.js`。设置自动引入新建路由模块。
