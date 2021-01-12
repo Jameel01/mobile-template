@@ -22,8 +22,8 @@ module.exports = {
     hotOnly: true, //是否热更新
     disableHostCheck: true,
     proxy: { //配置跨域
-      "/api": {
-        target: "http://test.12333.gov.cn/cloud-app/api/service",
+      "/api": {//设置代理路径
+        target: "", //设置代理地址
         ws: true,
         changOrigin: true,
         pathRewrite: {
@@ -41,15 +41,6 @@ module.exports = {
     sourceMap: false,
     // css预设器配置项
     loaderOptions: {
-
-      // sass: {
-      //   // @/ is an alias to src/
-      //   // so this assumes you have a file named `src/variables.scss`
-      //   prependData: `
-      //   $env: ${process.env.NODE_ENV};
-      //   @import "@/styles/theme-params.scss";
-      //   `
-      // },
       less: {
         modifyVars: {
           // 直接覆盖变量
@@ -128,20 +119,7 @@ module.exports = {
       .tap(options => Object.assign(options, {
         limit: 20240
       }))
-      // 图片质量压缩
-      // config.module
-      //   .rule('images')
-      //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-      //   .use('img-loader')
-      //   .loader('img-loader').options({
-      //     plugins: [
-      //       require('imagemin-jpegtran')(),
-      //       require('imagemin-pngquant')({
-      //         quality: [0.75, 0.85]
-      //       })
-      //     ]
-      //   })
-      // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
+    // 这里是对环境的配置，不同环境对应不同的BASE_URL，以便axios的请求地址不同
     config.plugin("define").tap(args => {
       args[0]["process.env"].BASE_URL = JSON.stringify(process.env.BASE_URL)
       return args

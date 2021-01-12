@@ -4,14 +4,14 @@
  * @Autor: yjm
  * @LastEditors: Please set LastEditors
  * @Date: 2020-09-21 10:59:06
- * @LastEditTime: 2021-01-07 09:43:07
+ * @LastEditTime: 2021-01-12 10:51:39
  */
 import isObject from "lodash/isObject"
 import isEmpty from "lodash/isEmpty"
 import isString from "lodash/isString"
 import isFunction from "lodash/isFunction"
 import jsonToArray from "@/utils/common"
-import mock from "@/mock" // mock 数据
+import { getCodeListApi } from "@/api/modules/common-api" // 字典数据请求接口
 
 const state = {
   codeList: {}, // 字典表数据列表
@@ -73,11 +73,11 @@ const actions = {
  * @param {Array} params 请求参数
  */
 // eslint-disable-next-line no-unused-vars
-export function getCodeListApi(params) {
-  // 测试请求数据：第一个参数为请求的字典类型，第二个参数isJson=true：设置返回的数据为json格式，需要设置formatter函数：全局数据格式化方法函数
-  // return mock(params[state.query], true)
-  return mock(params[state.query], false)
-}
+// export function getCodeListApi(params) {
+//   // 测试请求数据：第一个参数为请求的字典类型，第二个参数isJson=true：设置返回的数据为json格式，需要设置formatter函数：全局数据格式化方法函数
+//   // return mock(params[state.query], true)
+//   return mock(params[state.query], false)
+// }
 
 /**
  * json data format

@@ -2,8 +2,6 @@
  * @Description: 设置sessionStorage
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:53:12
- * @LastEditors: guoruliang
- * @LastEditTime: 2020-04-09 17:13:54
  */
 const ls = window.sessionStorage
 export default {

@@ -2,37 +2,32 @@
  * @Description: 主入口文件
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:32:12
- * @LastEditors: yjm
- * @LastEditTime: 2020-12-31 11:39:28
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-12 11:36:15
  */
 import Vue from "vue"
 import App from "@/App.vue"
 import Router from "vue-router"
 import router from "@/router"
-
-import { Toast } from "@ylz/vant"
-Vue.use(Toast)
-
+//全局函数
 import Mixin from "./mixins"
 Vue.mixin(Mixin)
-
+//全局过滤函数
 import * as filters from "./filters"
 Object.keys(filters).map(item => {
   Vue.filter(item, filters[item])
 })
-
+//js中的单位转换成vw、vx
 import pxToViewport from "@/utils/px-to-viewport"
 Vue.prototype.$pxToViewport = pxToViewport
 
 // 引入全局iconfont
 import "@/styles/iconfonts/iconfont.css"
-// 引入全部样式
+// 引入vant全部样式
 import "@ylz/vant/lib/index.less"
 // 自动注册全局的组件
 import "@/components/index"
 // 引入基础样式
-// import "@/styles/theme/theme-params.less"
-// import "@/styles/animate.less"
 import "@/styles/common.less"
 //先关闭医保规范样式文件
 // import "@/styles/theme/reset-vant.less"
@@ -54,6 +49,9 @@ router.beforeEach(beforeEachHandler)
 //标题设置
 router.afterEach(afterEachHandler)
 
+//全局提示
+import { Toast } from "@ylz/vant"
+Vue.use(Toast)
 //sessionstorage引入
 import SessionUtil from "@/utils/session-storage"
 // 挂载工具
@@ -77,7 +75,11 @@ Object.defineProperties(Vue.prototype, {
     }
   }
 })
-
+//是否启动mock
+if (process.env.VUE_APP_MOCK_SERVER) {
+  const { mockXHR } = require("../mock")
+  mockXHR()
+}
 Vue.config.devtools = true
 Vue.config.productionTip = false
 

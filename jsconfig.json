@@ -11,7 +11,7 @@
   },
   "include": [
     "src/**/*"
-  ],
+, "dist/mock"  ],
   "exclude": [
     "node_modules"
   ]

@@ -2,7 +2,7 @@
  * @Description: y-form-item 表单子项
  * @Version: 0.1
  * @Autor: yjm
- * @LastEditors: yjm
+ * @LastEditors: Please set LastEditors
  */
 import isFunction from "lodash/isFunction"
 import isObject from "lodash/isObject"
@@ -554,13 +554,13 @@ export default {
 
     if (type == "region") {
       // 配置默认地区数据
-      this.$attrs.dataList = this.$attrs.dataList || require("@/assets/data/regionData")
+      this.$attrs.dataList = this.$attrs.dataList || require("@/components/global/y-auto-form/data/regionData")
     }
     if (type == "area") {
       // 配置默认地区数据
-      this.$attrs.plist = this.$attrs.plist || require("@/assets/data/province")
-      this.$attrs.clist = this.$attrs.clist || require("@/assets/data/city")
-      this.$attrs.alist = this.$attrs.alist || require("@/assets/data/area")
+      this.$attrs.plist = this.$attrs.plist || require("@/components/global/y-auto-form/data/province")
+      this.$attrs.clist = this.$attrs.clist || require("@/components/global/y-auto-form/data/city")
+      this.$attrs.alist = this.$attrs.alist || require("@/components/global/y-auto-form/data/area")
     }
     return this.generator(
       this.renderOptions({ config: item }),
