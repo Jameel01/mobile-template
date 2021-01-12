@@ -5,6 +5,11 @@
 -->
 # Vue移动开发模板
 
+## 分支说明
+`master`分支正式版本，应用于开发，包含较丰富常用工具
+`master-simple`分支正式版本，偏简洁版本框架
+`develop`分支测试版本，用于部门团队开发测试
+其他分支用于开发、修复bug等
 ## 安装依赖
 ```
 npm install
@@ -73,5 +78,7 @@ npm run new:view
 * `@/utils/common.js`公用工具函数
 * `@/utils/desensitization.js`常用脱敏前端工具函数
 * `@/utils/dictionary.js`常用字典处理函数
+
+
 ### 跟新日志
-* [v1.0.2](./CHANGELOG.md "2020-11-16") 
+* [v1.0.3](./CHANGELOG.md "2021-1-12") 
