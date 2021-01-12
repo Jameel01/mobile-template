@@ -3,7 +3,7 @@
  * @Version: 0.1
  * @Autor: wjn
  * @Date: 2020-07-01 17:41:13
- * @LastEditors: yjm
+ * @LastEditors: Please set LastEditors
 --> 
 <template>
   <div class="y-title" :style="style" :class="{'set-border-bottom': mainBorder,'set-title-radius':radius}">
@@ -164,7 +164,7 @@ export default {
     //图标的url 如：footer-icon-fault.png 标题的图标要放titleIcon底下
     iconUrl: {
       type: String,
-      default: require("@/assets/imgs/title/icon@3x.png")
+      default: require("@/components/global/y-title/imgs/title/icon@3x.png")
     },
     //图标宽度
     iconWidth: {

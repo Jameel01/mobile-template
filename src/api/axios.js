@@ -2,12 +2,11 @@
  * @Description: 接口请求统一配置
  * @Autor: chenyt
  * @Date: 2020-03-21 21:18:41
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-07-08 14:31:44
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-12 10:28:14
  */
 import axios from "axios"
-import { getToken } from "@/utils/auth"
-// import Cookies from 'js-cookie'
+import { getToken } from "@/utils/cookie"
 // 环境变量
 const API_BASEURL = process.env.BASE_URL//api接口基础路径
 const CLIENT_TIMEOUT = process.env.VUE_APP_TIMEOUT || 8000//链接时间

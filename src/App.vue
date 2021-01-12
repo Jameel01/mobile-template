@@ -2,8 +2,8 @@
  * @Description: 主页面
  * @Autor: guoruliang
  * @Date: 2020-04-03 16:52:52
- * @LastEditors: Chenyt
- * @LastEditTime: 2020-11-16 11:35:15
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-12 09:51:06
  -->
 <template>
   <div id="app">
@@ -23,9 +23,6 @@ export default {
     }
   },
   mounted(){
-    // window.addEventListener("hashchange", () => {
-    //   this.$router.go(0)
-    // })
   },
   created() {
     this.$Loading.show(2000)

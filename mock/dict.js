@@ -1,7 +1,8 @@
 /*
- * @Description: 模拟数据
+ * @Description: 
  * @Version: 0.1
- * @Autor: Chenyt
+ * @Autor: yjm
+ * @LastEditors: yjm
  */
 import Mock from "mockjs"
 
@@ -26,20 +27,29 @@ export const RandomJsonData = function() {
   return data
 }
 
-export default function request(type, isJson) {
+function request(type, isJson) {
   type = Array.isArray(type) ? type : type.split(",")
-  console.log(type)
 
   const data = {}
   type.map(item => {
     data[item] = isJson ? RandomJsonData() : RandomNormalData()
   })
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({
+  console.log(type, data)
+  return data
+}
+
+export default [
+  {
+    url: "/getCodeApi",
+    type: "post",
+    response: config => {
+      const { types, isJson } = config.body.data
+      const data = request(types, isJson)
+
+      return {
         code: 0,
         data
-      })
-    }, 2000)
-  })
-}
+      }
+    }
+  }
+]

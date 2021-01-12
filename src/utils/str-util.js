@@ -275,14 +275,26 @@ export const DRThrottle = (delay) => (target, key, descriptor) => {
   };
   return descriptor;
 };
-/**
- * 日期格式转换
- *  @param time
- */
-export function formatDate (time) {
-  const now = new Date(time)
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1;
-  const date = now.getDate();
-  return year + "-" + month + "-" + date;
-} 
+
+// 截取字符串
+export const sliceStr = (str, sliceLen) => {
+  if (!str) {
+    return ''
+  }
+  let realLength = 0
+  const len = str.length
+  let charCode = -1
+  for (let i = 0; i < len; i++) {
+    charCode = str.charCodeAt(i)
+    if (charCode >= 0 && charCode <= 128) {
+      realLength += 1
+    } else {
+      realLength += 2
+    }
+    if (realLength > sliceLen) {
+      return `${str.slice(0, i)}...`
+    }
+  }
+
+  return str
+}

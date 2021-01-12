@@ -2,13 +2,13 @@
  * @Description: 路由拦截
  * @Autor: guoruliang
  * @Date: 2020-04-08 09:34:14
- * @LastEditors: chenyt
- * @LastEditTime: 2020-05-09 17:18:24
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-12 09:56:48
  */
 import { commonApi } from "@/api"
 import store from "@/store"
 // import Cookies from 'js-cookie'
-import { getToken } from "@/utils/auth"
+import { getToken } from "@/utils/cookie"
 
 // const TOKENNAME = process.env.VUE_APP_TOKEN
 const SET_USER_INFO = "SET_USER_INFO"

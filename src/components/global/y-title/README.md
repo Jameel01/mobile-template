@@ -3,8 +3,8 @@
  * @Version: 0.1
  * @Autor: lzx
  * @Date: 2020-07-02 17:31:24
- * @LastEditors: lzx
- * @LastEditTime: 2020-07-29 17:09:05
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-12 10:13:45
 --> 
 # y-title 标题组件
 
@@ -105,7 +105,7 @@ export default {
 | fontSizeMore | 右边更多文字大小 | _string_ | `14` |
 | colorMore   | 右边更多文字颜色 | _string_ | `@main_color`    |
 | ifIcon | 是否显示标题图标 | _boolean_ | `false` |
-| iconUrl   | 标题图标url | _string_ | `require("@/assets/imgs/title/icon@3x.png")`    |
+| iconUrl   | 标题图标url | _string_ | `require("@/components/global/y-title/imgs/title/icon@3x.png")`    |
 | iconWidth | 图标宽度 | _string_ | `28` |
 | iconHeight   | 图标高度 | _string_ | `28`    |
 | iconLeft | 图标左边距 | _string_ | `-32` |

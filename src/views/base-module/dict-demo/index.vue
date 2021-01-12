@@ -21,9 +21,6 @@
   </div>
 </template>
 <script>
-import Mock from "@/mock"
-import jsonToArray from "@/utils/common"
-
 export default {
   name: "home",
   data() {
@@ -51,10 +48,7 @@ export default {
           item: {
             required: true,
             rules: [{ required: true, message: "请输入姓名" }],
-            label: "姓名",
-            scopedSlots: {
-              extra: () => <van-icon name="manager-o" />
-            }
+            label: "姓名"
           }
         },
         {
@@ -74,45 +68,6 @@ export default {
             label: "地区字典选择(初始化)",
             dictType: "test",
             filterabled: false 
-          }
-        },
-        {
-          type: "selectDict",
-          prop: "selectDict2",
-          item: {
-            label: "地区字典选择(初始化)",
-            dictType: "test2"
-          }
-        },
-        {
-          type: "selectDict",
-          prop: "selectDict3",
-          item: {
-            label: "地区字典选择(初始化)",
-            dictType: "test3"
-          }
-        },
-        {
-          type: "selectDict",
-          prop: "selectDict4",
-          item: {
-            label: "地区字典选择（自定义api）",
-            dictType: "test4"
-          },
-          // 自定义请求接口
-          getCodeApi: async(params) => {
-            const res = await Mock(params.types, true)
-            return res
-          },
-          // 如需转换数据格式，可以自定义格式化数据
-          formatter(data, params) {
-            // 例如：数据格式转换
-            // sex:{ '0':'男0号 Api', '1':'男1号 Api' } =>>> 
-            // sex:[{ value:'0',label:'男0号 Api' },{ value:'1',label:'男1号 Api' }]
-            Object.keys(data).map(item => {
-              data[item] = jsonToArray(data[item])
-            })
-            return data
           }
         }
       ]
