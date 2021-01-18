@@ -44,6 +44,7 @@ export default {
         attrs: {
           __data: this.form[prop], // form item 绑定值
           on,
+          name: prop,
           ...attrs
         },
         on: {
@@ -57,7 +58,7 @@ export default {
       return <FormItem {...props} v-show={!hidden}></FormItem>
     },
     parseFormItemList(formItemList) {
-      const isArrayValue = ["uploader", "region", "area"]
+      const isArrayValue = ["uploader", "region", "area", "selectDict"]
       // 原始配置对象
       this.rawFormItemList = formItemList
         .map(item => {

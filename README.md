@@ -131,4 +131,6 @@ git remote add mobileTemplateFramework http://47.107.67.231:8888/project-templat
 git fetch mobileTemplateFramework master
 ```
 ### 跟新日志
+* [v1.2.0](./CHANGELOG.md "2021-01-18") 
+* [v1.1.0](./CHANGELOG.md "2021-01-15") 
 * [v1.0.2](./CHANGELOG.md "2020-11-16") 
