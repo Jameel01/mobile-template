@@ -9,6 +9,8 @@ import isObject from "lodash/isObject"
 import merge from "lodash/merge"
 import flattenDeep from "lodash/flattenDeep"
 import { dayFormat } from "@/utils/dayjs"
+import ImageCode from "./image-code.vue"
+import SmsCode from "./sms-code.vue"
 
 import "./index.less"
 
@@ -16,14 +18,12 @@ import {
   Rate,
   Slider,
   YUploader,
-  Switch,
   Stepper,
   Checkbox,
   CheckboxGroup,
   Radio,
   RadioGroup,
   Calendar,
-  Popup,
   YSelect,
   DatetimePicker
 } from "@ylz/vant"
@@ -33,25 +33,23 @@ export default {
   data() {
     return {
       generator: "",
-      showCalendar: false,
-      showDatetime: false,
-      showRegion: false,
-      showArea: false
+      showPopup: false,
+      cacheData: ""
     }
   },
   components: {
     Rate,
     Slider,
     YUploader,
-    "van-switch": Switch,
     Stepper,
     Checkbox,
     CheckboxGroup,
     Radio,
     RadioGroup,
     Calendar,
-    Popup,
-    YSelect
+    YSelect,
+    ImageCode,
+    SmsCode
   },
 
   methods: {
@@ -186,7 +184,7 @@ export default {
         },
         defaultEvent: {
           click: () => {
-            this.showCalendar = true
+            this.showPopup = true
           }
         }
       })
@@ -196,7 +194,7 @@ export default {
         defaultEvent: {
           confirm: data => {
             this.data = format(data, this)
-            this.showCalendar = false
+            this.showPopup = false
           }
         },
         defaultAttrs: {
@@ -227,7 +225,7 @@ export default {
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.data} {...fieldProps} />
-          <Calendar v-model={this.showCalendar} {...calendarProps} />
+          <Calendar v-model={this.showPopup} {...calendarProps} />
         </div>
       )
     },
@@ -242,7 +240,7 @@ export default {
         },
         defaultEvent: {
           click: () => {
-            this.showRegion = true
+            this.showPopup = true
           }
         }
       })
@@ -252,11 +250,11 @@ export default {
         defaultEvent: {
           onConfirm: data => {
             this.data = data.map(item => item.code).filter(Boolean)
-            this.showRegion = false
+            this.showPopup = false
             this.$emit("confirm", data)
           },
           onCancel: () => {
-            this.showRegion = false
+            this.showPopup = false
           }
         },
         defaultAttrs: {
@@ -267,7 +265,7 @@ export default {
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.regionText} {...fieldProps} />
-          <y-region-picker show={this.showRegion} {...regionProps} />
+          <y-region-picker show={this.showPopup} {...regionProps} />
         </div>
       )
     },
@@ -282,7 +280,7 @@ export default {
         },
         defaultEvent: {
           click: () => {
-            this.showArea = true
+            this.showPopup = true
           }
         }
       })
@@ -292,11 +290,11 @@ export default {
         defaultEvent: {
           onConfirm: data => {
             this.data = data.map(item => item.code).filter(Boolean)
-            this.showArea = false
+            this.showPopup = false
             this.$emit("confirm", data)
           },
           onCancel: () => {
-            this.showArea = false
+            this.showPopup = false
           }
         },
         defaultAttrs: {}
@@ -305,7 +303,7 @@ export default {
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.areaText} {...fieldProps} />
-          <y-area show={this.showArea} {...areaProps} />
+          <y-area show={this.showPopup} {...areaProps} />
         </div>
       )
     },
@@ -331,7 +329,7 @@ export default {
         },
         defaultEvent: {
           click: () => {
-            this.showDatetime = true
+            this.showPopup = true
           }
         }
       })
@@ -341,10 +339,10 @@ export default {
         defaultEvent: {
           confirm: data => {
             this.data = dateType[type] ? dayFormat(data, dateType[type]) : data
-            this.showDatetime = false
+            this.showPopup = false
           },
           cancel: () => {
-            this.showDatetime = false
+            this.showPopup = false
           }
         }
       })
@@ -361,9 +359,9 @@ export default {
       return (
         <div class="van-cell form-item">
           <van-field v-model={this.data} {...fieldProps} />
-          <Popup v-model={this.showDatetime} {...popupProps}>
+          <van-popup v-model={this.showPopup} {...popupProps}>
             <DatetimePicker {...datetimeProps} />
-          </Popup>
+          </van-popup>
         </div>
       )
     },
@@ -398,6 +396,28 @@ export default {
             v-model={this.data}
             {...fieldProps}
           />
+        </div>
+      )
+    },
+    genImageCode(field, props) {
+      return (
+        <div class="van-cell form-item">
+          <van-field v-model={this.data} {...field} >
+            <template slot="button">
+              <ImageCode {...props} ></ImageCode>
+            </template>
+          </van-field>
+        </div>
+      )
+    },
+    genSmsCode(field, props) {
+      return (
+        <div class="van-cell form-item">
+          <van-field v-model={this.data} {...field} >
+            <template slot="button">
+              <SmsCode {...props} ></SmsCode>
+            </template>
+          </van-field>
         </div>
       )
     },
@@ -476,11 +496,13 @@ export default {
       calendar: this.genCalendar, // 日历
       select: this.genSelect, // 选择框
       selectDict: this.genSelectDict, // 码表编译选择框
-      checkbox: this.genCheckbox, // 码表编译选择框
-      radio: this.genRadio, // 码表编译选择框
+      checkbox: this.genCheckbox, // 多选框
+      radio: this.genRadio, // 单选框
       datetime: this.genDatetime, // 时间选择框
       area: this.genArea, // 三级地区选择框
-      region: this.genRegion // 城市选择框
+      region: this.genRegion, // 城市选择框
+      imageCode: this.genImageCode, // 图形验证码
+      smsCode: this.genSmsCode // 短信验证码
     }
 
     // 获取生成模板函数，创建后不在变更
@@ -518,6 +540,7 @@ export default {
         return ""
       }
     },
+
     areaText() {
       if (this.$attrs.type == "area") {
 
@@ -550,7 +573,7 @@ export default {
 
   render(h) {
     // eslint-disable-next-line no-unused-vars
-    const { prop, type, item, __data, ...props } = this.$attrs
+    const { type, item, __data, ...props } = this.$attrs
 
     if (type == "region") {
       // 配置默认地区数据
@@ -568,3 +591,4 @@ export default {
     )
   }
 }
+

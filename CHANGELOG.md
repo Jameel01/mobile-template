@@ -2,9 +2,7 @@
  * @Description
  * @Version: 0.1
  * @Autor: Chenyt
- * @Date: 2020-11-03 14:11:55
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-12 14:08:29
+ * @LastEditors: yjm
 -->
 # 更新日志
 
@@ -18,15 +16,21 @@
 - 次版本号：发布包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
-### [v1.0.3]()
+### [v1.2.0]()
 
-`2021-1-12`
-
-**chore**
-- 去除无用代码
+`2021-01-18`
 
 **Feature**
-- 新增简介版本前端框架分支：master-simple
+
+- y-auto-form新增图形验证码与短信验证码表单项
+
+### [v1.1.0]()
+
+`2021-01-15`
+
+**Feature**
+
+- 新增svg文件压缩配置
 
 ### [v1.0.2]()
 
