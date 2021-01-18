@@ -111,5 +111,24 @@ import(/* webpackPrefetch: true */ './someAsyncComponent.vue')
 * `@/utils/detect.js`设备判断函数
 * `@/utils/common.js`公用工具函数
 
+### svg 文件压缩
+
+`svg` 文件放置 `src/assets/svg` 文件夹中,运行指令压缩指令
+
+```sh
+npm run svgo
+```
+
+### 旧项目更新新版框架内容指南
+
+在已开发的项目中想要更新新版框架内容，可以通过在项目中添加框架远程仓库，然后拉取master分支内容合并到当前项目中
+
+```sh
+#  添加远程仓库
+git remote add mobileTemplateFramework http://47.107.67.231:8888/project-template/mobileInitProject.git
+
+# 拉取指定仓库分支
+git fetch mobileTemplateFramework master
+```
 ### 跟新日志
 * [v1.0.2](./CHANGELOG.md "2020-11-16") 
